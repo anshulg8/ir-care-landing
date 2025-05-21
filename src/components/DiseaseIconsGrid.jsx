@@ -1,57 +1,33 @@
 import { Link } from 'react-router-dom';
-import { FaMale, FaFemale, FaToiletPaper, FaWalking } from 'react-icons/fa';
-
-const diseaseIcons = [
-    {
-        id: 1,
-        label: 'Enlarged Prostate',
-        slug: 'prostatic-artery-embolization-pae',
-        icon: <FaMale className="text-4xl text-teal-600" />,
-    },
-    {
-        id: 2,
-        label: 'Uterine Fibroids',
-        slug: 'uterine-fibroid-embolization-ufe',
-        icon: <FaFemale className="text-4xl text-teal-600" />,
-    },
-    {
-        id: 3,
-        label: 'Bleeding Hemorrhoids',
-        slug: 'hemorrhoidal-artery-embolization-hae',
-        icon: <FaToiletPaper className="text-4xl text-teal-600" />,
-    },
-    {
-        id: 4,
-        label: 'Joint Pain',
-        slug: 'okuno-procedure-tam',
-        icon: <FaWalking className="text-4xl text-teal-600" />,
-    },
-];
+import { FiExternalLink, FiArrowUpRight } from 'react-icons/fi';
+import { proceduresArray } from '../data';
 
 const DiseaseIconsGrid = () => {
     return (
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
             <div className="max-w-5xl mx-auto">
-                <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">
-                    Conditions We Treat
+                <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+                    Conditions <span className="text-teal-600">We Treat</span>
                 </h2>
 
-                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                    {diseaseIcons.map(({ id, label, slug, icon }) => (
+                <div className="grid grid-cols-2 gap-4">
+                    {proceduresArray.map(({ id, name, slug, icon }) => (
                         <Link
                             to={`/procedures/${slug}`}
                             key={id}
-                            className="group flex flex-col items-center justify-center p-4 border border-gray-200 rounded-xl hover:shadow-md transition-all bg-white"
+                            className="flex items-center justify-between px-4 py-3 rounded-lg border border-teal-600 text-teal-700 bg-white hover:bg-teal-50 transition text-sm font-medium shadow-sm"
                         >
-                            <div className="mb-2">{icon}</div>
-                            <span className="text-sm font-medium text-gray-700 group-hover:text-teal-600">
-                                {label}
-                            </span>
+                            <div className="flex items-center gap-2">
+                                <span className="text-lg">{icon}</span>
+                                <span>{name}</span>
+                            </div>
+                            <FiExternalLink className="text-base" />
+                            {/* <FiArrowUpRight className="text-base" /> */}
                         </Link>
                     ))}
                 </div>
             </div>
-        </section>
+        </section >
     );
 };
 

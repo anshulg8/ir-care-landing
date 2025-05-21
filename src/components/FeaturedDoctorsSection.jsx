@@ -3,18 +3,20 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-
 import { featuredDoctors } from '../data.jsx';
 
 const FeaturedDoctorsSection = () => {
 
 
     return (
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <section className="pt-6 sm:pt-16 pb-6 px-4 sm:px-6 lg:px-8 bg-white">
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
                     Meet Our <span className="text-teal-600">World-Class</span> Doctors
                 </h2>
+                <p className="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-12">
+                    Hand-picked department heads with an average of 22 years of experience, global fellowships, and a less than 1% major-complication rate across 5,000+ Interventional Radiology cases.
+                </p>
 
                 {/* Mobile View: Swiper */}
                 <div className="md:hidden mb-12 -mx-4">
@@ -28,23 +30,26 @@ const FeaturedDoctorsSection = () => {
                         {featuredDoctors.map((doctor) => (
                             <SwiperSlide key={doctor.id}>
                                 <div className="bg-gray-50 overflow-hidden shadow-sm hover:shadow-md transition-shadow rounded-xl">
-                                    <img
-                                        src={doctor.image}
-                                        alt={doctor.name}
-                                        className="w-full h-48 object-cover"
-                                    />
+                                    <div>
+                                        <img
+                                            src={doctor.image}
+                                            alt={doctor.name}
+                                            className="w-full h-48 object-cover object-[center_top]"
+                                        />
+                                        {doctor.hospitalIcons?.length > 0 && (
+                                            <div className="flex gap-3 px-4 py-2">
+                                                {doctor.hospitalIcons.map((icon, i) => (
+                                                    <img
+                                                        key={i}
+                                                        src={icon}
+                                                        alt="Hospital"
+                                                        className="h-6 w-auto object-contain"
+                                                    />
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
                                     <div className="p-4">
-                                        <div className="flex gap-2 mb-2">
-                                            {doctor.hospitalIcons?.map((icon, idx) => (
-                                                <img
-                                                    key={idx}
-                                                    src={icon}
-                                                    alt="Hospital"
-                                                    className="w-12 h-12 object-contain"
-                                                />
-                                            ))}
-                                        </div>
-
                                         <h3 className="text-lg font-semibold text-gray-900">{doctor.name}</h3>
                                         <p className="text-teal-600 text-sm font-medium mb-2">{doctor.designation}</p>
                                         <ul className="space-y-1 text-sm mb-3">
@@ -75,6 +80,7 @@ const FeaturedDoctorsSection = () => {
                                     </div>
                                 </div>
                             </SwiperSlide>
+
                         ))}
                     </Swiper>
                 </div>
@@ -120,6 +126,18 @@ const FeaturedDoctorsSection = () => {
                                             Specializes in: {doctor.specialty}
                                         </p>
                                     </div>
+                                    {doctor.hospitalIcons?.length > 0 && (
+                                        <div className="flex gap-3">
+                                            {doctor.hospitalIcons.map((icon, i) => (
+                                                <img
+                                                    key={i}
+                                                    src={icon}
+                                                    alt="Hospital"
+                                                    className="h-6 w-auto object-contain"
+                                                />
+                                            ))}
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -127,7 +145,7 @@ const FeaturedDoctorsSection = () => {
                 </div>
 
                 {/* View All Link */}
-                <div className="mt-8 text-center">
+                <div className="mt-4 sm:mt-8 text-center">
                     <Link
                         to="/doctors"
                         className="inline-block text-teal-600 text-lg font-semibold hover:underline"

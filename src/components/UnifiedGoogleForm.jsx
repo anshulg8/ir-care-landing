@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { FaCrosshairs } from 'react-icons/fa6';
+import axios from 'axios';
 import {
     FIELD_CITY_ID,
     FIELD_DISEASE_ID,
@@ -9,13 +9,25 @@ import {
     GOOGLE_FORM_ACTION_URL,
     PHONE_NUMBER,
 } from '../constants';
+import { proceduresArray } from '../data';
 
-const GoogleFormSubmit = ({ procedure }) => {
-    const [formData, setFormData] = useState({ name: '', phone: '', city: '' });
+const procedures = proceduresArray.map(proc => proc.name);
+
+const UnifiedGoogleForm = ({ mode = 'input', procedure = '' }) => {
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        city: '',
+        procedure: mode === 'fixed' ? procedure : '',
+    });
+
     const [status, setStatus] = useState('');
+    const [filtered, setFiltered] = useState([]);
+    const [showDropdown, setShowDropdown] = useState(false);
     const [nearbyCities, setNearbyCities] = useState([]);
     const [isLoadingCities, setIsLoadingCities] = useState(false);
 
+    // Fetch nearby cities based on IP
     useEffect(() => {
         const fetchNearbyCities = async () => {
             setIsLoadingCities(true);
@@ -34,9 +46,7 @@ const GoogleFormSubmit = ({ procedure }) => {
                 const response = await axios.post(
                     'https://overpass-api.de/api/interpreter',
                     overpassQuery,
-                    {
-                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    }
+                    { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
                 );
 
                 const cityNames = response.data.elements
@@ -65,11 +75,7 @@ const GoogleFormSubmit = ({ procedure }) => {
             async ({ coords: { latitude, longitude } }) => {
                 try {
                     const response = await axios.get('https://nominatim.openstreetmap.org/reverse', {
-                        params: {
-                            lat: latitude,
-                            lon: longitude,
-                            format: 'json',
-                        },
+                        params: { lat: latitude, lon: longitude, format: 'json' },
                     });
 
                     const city =
@@ -95,7 +101,21 @@ const GoogleFormSubmit = ({ procedure }) => {
     };
 
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        const { name, value } = e.target;
+        setFormData((prev) => ({ ...prev, [name]: value }));
+
+        if (name === 'procedure' && mode === 'input') {
+            const matches = procedures.filter((proc) =>
+                proc.toLowerCase().includes(value.toLowerCase())
+            );
+            setFiltered(matches);
+            setShowDropdown(true);
+        }
+    };
+
+    const handleSelectProcedure = (value) => {
+        setFormData((prev) => ({ ...prev, procedure: value }));
+        setShowDropdown(false);
     };
 
     const handleSubmit = (e) => {
@@ -105,7 +125,7 @@ const GoogleFormSubmit = ({ procedure }) => {
         formBody.append(FIELD_NAME_ID, formData.name);
         formBody.append(FIELD_PHONE_ID, formData.phone);
         formBody.append(FIELD_CITY_ID, formData.city);
-        formBody.append(FIELD_DISEASE_ID, procedure);
+        formBody.append(FIELD_DISEASE_ID, formData.procedure);
 
         fetch(GOOGLE_FORM_ACTION_URL, {
             method: 'POST',
@@ -170,9 +190,7 @@ const GoogleFormSubmit = ({ procedure }) => {
                                 <button
                                     key={idx}
                                     type="button"
-                                    onClick={() =>
-                                        setFormData((prev) => ({ ...prev, city }))
-                                    }
+                                    onClick={() => setFormData((prev) => ({ ...prev, city }))}
                                     className="px-3 py-1 text-sm bg-teal-100 text-teal-800 rounded hover:bg-teal-200"
                                 >
                                     {city}
@@ -183,7 +201,35 @@ const GoogleFormSubmit = ({ procedure }) => {
                 )
             )}
 
-            {/* Submit Button with Free Consultation Tag */}
+            {mode === 'input' && (
+                <div className="relative">
+                    <input
+                        name="procedure"
+                        type="text"
+                        placeholder="Select Disease"
+                        value={formData.procedure}
+                        onChange={handleChange}
+                        onFocus={() => setShowDropdown(true)}
+                        className="w-full border border-gray-300 p-2 rounded"
+                        required
+                    />
+                    {showDropdown && filtered.length > 0 && (
+                        <ul className="absolute z-10 w-full bg-white border border-gray-200 rounded shadow max-h-48 overflow-y-auto">
+                            {filtered.map((option, idx) => (
+                                <li
+                                    key={idx}
+                                    onClick={() => handleSelectProcedure(option)}
+                                    className="px-4 py-2 hover:bg-teal-50 cursor-pointer text-sm"
+                                >
+                                    {option}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
+            )}
+
+            {/* Submit button + badge */}
             <div className="relative w-full">
                 <div className="absolute -top-3 right-4 transform -skew-x-12 bg-green-600 text-white text-xs px-4 py-1 shadow-sm z-10">
                     <div className="transform skew-x-12">Free Consultation</div>
@@ -197,7 +243,7 @@ const GoogleFormSubmit = ({ procedure }) => {
                 </button>
             </div>
 
-            {/* Call Link */}
+            {/* Call Us link */}
             <a
                 href={`tel:${PHONE_NUMBER}`}
                 className="block text-lg text-center font-medium text-teal-600 hover:underline"
@@ -210,4 +256,4 @@ const GoogleFormSubmit = ({ procedure }) => {
     );
 };
 
-export default GoogleFormSubmit;
+export default UnifiedGoogleForm;

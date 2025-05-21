@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -6,8 +6,17 @@ import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { cards } from '../data';
+import AppointmentModal from './AppointmentModal'; // Import your modal component
 
 const SwiperSection = () => {
+    const [showModal, setShowModal] = useState(false);
+    const [selectedProcedure, setSelectedProcedure] = useState('');
+
+    const handlePrimaryCTA = (procedureTitle) => {
+        setSelectedProcedure(procedureTitle);
+        setShowModal(true);
+    };
+
     return (
         <div className="w-full relative z-10">
             <Swiper
@@ -21,38 +30,28 @@ const SwiperSection = () => {
             >
                 {cards.map((card, index) => (
                     <SwiperSlide key={index}>
-                        <section
-                            className="w-full bg-cover bg-center px-6 sm:px-12 lg:px-24 py-24 text-center relative"
-                            style={{
-                                backgroundImage: `url(${card.backgroundImage})`,
-                                backgroundPosition: 'center',
-                                backgroundSize: 'cover',
-                            }}
-                        >
-                            {/* Dark overlay */}
-                            {/* <div className="absolute inset-0 bg-black bg-opacity-50 z-0"></div> */}
-                            <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent z-0"></div>
+                        <section className="relative h-[32rem] w-full overflow-hidden">
+                            <img
+                                src={card.backgroundImage}
+                                alt={card.title}
+                                className="absolute inset-0 w-full h-full object-cover object-[50%_30%] z-0"
+                            />
 
-                            {/* Foreground content */}
-                            <div className="relative z-10 max-w-5xl mx-auto text-white">
-                                <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                                    {card.title}
-                                </h1>
-                                <h2 className="text-xl md:text-2xl font-semibold mb-6">
-                                    {card.subtitle}
-                                </h2>
-                                <p className="text-lg max-w-4xl mx-auto mb-8">
-                                    {card.description}
-                                </p>
+                            <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent z-10" />
+
+                            <div className="relative z-20 px-6 sm:px-12 lg:px-24 py-24 text-center max-w-5xl mx-auto text-white h-full flex flex-col justify-center items-center">
+                                <h1 className="text-4xl md:text-5xl font-bold mb-4">{card.title}</h1>
+                                <h2 className="text-xl md:text-2xl font-semibold mb-6">{card.subtitle}</h2>
                                 <div className="flex flex-col sm:flex-row justify-center gap-4">
-                                    <Link to="/contact">
-                                        <button className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-lg font-medium transition-colors">
-                                            Book Free Doctor Consultation
-                                        </button>
-                                    </Link>
+                                    <button
+                                        onClick={() => handlePrimaryCTA(card.title)}
+                                        className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
+                                    >
+                                        {card.primaryCTA}
+                                    </button>
                                     <Link to="/interventional-radiology">
-                                        <button className="border border-teal-600 text-teal-600 hover:bg-teal-50 px-8 py-3 rounded-lg font-medium transition-colors">
-                                            Know more about IR
+                                        <button className="bg-white/80 text-teal-700 hover:bg-white px-8 py-3 rounded-lg font-medium transition-colors shadow-md backdrop-blur-sm">
+                                            {card.secondaryCTA}
                                         </button>
                                     </Link>
                                 </div>
@@ -61,6 +60,13 @@ const SwiperSection = () => {
                     </SwiperSlide>
                 ))}
             </Swiper>
+
+            {/* Modal below swiper */}
+            <AppointmentModal
+                show={showModal}
+                onClose={() => setShowModal(false)}
+                procedure={selectedProcedure}
+            />
         </div>
     );
 };

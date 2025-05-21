@@ -4,7 +4,7 @@ import { proceduresArray } from '../data.jsx';
 
 const ProcedureSection = () => {
     return (
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
+        <section className="pt-6 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
             <div className="max-w-7xl mx-auto">
                 {/* Section Header */}
                 <div className="text-center mb-12">
@@ -94,7 +94,7 @@ const ProcedureSection = () => {
                 </div>
 
                 {/* Comparative CTA */}
-                <div className="mt-16 text-center">
+                <div className="mt-8 text-center">
                     <div className="inline-flex items-center bg-white border border-gray-200 px-6 py-3 rounded-full shadow-xs">
                         <svg className="h-5 w-5 text-gray-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />

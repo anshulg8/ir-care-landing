@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import logo from '../assets/trans-logo.png';
 
 const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -25,7 +26,8 @@ const Header = () => {
                 <div className="flex justify-between h-16">
                     <div className="flex items-center">
                         <Link to="/" className="flex items-center">
-                            <span className="text-2xl font-bold text-teal-600">Docsy</span>
+                            {/* <span className="text-2xl font-bold text-teal-600">Docsy</span> */}
+                            <img src={logo} alt="Docsy Logo" className="h-20 w-auto" />
                         </Link>
                     </div>
 

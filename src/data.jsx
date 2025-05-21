@@ -1,27 +1,27 @@
-import DrKhuzaima from './assets/dr-khuzaima.webp';
-import DrRochan from './assets/dr-rochan.webp';
-import DrMukul from './assets/dr-mukul.webp';
-import DrLenon from './assets/dr-lenon.webp';
+import { FaMale, FaFemale, FaToiletPaper, FaWalking } from 'react-icons/fa';
+import DrRochan from './assets/dr-rochan-copy.webp';
+import DrMukul from './assets/dr-mukul-copy.webp';
+import DrLenon from './assets/dr-lenon-copy.webp';
 import DrKB from './assets/dr-kb.png';
 import DrAshwin from './assets/dr-ashwin.jpg';
 
 export const usps = [
     {
-        title: "World-Class Doctors",
+        title: "Top Senior Doctors",
         description: [
-            "Avg. 20+ years experience",
-            "Trained at Harvard, Johns Hopkins, Cleveland Clinic",
-            "Heads of Department at premium hospitals",
+            "Only Dept Heads at premium hospitals",
+            "Average 22 years experience",
+            "5000+ IR procedures with <1% complications",
         ],
         iconPath:
             "M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z",
     },
     {
-        title: "Latest Procedures",
+        title: "Premium Centres & Latest Tech",
         description: [
             "US-FDA & EU-approved minimally invasive techniques",
-            "German/American equipment (Siemens, Philips)",
-            "15,000+ successful procedures",
+            "Strictly vetted cath lab suites with European flat-panel imaging systems",
+            "Infection-controlled theatres, anaesthetist and critical care on standby",
         ],
         iconPath:
             "M13 10V3L4 14h7v7l9-11h-7z",
@@ -29,9 +29,9 @@ export const usps = [
     {
         title: "VIP Experience",
         description: [
-            "Pickup/drop & healthy meals on procedure day",
-            "24/7 clinical support + insurance claim handholding",
-            "Zero waiting periods for consultations",
+            "24 × 7 Care Navigator on WhatsApp and phone",
+            "End-to-end insurance-claim hand-holding",
+            "Door-to-door pickup & drop + complimentary lounge meal & barista coffee/tea for family and patient",
         ],
         iconPath:
             "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
@@ -63,45 +63,45 @@ export const technologies = [
 
 export const cards = [
     {
-        title: 'World-Class Minimally Invasive Treatments',
-        subtitle: "Docsy Subtitle - Lorem Ipsum!",
-        description:
-            "FDA/EU-approved procedures by India's top 1% Interventional Radiologists. Zero scars. Zero waiting. VIP care.",
-        backgroundImage:
-            "https://cdn.hexahealth.com/static/images/slide-1.jpg",
+        title: 'Surgery — without Surgery',
+        subtitle: "Discover Interventional Radiology: tiny pin-hole cures, same-day discharge",
+        backgroundImage: "https://chatgpt.com/backend-api/public_content/enc/eyJpZCI6Im1fNjgyNGI2YTNmMmIwODE5MWIyZmNmNDJkMDFmMmNiOWE6ZmlsZV8wMDAwMDAwMGIxNzA2MjJmOWU3ZDRhZTMzYmU3NTEyNiIsInRzIjoiNDg1Mzg0IiwicCI6InB5aSIsInNpZyI6ImEyNThlOTExNzliMjYyNGQwMjgwMjI0YzBiZGRjMTk0M2Q3MmUwN2JkOWNlMmNlNDk1NGNiMmI4ZDJmNmNhNjYiLCJ2IjoiMCIsImdpem1vX2lkIjpudWxsfQ==",
+        // "https://cdn.hexahealth.com/static/images/slide-1.jpg",
+        primaryCTA: "Book Free IR Consultation",
+        secondaryCTA: "What is IR?",
     },
     {
-        title: "Advanced IR Care for Men & Women",
-        subtitle: "Say goodbye to chronic pain",
-        description:
-            "Treating fibroids, varicocele, prostate, and more using non-surgical image-guided techniques.",
+        title: "No Cuts. No Scars. No Hospital Stay.",
+        subtitle: "American FDA & European CE-approved, lowers complications 70-90 % vs open/lap surgery",
         backgroundImage:
             "https://cdn.hexahealth.com/static/images/slide-2.jpg",
+        primaryCTA: "Check My Eligibility",
+        secondaryCTA: "Compare to Surgery",
     },
     {
-        title: "Expert Consultation, No Signup Needed",
-        subtitle: "Learn how IR can help",
-        description:
-            "Speak to an IR expert instantly without any delays or paperwork.",
-        backgroundImage:
-            "https://cdn.hexahealth.com/static/images/slide-3.jpg",
+        title: "Top Doctors • Premium Centres • VIP Experience",
+        subtitle: "India’s first end-to-end IR ecosystem with 24 x 7 Care Navigators",
+        backgroundImage: "https://cdn.hexahealth.com/static/images/slide-3.jpg",
+        primaryCTA: "Start My Care Journey",
+        secondaryCTA: "View Success Stories",
     },
 ];
 
 export const featuredDoctors = [
     {
         id: 1,
-        name: "Dr. Khuzaima Mama",
-        designation: "Interventional Oncologist | Founder, C3 Medicare",
-        image: DrKhuzaima,
+        name: "Dr. Ashwin M Polnaya",
+        designation: "Interventional Radiologist",
+        image: DrAshwin,
         credentials: [
-            "Harvard-MIT Health Sciences & Technology Alumnus",
-            "35,000+ Cancer Patients Guided Pro Bono",
-            "Investor & Oxford University Startup Mentor",
-            "Pioneer of Affordable IR Cancer Care"
+            // "Trailblazer in advanced liver cancer therapy — first radioactive IR in Karnataka.",
+            "First in Dakshina Kannada to Perform Radioactive Liver Cancer Therapy",
+            "Affiliated with AJ Hospital, Mangaluru",
+            "Specialized in Minimally Invasive Tumor Treatments",
+            "Expert in TACE & Radioembolization"
         ],
-        specialty: "Molecular Oncology & Minimally Invasive Cancer Treatments",
-        hospitalIcons: ["https://www.rfhospital.org/images/new-home-img/RF-logo-svg.svg", "https://cdn.worldvectorlogo.com/logos/apollo-hospitals.svg"]
+        specialty: "Advanced Liver Cancer Management",
+        hospitalIcons: ["https://www.ajhospital.in/images/aj-logo.png", "https://www.fathermuller.edu.in/medical-college/img/father-muller-logo.svg"]
     },
     {
         id: 2,
@@ -109,13 +109,14 @@ export const featuredDoctors = [
         designation: "Vascular & Neuro IR Specialist",
         image: DrRochan,
         credentials: [
+            // "Decorated IR veteran with 2,000+ complex vascular interventions. Presidential awardee",
             "Vishisht Seva Medal (President of India Awardee)",
             "Ex-Director, Radiology - Reliance Foundation Hospital",
             "20+ Years Teaching at MUHS, Nasik",
             "18+ Published Research Papers"
         ],
         specialty: "Stroke Intervention, Aortic Aneurysms, Liver Cancer (TACE/RFA)",
-        hospitalIcons: ["https://www.rfhospital.org/images/new-home-img/RF-logo-svg.svg", "https://cdn.worldvectorlogo.com/logos/apollo-hospitals.svg", "https://www.rfhospital.org/images/new-home-img/RF-logo-svg.svg"]
+        hospitalIcons: ["https://www.rfhospital.org/images/new-home-img/RF-logo-svg.svg", "https://www.ajhospital.in/images/aj-logo.png"]
     },
     {
         id: 3,
@@ -123,13 +124,14 @@ export const featuredDoctors = [
         designation: "Senior Interventional Radiologist",
         image: DrMukul,
         credentials: [
+            // "Global imaging expert with 30 yrs of IR innovation. Built Pune’s first high-end MRI centre.",
             "Trained in MRI/CT at USA, Germany, Japan, UK",
             "Founder - OMEGA MRI & PDS CT Scan Centres (Pune)",
             "30+ Years in Advanced Imaging",
             "Specialized in Hepatobiliary Interventions"
         ],
         specialty: "Cross-Border IR Expertise with Global Techniques",
-        hospitalIcons: ["https://www.rfhospital.org/images/new-home-img/RF-logo-svg.svg", "https://cdn.worldvectorlogo.com/logos/apollo-hospitals.svg"]
+        hospitalIcons: ["https://poonahospital.org/wp-content/uploads/2022/09/logo_new.png", "https://www.ajhospital.in/images/aj-logo.png"]
     },
     {
         id: 4,
@@ -137,13 +139,14 @@ export const featuredDoctors = [
         designation: "Interventional Neuro Radiologist",
         image: DrKB,
         credentials: [
+            // "Mangalore’s senior-most leading neuro-IR specialist. 1,500+ life-changing pin-hole procedures.",
             "First Interventional Neuroradiologist in Dakshina Kannada",
             "DM in Neuro Imaging & IR (SCTIMST, Trivandrum)",
             "Pioneer of Pinhole Access Neurovascular Treatments",
             "Expert in Stroke Management"
         ],
         specialty: "Endovascular Neurosurgeries Without Open Surgery",
-        hospitalIcons: ["https://www.rfhospital.org/images/new-home-img/RF-logo-svg.svg", "https://cdn.worldvectorlogo.com/logos/apollo-hospitals.svg"]
+        hospitalIcons: ["https://www.manipalhospitals.com/mangalore/assets/images/homepage/manipal-hospitals-mangalore.webp", "https://www.rfhospital.org/images/new-home-img/RF-logo-svg.svg"]
     },
     {
         id: 5,
@@ -151,84 +154,71 @@ export const featuredDoctors = [
         designation: "Vascular Surgeon & IR Specialist",
         image: DrLenon,
         credentials: [
+            // "Gold-medalist IR specialist with latest expertise across new & diverse procedure types.",
             "Gold Medalist - Rajiv Gandhi University",
             "Fellowship in Vascular IR (KEM Hospital, Mumbai)",
             "7+ Years in Complex Endovascular Procedures",
             "Ranked #1 in Radiology (RGUHS)"
         ],
         specialty: "Varicose Veins, Diabetic Foot Salvage, Uterine Fibroid Embolization",
-        hospitalIcons: ["https://www.rfhospital.org/images/new-home-img/RF-logo-svg.svg", "https://cdn.worldvectorlogo.com/logos/apollo-hospitals.svg"]
+        hospitalIcons: ["https://www.fathermuller.edu.in/medical-college/img/father-muller-logo.svg", "https://www.rfhospital.org/images/new-home-img/RF-logo-svg.svg"]
     },
-    {
-        id: 6,
-        name: "Dr. Ashwin M Polnaya",
-        designation: "Interventional Radiologist",
-        image: DrAshwin,
-        credentials: [
-            "First in Dakshina Kannada to Perform Radioactive Liver Cancer Therapy",
-            "Affiliated with AJ Hospital, Mangaluru",
-            "Specialized in Minimally Invasive Tumor Treatments",
-            "Expert in TACE & Radioembolization"
-        ],
-        specialty: "Advanced Liver Cancer Management",
-        hospitalIcons: ["https://www.rfhospital.org/images/new-home-img/RF-logo-svg.svg", "https://cdn.worldvectorlogo.com/logos/apollo-hospitals.svg"]
-    }
 ];
 
-const howItWorks = [
+export const howItWorks = [
     {
-        icon: "📞",
-        title: "Free Screening",
-        desc: "10-min questionnaire or teleconsult with our expert specialists",
-        color: "bg-teal-100 text-teal-800"
+        title: "Free Video Consult",
+        desc: "IR specialist reviews symptoms, scans & scores(IPSS / fibroid size / bleeding grade).",
+        icon: "🩺",
+        time: "15 min",
+        color: "bg-teal-500 text-white",
     },
     {
-        icon: "🏥",
-        title: "Premium Diagnostics",
-        desc: "Scan at JCI-accredited centers with Siemens/Philips machines",
-        color: "bg-purple-100 text-purple-800"
+        title: "Evidence-Based Choice",
+        desc: "Specialist doctor helps compare surgery vs IR; navigator gives price, insurance check & finance options.",
+        icon: "🧠",
+        time: "Same day",
+        color: "bg-blue-500 text-white",
     },
     {
-        icon: "🚙",
-        title: "VIP Procedure Day",
-        desc: "Door-to-door transport & healthy meals for you + companion",
-        color: "bg-green-100 text-green-800"
+        title: "Day-Care Procedure",
+        desc: "Local anaesthesia, pin - hole access, latte in the lounge, discharge in 4 h.",
+        icon: "💉",
+        time: "4 h on site",
+        color: "bg-purple-500 text-white",
     },
     {
-        icon: "💳",
-        title: "Insurance Handholding",
-        desc: "Dedicated admin team files all paperwork for cashless claims",
-        color: "bg-amber-100 text-amber-800"
+        title: "Virtual Recovery",
+        desc: "WhatsApp check - ins Day 1 & Day 30, diet & physio tips, 24 × 7 hotline.",
+        icon: "🤝",
+        time: "< 5 min",
+        color: "bg-orange-500 text-white",
     },
-    {
-        icon: "❤️‍🩹",
-        title: "Complete Aftercare",
-        desc: "Pre & Post follow-ups until full recovery",
-        color: "bg-red-100 text-red-800"
-    }
-]
+];
 
 export const centers = [
     {
         id: 'mumbai-c3',
+        rating: 4.9,
+        reviews: 77,
         city: 'Mumbai',
-        area: 'C3 Medicare',
+        area: '',
         name: 'C3 Medicare',
-        address: '123 Medical Plaza, Andheri West, Mumbai - 400053',
-        phone: '+91 22 1234 5678',
-        email: 'c3-mumbai@docsy.com',
-        image: 'https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-        description: 'Our flagship center in Andheri offers state-of-the-art interventional radiology services with cutting-edge technology and expert medical professionals.',
+        address: '901, Shrikant Chambers - c, II, VN Purav Marg, next to R K Studio, Union Park, Chembur, Mumbai 400071',
+        phone: '022 4897 2433',
+        email: 'info@c3medicare.com',
+        image: 'https://i0.wp.com/c3medicare.com/wp-content/uploads/2024/08/1.jpg',
+        description: 'C3 MEDICARE is a day-care centre for oncology and interventional radiology procedures that do not require overnight admissions. Our dedicated daycare Centre allows patients quick and efficient single-point admission, treatment, and discharge and reduces the time spent in the hospital.',
         technologies: [
             {
                 name: 'Siemens Artis Q.zen',
                 description: 'Advanced angiography system with 3D imaging capabilities',
-                image: 'https://images.unsplash.com/photo-1581093458791-9d15482442f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+                image: ''
             },
             {
                 name: 'Philips Azurion',
                 description: 'Next-generation image-guided therapy platform',
-                image: 'https://images.unsplash.com/photo-1581093458791-9d15482442f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+                image: ''
             }
         ],
         certifications: [
@@ -245,37 +235,39 @@ export const centers = [
         ],
         doctors: [
             {
-                name: 'Dr. Rajesh Kumar',
+                name: 'Dr. Surg. Capt. Rochan Pant',
                 specialization: 'Interventional Radiologist',
                 experience: '15+ years'
             },
             {
-                name: 'Dr. Priya Sharma',
-                specialization: 'Vascular Interventional Radiologist',
-                experience: '12+ years'
+                name: 'Dr. Mukul Mutatkar',
+                specialization: 'Interventional Radiologist',
+                experience: '30+ years'
             }
         ]
     },
     {
         id: 'pune-jahangir',
+        rating: 4.6,
+        reviews: 10378,
         city: 'Pune',
-        area: 'Jahangir Hospital',
+        area: '',
         name: 'Jahangir Hospital',
-        address: '456 Tech Park, Powai, Mumbai - 400076',
-        phone: '+91 22 2345 6789',
-        email: 'jahangir@docsy.com',
-        image: 'https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-        description: 'Our Powai center specializes in advanced interventional radiology procedures with a focus on patient comfort and cutting-edge technology.',
+        address: '32, Sasoon Rd, opposite Railway Station, Central Excise Colony, Sangamvadi, Pune, Maharashtra 411001',
+        phone: '020 6681 9999',
+        email: ' info@jehangirhospital.com',
+        image: 'https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqwrJZ6Es7LvMppZmwd7bwjIOk0Z8tTlwtOqQQ6phCN1PksUDp6F9BXcECG9nQQATZ9qgb1hg1nRQG3fJn5ne3nfhSx-UbAvwoeoVTxIQl9fC4dOQOPXA4TYGwYzyj_3GAq3Nar=s680-w680-h510-rw',
+        description: 'Jehangir Hospital is a 350-bed hospital in Pune, Maharashtra, India. Sir Cowasji Jehangir and Lady Hirabai Jehangir founded the hospital on 6 February 1946.',
         technologies: [
             {
                 name: 'GE Discovery IGS 740',
                 description: 'Advanced imaging system for precise interventions',
-                image: 'https://images.unsplash.com/photo-1581093458791-9d15482442f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+                image: ''
             },
             {
                 name: 'Siemens MAGNETOM Vida',
                 description: '3T MRI system for detailed imaging',
-                image: 'https://images.unsplash.com/photo-1581093458791-9d15482442f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+                image: ''
             }
         ],
         certifications: [
@@ -291,38 +283,30 @@ export const centers = [
             'Pediatric Interventions'
         ],
         doctors: [
-            {
-                name: 'Dr. Amit Verma',
-                specialization: 'Interventional Radiologist',
-                experience: '18+ years'
-            },
-            {
-                name: 'Dr. Neha Gupta',
-                specialization: 'Cardiac Interventional Radiologist',
-                experience: '14+ years'
-            }
         ]
     },
     {
         id: 'pune-h',
+        rating: 3.6,
+        reviews: 980,
         city: 'Pune',
-        area: 'Pune Hospital',
-        name: 'Pune Hospital',
-        address: '101 Cyber City, Pune - 122002',
-        phone: '+91 124 5678 901',
-        email: 'pune@docsy.com',
-        image: 'https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-        description: 'Our Pune center offers comprehensive interventional radiology services with a focus on advanced technology and patient care.',
+        area: '',
+        name: 'Poona Hospital',
+        address: '27, near Alka Talkies, Sadashiv Peth, Pune, Maharashtra',
+        phone: '+91 97305 59600',
+        email: 'phrcjr@gmail.com',
+        image: 'https://poonahospital.org/wp-content/uploads/2024/01/Hosptial.jpg',
+        description: 'Poona Hospital & Research Center is a healthcare provider, par excellence, fast establishing it self as a global industry model in the tertiary healthcare system of india.',
         technologies: [
             {
                 name: 'Philips Ingenia Elition',
                 description: '3T MRI system with AI-powered imaging',
-                image: 'https://images.unsplash.com/photo-1581093458791-9d15482442f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+                image: ''
             },
             {
                 name: 'Siemens Artis pheno',
                 description: 'Hybrid operating room system',
-                image: 'https://images.unsplash.com/photo-1581093458791-9d15482442f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+                image: ''
             }
         ],
         certifications: [
@@ -337,39 +321,30 @@ export const centers = [
             'Cardiac Interventions',
             'Pediatric Interventions'
         ],
-        doctors: [
-            {
-                name: 'Dr. Vikram Singh',
-                specialization: 'Vascular Interventional Radiologist',
-                experience: '17+ years'
-            },
-            {
-                name: 'Dr. Meera Kapoor',
-                specialization: 'Cardiac Interventional Radiologist',
-                experience: '15+ years'
-            }
-        ]
+        doctors: []
     },
     {
         id: 'mangalore-tara',
+        rating: 3.7,
+        reviews: 191,
         city: 'Mangalore',
-        area: 'Tara Hospital',
+        area: '',
         name: 'Tara Hospital',
-        address: '789 Healthcare Avenue, Saket, New Delhi - 110017',
-        phone: '+91 11 3456 7890',
-        email: 'tara@docsy.com',
+        address: 'Ganapathi High School Road, Bhavathi, Near Hampankatta, Mangalore-575001, Karnataka, India.',
+        phone: '+91 78296 07080',
+        email: 'Office@tarahospital.co.in',
         image: 'https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-        description: 'Our Saket center combines technological innovation with expert care, offering a wide range of interventional radiology procedures.',
+        description: 'We at Tara Hospital provide the highest quality and affordable treatments to our patients. We have an unwavering commitment to medical ethics.',
         technologies: [
             {
                 name: 'Canon Medical Systems Alphenix',
                 description: 'Advanced angiography system with 4K imaging',
-                image: 'https://images.unsplash.com/photo-1581093458791-9d15482442f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+                image: ''
             },
             {
                 name: 'Siemens SOMATOM Force',
                 description: 'Dual-source CT scanner for high-speed imaging',
-                image: 'https://images.unsplash.com/photo-1581093458791-9d15482442f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+                image: ''
             }
         ],
         certifications: [
@@ -384,39 +359,30 @@ export const centers = [
             'Oncological Interventions',
             'Musculoskeletal Interventions'
         ],
-        doctors: [
-            {
-                name: 'Dr. Suresh Patel',
-                specialization: 'Neuro Interventional Radiologist',
-                experience: '16+ years'
-            },
-            {
-                name: 'Dr. Ananya Reddy',
-                specialization: 'Vascular Interventional Radiologist',
-                experience: '13+ years'
-            }
-        ]
+        doctors: []
     },
     {
         id: 'mangalore-aj',
+        rating: 4.1,
+        reviews: 1500,
         city: 'Mangalore',
-        area: 'AJ Medical College',
+        area: '',
         name: 'AJ Medical College',
-        address: '789 Healthcare Avenue, Saket, Mangalore - 110017',
+        address: 'Kuntikana NH -66, Mangalore - 575 004.',
         phone: '+91 11 3456 7890',
-        email: 'tara@docsy.com',
-        image: 'https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-        description: 'Our Saket center combines technological innovation with expert care, offering a wide range of interventional radiology procedures.',
+        email: 'dean@ajims.edu.in',
+        image: 'https://ajims.edu.in/ASPXImages/sliderfirst.jpg',
+        description: 'AJIMS is aimed to provide a global perspective of medical education to achieve the national objective of “Health for All”.',
         technologies: [
             {
                 name: 'Canon Medical Systems Alphenix',
                 description: 'Advanced angiography system with 4K imaging',
-                image: 'https://images.unsplash.com/photo-1581093458791-9d15482442f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+                image: ''
             },
             {
                 name: 'Siemens SOMATOM Force',
                 description: 'Dual-source CT scanner for high-speed imaging',
-                image: 'https://images.unsplash.com/photo-1581093458791-9d15482442f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+                image: ''
             }
         ],
         certifications: [
@@ -432,38 +398,30 @@ export const centers = [
             'Musculoskeletal Interventions'
         ],
         doctors: [
-            {
-                name: 'Dr. Suresh Patel',
-                specialization: 'Neuro Interventional Radiologist',
-                experience: '16+ years'
-            },
-            {
-                name: 'Dr. Ananya Reddy',
-                specialization: 'Vascular Interventional Radiologist',
-                experience: '13+ years'
-            }
         ]
     },
     {
         id: 'mangalore-fm',
         city: 'Mangalore',
-        area: 'Father Muller Medical College',
+        rating: 4.1,
+        reviews: 931,
+        area: '',
         name: 'Father Muller Medical College',
-        address: '789 Healthcare Avenue, Saket, Mangalore - 110017',
-        phone: '+91 11 3456 7890',
-        email: 'tara@docsy.com',
-        image: 'https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-        description: 'Our Saket center combines technological innovation with expert care, offering a wide range of interventional radiology procedures.',
+        address: 'VV85+HJR, Father Muller\'s Rd, Kankanady, Mangaluru',
+        phone: '+91 824 223 8000',
+        email: 'drnageshkr@rediffmail.com',
+        image: 'https://bookuradmission.com/college_photo/Father%20Muller%20Medical%20College_photo210528093012.jpg',
+        description: 'Father Muller Medical College is a private medical school located at Kankanady in Mangaluru, Karnataka. It is a part of the Father Muller Charitable Institutions.',
         technologies: [
             {
                 name: 'Canon Medical Systems Alphenix',
                 description: 'Advanced angiography system with 4K imaging',
-                image: 'https://images.unsplash.com/photo-1581093458791-9d15482442f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+                image: ''
             },
             {
                 name: 'Siemens SOMATOM Force',
                 description: 'Dual-source CT scanner for high-speed imaging',
-                image: 'https://images.unsplash.com/photo-1581093458791-9d15482442f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+                image: ''
             }
         ],
         certifications: [
@@ -479,16 +437,6 @@ export const centers = [
             'Musculoskeletal Interventions'
         ],
         doctors: [
-            {
-                name: 'Dr. Suresh Patel',
-                specialization: 'Neuro Interventional Radiologist',
-                experience: '16+ years'
-            },
-            {
-                name: 'Dr. Ananya Reddy',
-                specialization: 'Vascular Interventional Radiologist',
-                experience: '13+ years'
-            }
         ]
     }
 ];
@@ -508,9 +456,7 @@ export const proceduresArray = [
             "FDA-approved alternative to TURP"
         ],
         icon: (
-            <svg className="h-8 w-8 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-            </svg>
+            <FaMale className="text-4xl text-teal-600" />
         ),
         process: [
             "Initial consultation and imaging",
@@ -559,11 +505,7 @@ export const proceduresArray = [
             "Preserves uterus for future pregnancy",
             "Recommended by leading gynecologists"
         ],
-        icon: (
-            <svg className="h-8 w-8 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-            </svg>
-        ),
+        icon: <FaFemale className="text-4xl text-teal-600" />,
         process: [
             "Pre-procedure imaging and consultation",
             "Local anesthesia administration",
@@ -611,11 +553,7 @@ export const proceduresArray = [
             "No dietary restrictions post-op",
             "Resume work next day"
         ],
-        icon: (
-            <svg className="h-8 w-8 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-            </svg>
-        ),
+        icon: <FaToiletPaper className="text-4xl text-teal-600" />,
         process: [
             "Pre-procedure imaging and consultation",
             "Local anesthesia administration",
@@ -663,11 +601,7 @@ export const proceduresArray = [
             "No implants or major surgery",
             "German-engineered microcatheters used"
         ],
-        icon: (
-            <svg className="h-8 w-8 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-        ),
+        icon: <FaWalking className="text-4xl text-teal-600" />,
         process: [
             "Consultation with pain/intervention expert",
             "MRI or diagnostic scan",
@@ -713,22 +647,86 @@ export const proceduresMap = proceduresArray.reduce((map, p) => {
 export const generalFaqs = [
     {
         id: 1,
-        question: "What is Prostatic Artery Embolization (PAE)?",
-        answer: "PAE is a minimally invasive procedure to treat Benign Prostatic Hyperplasia (BPH)..."
+        question: "What exactly is Interventional Radiology?",
+        answer:
+            "It’s an image-guided minimally invasive treatment done through a 2 mm pin-hole in the wrist or leg, accessing any part of the body via our blood vessel system. No large cuts, stitches or scarring; no general anaesthesia, home the same day.",
     },
     {
         id: 2,
-        question: "Is the Uterine Fibroid Embolization (UFE) procedure safe?",
-        answer: "Yes, UFE is an FDA-approved, safe procedure..."
+        question: "Is the radiation dangerous?",
+        answer:
+            "A typical IR case gives about the same dose as one abdominal CT scan, well below levels linked to measurable cancer risk. Lead shields protect the rest of your body.",
     },
     {
         id: 3,
-        question: "How long does the recovery take after Hemorrhoidal Artery Embolization (HAE)?",
-        answer: "Most patients return to normal activities within 1-2 days after HAE..."
+        question: "How safe are these procedures overall?",
+        answer:
+            "Across >5,000 cases by our senior IR doctors, the major-complication rate is <1%. Global studies report similar numbers.",
     },
     {
         id: 4,
-        question: "What are the benefits of the OKUNO Procedure (TAM)?",
-        answer: "The OKUNO Procedure offers targeted treatment for chronic pain..."
+        question: "I’m over 75 / have diabetes or heart stents—can I still have IR?",
+        answer:
+            "Yes. Because we use only local anaesthesia and light sedation, high-risk patients usually qualify. We’ll coordinate with your cardiologist or endocrinologist first.",
+    },
+    {
+        id: 5,
+        question: "Will IR affect fertility or sexual function?",
+        answer:
+            "PAE: Preserves erections and ejaculation (0% retrograde vs ≤65% after TURP).\nUAE: Many women conceive after the procedure; large series show healthy pregnancies post-UAE.",
+    },
+    {
+        id: 6,
+        question: "What if IR doesn’t work—can I still have surgery later?",
+        answer:
+            "Absolutely. IR is “add-on,” not burn-the-bridge. You can still choose TURP, myomectomy, hemorrhoidectomy, or knee replacement later if needed.",
+    },
+    {
+        id: 7,
+        question: "Will it hurt?",
+        answer:
+            "You’ll feel a quick numbing injection; most patients rate pain 1–2 / 10 and walk within an hour.",
+    },
+    {
+        id: 8,
+        question: "How many visits if I’m travelling from another city?",
+        answer:
+            "Only two: a virtual pre-op consult, then a 4-hour day-care visit. Fly home the next morning. We arrange hotel, car and paperwork.",
+    },
+    {
+        id: 9,
+        question: "How soon can I drive, work or fly?",
+        answer:
+            "Drive next day, desk work 24–48 h, fly 48 h, gym one week.",
+    },
+    {
+        id: 10,
+        question: "What tests or prep do I need?",
+        answer:
+            "Basic blood work and a 6-hour fast. If you take blood thinners, we’ll liaise with your cardiologist for a safe pause.",
+    },
+    {
+        id: 11,
+        question: "How long do the results last?",
+        answer:
+            "PAE: 85–93% symptom relief at 12 m with durable benefit >5 y.\nUAE: 90–95% bleeding relief; fibroid shrinkage 30–60%.\nHAE: 90–93% bleeding control in Grade II–III hemorrhoids.\nTAME/GAE: 71% pain drop, 87% QoL boost at 1 y; delays knee replacement.\nRepeat IR is possible if symptoms return.",
+    },
+    {
+        id: 12,
+        question: "What does it cost and will insurance pay?",
+        answer:
+            "Packages ₹ 1.8 – 2.75 L all-inclusive. Most private insurers cover when medical need is shown; our Care Navigator files cashless claims. No-interest EMIs from ₹ 5,999 / month.",
+    },
+    {
+        id: 13,
+        question: "Can I get a free second opinion?",
+        answer:
+            "Yes—upload your scans, and a senior IR sends a written IR-vs-surgery report within 24 h.",
+    },
+    {
+        id: 14,
+        question: "How do I confirm if I’m a candidate?",
+        answer:
+            "Click 'Book Free IR Consult' below or WhatsApp us your latest report. A senior doctor replies in ≤30 min.",
     },
 ];

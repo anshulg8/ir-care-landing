@@ -37,8 +37,11 @@ const InsurancePartners = () => {
 
                 <p className="text-center mt-8 text-gray-600">
                     Don&apos;t see your insurer? We accept all major policies –{' '}
-                    <span className="text-teal-600 font-medium">Call {PHONE_NUMBER} to verify</span>
+                    <a href={`tel:${PHONE_NUMBER}`} className="text-teal-600 font-medium">
+                        Call {PHONE_NUMBER} to verify
+                    </a>
                 </p>
+
             </div>
         </section>
     );

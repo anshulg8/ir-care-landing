@@ -165,15 +165,6 @@ const ProcedureDetailPage = () => {
                                 <FAQSection faqs={procedure.faqs} />
                             </div>
                         )}
-
-                        <div className="mt-8 text-center">
-                            <Link
-                                to="/contact"
-                                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition-colors duration-200"
-                            >
-                                Schedule a Consultation
-                            </Link>
-                        </div>
                     </div>
                 </div>
             </div>

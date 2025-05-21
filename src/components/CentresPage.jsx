@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { centers } from '../data.jsx';
 
 const CentresPage = () => {
     const [selectedCity, setSelectedCity] = useState('Mumbai');
     const [selectedCenter, setSelectedCenter] = useState(null);
-
-
 
     // Get unique cities
     const cities = [...new Set(centers.map(center => center.city))];
@@ -63,7 +60,7 @@ const CentresPage = () => {
                                 : 'bg-white text-gray-700 hover:bg-teal-50'
                                 }`}
                         >
-                            {center.area}
+                            {center.name}
                         </button>
                     ))}
                 </div>
@@ -79,10 +76,31 @@ const CentresPage = () => {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                             <div className="absolute bottom-0 left-0 p-6">
+
                                 <h2 className="text-3xl font-bold text-white mb-2">{selectedCenter.name}</h2>
                                 <p className="text-white/90">{selectedCenter.address}</p>
+
+                                {/* Rating and Reviews */}
+                                <div className="flex items-center mt-2 text-sm text-white/90">
+                                    <svg className="h-5 w-5 text-yellow-400 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <span className="mr-1 font-semibold">{selectedCenter.rating}</span>
+                                    <span>({selectedCenter.reviews.toLocaleString()} Google reviews)</span>
+                                </div>
+
                             </div>
                         </div>
+
+                        {/* Description */}
+                        {selectedCenter.description && (
+                            <div className="px-8 pt-6">
+                                <p className="text-gray-700 text-lg leading-relaxed">
+                                    {selectedCenter.description}
+                                </p>
+                            </div>
+                        )}
+
 
                         <div className="p-8">
                             <div className="grid md:grid-cols-2 gap-8">
@@ -128,11 +146,14 @@ const CentresPage = () => {
                                     {selectedCenter.technologies.map((tech, index) => (
                                         <div key={index} className="bg-gray-50 rounded-lg p-4">
                                             <div className="flex items-start">
-                                                <img
-                                                    src={tech.image}
-                                                    alt={tech.name}
-                                                    className="w-24 h-24 object-cover rounded-lg mr-4"
-                                                />
+                                                {tech.image && (
+                                                    <img
+                                                        src={tech.image}
+                                                        alt={tech.name}
+                                                        className="w-24 h-24 object-cover rounded-lg mr-4"
+                                                    />
+                                                )}
+
                                                 <div>
                                                     <h4 className="font-bold text-gray-900">{tech.name}</h4>
                                                     <p className="text-gray-600 text-sm mt-1">{tech.description}</p>
@@ -159,28 +180,21 @@ const CentresPage = () => {
                             </div>
 
                             {/* Doctors */}
-                            <div className="mt-8">
-                                <h3 className="text-xl font-bold text-gray-900 mb-4">Our Expert Team</h3>
-                                <div className="grid md:grid-cols-2 gap-6">
-                                    {selectedCenter.doctors.map((doctor, index) => (
-                                        <div key={index} className="bg-gray-50 rounded-lg p-4">
-                                            <h4 className="font-bold text-gray-900">{doctor.name}</h4>
-                                            <p className="text-teal-600">{doctor.specialization}</p>
-                                            <p className="text-gray-600 text-sm mt-1">Experience: {doctor.experience}</p>
-                                        </div>
-                                    ))}
+                            {selectedCenter.doctors && selectedCenter.doctors.length > 0 && (
+                                <div className="mt-8">
+                                    <h3 className="text-xl font-bold text-gray-900 mb-4">Our Expert Team</h3>
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        {selectedCenter.doctors.map((doctor, index) => (
+                                            <div key={index} className="bg-gray-50 rounded-lg p-4">
+                                                <h4 className="font-bold text-gray-900">{doctor.name}</h4>
+                                                <p className="text-teal-600">{doctor.specialization}</p>
+                                                <p className="text-gray-600 text-sm mt-1">Experience: {doctor.experience}</p>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
+                            )}
 
-                            {/* CTA */}
-                            <div className="mt-8 text-center">
-                                <Link
-                                    to="/contact"
-                                    className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition-colors duration-200"
-                                >
-                                    Schedule a Consultation
-                                </Link>
-                            </div>
                         </div>
                     </div>
                 )}

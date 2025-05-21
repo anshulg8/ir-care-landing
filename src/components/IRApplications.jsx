@@ -1,6 +1,5 @@
 // src/pages/IRApplications.jsx
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 const IRApplications = () => {
     const [searchTerm, setSearchTerm] = useState('');

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { FaCrosshairs } from 'react-icons/fa6';
+import axios from 'axios';
 import {
     FIELD_CITY_ID,
     FIELD_DISEASE_ID,
@@ -9,13 +9,25 @@ import {
     GOOGLE_FORM_ACTION_URL,
     PHONE_NUMBER,
 } from '../constants';
+import { proceduresArray } from '../data';
 
-const GoogleFormSubmit = ({ procedure }) => {
-    const [formData, setFormData] = useState({ name: '', phone: '', city: '' });
+const procedures = proceduresArray.map(proc => proc.name);
+
+const GoogleFormWithProcedureInput = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        city: '',
+        procedure: '',
+    });
+
     const [status, setStatus] = useState('');
+    const [filtered, setFiltered] = useState([]);
+    const [showDropdown, setShowDropdown] = useState(false);
     const [nearbyCities, setNearbyCities] = useState([]);
     const [isLoadingCities, setIsLoadingCities] = useState(false);
 
+    // Fetch nearby cities using IP + Overpass API
     useEffect(() => {
         const fetchNearbyCities = async () => {
             setIsLoadingCities(true);
@@ -55,6 +67,7 @@ const GoogleFormSubmit = ({ procedure }) => {
         fetchNearbyCities();
     }, []);
 
+    // Get city from browser GPS
     const handleGetLocation = () => {
         if (!navigator.geolocation) {
             alert('Geolocation is not supported by your browser');
@@ -95,7 +108,21 @@ const GoogleFormSubmit = ({ procedure }) => {
     };
 
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        const { name, value } = e.target;
+        setFormData((prev) => ({ ...prev, [name]: value }));
+
+        if (name === 'procedure') {
+            const matches = procedures.filter((proc) =>
+                proc.toLowerCase().includes(value.toLowerCase())
+            );
+            setFiltered(matches);
+            setShowDropdown(true);
+        }
+    };
+
+    const handleSelectProcedure = (value) => {
+        setFormData((prev) => ({ ...prev, procedure: value }));
+        setShowDropdown(false);
     };
 
     const handleSubmit = (e) => {
@@ -105,7 +132,7 @@ const GoogleFormSubmit = ({ procedure }) => {
         formBody.append(FIELD_NAME_ID, formData.name);
         formBody.append(FIELD_PHONE_ID, formData.phone);
         formBody.append(FIELD_CITY_ID, formData.city);
-        formBody.append(FIELD_DISEASE_ID, procedure);
+        formBody.append(FIELD_DISEASE_ID, formData.procedure);
 
         fetch(GOOGLE_FORM_ACTION_URL, {
             method: 'POST',
@@ -117,7 +144,10 @@ const GoogleFormSubmit = ({ procedure }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4 bg-white shadow rounded space-y-4 relative">
+        <form
+            onSubmit={handleSubmit}
+            className="max-w-md mx-auto p-4 bg-white shadow rounded space-y-4 relative"
+        >
             <input
                 name="name"
                 type="text"
@@ -159,6 +189,8 @@ const GoogleFormSubmit = ({ procedure }) => {
                 </button>
             </div>
 
+
+            {/* Nearby Cities */}
             {isLoadingCities ? (
                 <p className="text-sm text-gray-500 mt-2">Detecting nearby cities...</p>
             ) : (
@@ -183,7 +215,34 @@ const GoogleFormSubmit = ({ procedure }) => {
                 )
             )}
 
-            {/* Submit Button with Free Consultation Tag */}
+            {/* Procedure Auto-Complete */}
+            <div className="relative">
+                <input
+                    name="procedure"
+                    type="text"
+                    placeholder="Select Disease"
+                    value={formData.procedure}
+                    onChange={handleChange}
+                    onFocus={() => setShowDropdown(true)}
+                    className="w-full border border-gray-300 p-2 rounded"
+                    required
+                />
+                {showDropdown && filtered.length > 0 && (
+                    <ul className="absolute z-10 w-full bg-white border border-gray-200 rounded shadow max-h-48 overflow-y-auto">
+                        {filtered.map((option, idx) => (
+                            <li
+                                key={idx}
+                                onClick={() => handleSelectProcedure(option)}
+                                className="px-4 py-2 hover:bg-teal-50 cursor-pointer text-sm"
+                            >
+                                {option}
+                            </li>
+                        ))}
+                    </ul>
+                )}
+            </div>
+
+            {/* Submit Button + Banner */}
             <div className="relative w-full">
                 <div className="absolute -top-3 right-4 transform -skew-x-12 bg-green-600 text-white text-xs px-4 py-1 shadow-sm z-10">
                     <div className="transform skew-x-12">Free Consultation</div>
@@ -205,9 +264,10 @@ const GoogleFormSubmit = ({ procedure }) => {
                 Call Us 📞 {PHONE_NUMBER}
             </a>
 
+            {/* Status Message */}
             {status && <p className="text-sm text-teal-700">{status}</p>}
         </form>
     );
 };
 
-export default GoogleFormSubmit;
+export default GoogleFormWithProcedureInput;

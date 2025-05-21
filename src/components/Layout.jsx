@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header';
-import { PHONE_NUMBER } from '../constants';
+import { PHONE_NUMBER, WHATSAPP_LINK } from '../constants';
+import { Link } from 'react-router-dom';
 
 const Layout = ({ children }) => {
     return (
@@ -16,15 +17,27 @@ const Layout = ({ children }) => {
                         Speak to our care navigators today. Zero obligation, 100% clarity.
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <button className="bg-white text-teal-800 hover:bg-gray-100 px-8 py-3 rounded-lg font-medium transition-colors">
+                        {/* Phone Button */}
+                        <a
+                            href={`tel:${PHONE_NUMBER}`}
+                            className="bg-white text-teal-800 hover:bg-gray-100 px-8 py-3 rounded-lg font-medium transition-colors inline-block"
+                        >
                             Call Now: {PHONE_NUMBER}
-                        </button>
-                        <button className="border border-white hover:bg-teal-800 px-8 py-3 rounded-lg font-medium transition-colors">
-                            Request a Callback
-                        </button>
+                        </a>
+
+                        {/* WhatsApp Button */}
+                        <a
+                            href={WHATSAPP_LINK}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="border border-white hover:bg-teal-800 px-8 py-3 rounded-lg font-medium transition-colors inline-block"
+                        >
+                            WhatsApp
+                        </a>
                     </div>
                 </div>
             </div>
+
             <footer className="bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid md:grid-cols-3 gap-12">
@@ -48,7 +61,9 @@ const Layout = ({ children }) => {
 
                         {/* Centers */}
                         <div>
-                            <a href="/centres"><h3 className="text-white text-lg font-bold mb-4">Our Centers</h3></a>
+                            <Link to="/centres">
+                                <h3 className="text-white text-lg font-bold mb-4">Our Centers</h3>
+                            </Link>
                             <ul className="space-y-2">
                                 {["Mumbai", "Pune", "Mangalore"].map((city, index) => (
                                     <li key={index} className="flex items-center">
@@ -79,9 +94,10 @@ const Layout = ({ children }) => {
                     {/* Bottom Row: Terms, Privacy & Copyright */}
                     <div className="border-t border-gray-800 mt-12 pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500 text-center md:text-left gap-4">
                         <div className="space-x-4">
-                            <a href="/about" className="hover:text-white transition">About Us</a>
-                            <a href="/terms" className="hover:text-white transition">Terms & Conditions</a>
-                            <a href="/privacy" className="hover:text-white transition">Privacy Policy</a>
+                            <Link to="/about" className="hover:text-white transition">About Us</Link>
+                            <Link to="/terms" className="hover:text-white transition">Terms & Conditions</Link>
+                            <Link to="/privacy" className="hover:text-white transition">Privacy Policy</Link>
+                            <Link to="/contact" className="hover:text-white transition">Contact Us</Link>
                         </div>
                         <div>
                             © {new Date().getFullYear()} Docsy. All rights reserved.

@@ -5,7 +5,7 @@ const Terms = () => {
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-                    <span className="text-teal-600">Terms & Conditions</span>
+                    Terms <span className="text-teal-600">& Conditions</span>
                 </h2>
 
                 <div className="max-w-3xl mx-auto text-gray-700 text-base leading-7 space-y-6">

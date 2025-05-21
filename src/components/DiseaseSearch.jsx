@@ -1,29 +1,11 @@
-// src/components/DiseaseSearch.jsx
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
-const diseases = [
-    { name: "Liver Tumors", slug: "liver-tumors" },
-    { name: "Kidney Stones", slug: "kidney-stones" },
-    { name: "Spinal Compression Fractures", slug: "spinal-compression-fractures" },
-    { name: "Uterine Fibroids", slug: "uterine-fibroids" },
-    { name: "Peripheral Arterial Disease (PAD)", slug: "peripheral-arterial-disease-pad" },
-    { name: "Deep Vein Thrombosis (DVT)", slug: "deep-vein-thrombosis-dvt" },
-    { name: "Pulmonary Embolism (PE)", slug: "pulmonary-embolism-pe" },
-    { name: "Varicocele", slug: "varicocele" },
-    { name: "Benign Prostatic Hyperplasia (BPH)", slug: "benign-prostatic-hyperplasia-bph" },
-    { name: "Pelvic Congestion Syndrome", slug: "pelvic-congestion-syndrome" },
-    { name: "Gastrointestinal Bleeding", slug: "gastrointestinal-bleeding" },
-    { name: "Biliary Obstruction", slug: "biliary-obstruction" },
-    { name: "Ureteral Obstruction", slug: "ureteral-obstruction" },
-    { name: "Arteriovenous Malformations (AVMs)", slug: "arteriovenous-malformations-avms" },
-    { name: "Lymphatic Malformations", slug: "lymphatic-malformations" }
-];
+import { proceduresArray } from "../data";
 
 const DiseaseSearch = () => {
     const [query, setQuery] = useState("");
 
-    const filtered = diseases.filter(d =>
+    const filtered = proceduresArray.filter(d =>
         d.name.toLowerCase().includes(query.toLowerCase())
     );
 
@@ -52,7 +34,7 @@ const DiseaseSearch = () => {
                             filtered.map((disease, index) => (
                                 <Link
                                     key={index}
-                                    to={`/conditions/${disease.slug}`}
+                                    to={`/procedures/${disease.slug}`}
                                     className="block px-4 py-3 hover:bg-teal-50 text-gray-800 border-b last:border-b-0"
                                 >
                                     {disease.name}

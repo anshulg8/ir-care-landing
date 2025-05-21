@@ -1,6 +1,7 @@
 import React from 'react';
 import SurgeryComparisonTable from './SurgeryComparisonTable';
 import IrTreatableConditions from './IrTreatableConditions';
+import { Link } from 'react-router-dom';
 
 const InterventionalRadiology = () => {
     return (
@@ -98,16 +99,6 @@ const InterventionalRadiology = () => {
 
                     <SurgeryComparisonTable />
                     <IrTreatableConditions />
-
-                    {/* CTA */}
-                    <div className="mt-10 text-center">
-                        <a
-                            href="/contact"
-                            className="inline-block bg-teal-600 hover:bg-teal-700 text-white text-lg font-medium px-6 py-3 rounded-lg transition"
-                        >
-                            Talk to an IR Specialist
-                        </a>
-                    </div>
                 </div>
             </div>
         </section>

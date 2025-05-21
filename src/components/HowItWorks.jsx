@@ -1,41 +1,10 @@
 import React from "react";
+import { howItWorks } from "../data";
 
 const HowItWorks = () => {
-    const howItWorks = [
-        {
-            title: "Free Consultation",
-            desc: "Talk to a certified IR expert about your symptoms and options.",
-            icon: "🩺",
-            color: "bg-teal-500 text-white",
-        },
-        {
-            title: "Diagnostic Imaging",
-            desc: "Advanced scans to map your exact anatomy and problem areas.",
-            icon: "🧠",
-            color: "bg-blue-500 text-white",
-        },
-        {
-            title: "Procedure Day",
-            desc: "Minimally invasive treatment with same-day or next-day discharge.",
-            icon: "💉",
-            color: "bg-purple-500 text-white",
-        },
-        {
-            title: "Recovery Support",
-            desc: "24/7 guidance + follow-ups to ensure proper healing and results.",
-            icon: "🤝",
-            color: "bg-orange-500 text-white",
-        },
-        {
-            title: "Ongoing Care",
-            desc: "Annual checkups or repeat care if needed. We're always here.",
-            icon: "🏥",
-            color: "bg-pink-500 text-white",
-        },
-    ];
 
     return (
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <section className="pt-16 pb-6 px-4 sm:px-6 lg:px-8 bg-gray-50">
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
                     Your <span className="text-teal-600">Seamless Journey</span> to Relief
@@ -56,9 +25,8 @@ const HowItWorks = () => {
                                     <h3 className="text-lg font-bold text-gray-900 ml-4">{step.title}</h3>
                                 </div>
                                 <p className="text-gray-600">{step.desc}</p>
+                                <p className="text-sm font-medium text-teal-600 mt-2">⏱ {step.time}</p>
                             </div>
-
-
                         ))}
                     </div>
                 </div>
@@ -68,7 +36,7 @@ const HowItWorks = () => {
                     {/* Timeline bar */}
                     <div className="absolute top-16 left-16 right-16 h-1 bg-teal-200"></div>
 
-                    <div className="grid md:grid-cols-5 gap-8">
+                    <div className="grid md:grid-cols-4 gap-8">
                         {howItWorks.map((step, index) => (
                             <div key={index} className="relative">
                                 {/* Step indicator */}
@@ -80,6 +48,7 @@ const HowItWorks = () => {
                                 <div className="mt-8 pt-16 pb-6 px-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow h-full">
                                     <h3 className="text-xl font-bold text-gray-900 mb-2">{step.title}</h3>
                                     <p className="text-gray-600">{step.desc}</p>
+                                    <p className="text-sm font-medium text-teal-600 mt-2">⏱ {step.time}</p>
                                 </div>
                             </div>
                         ))}

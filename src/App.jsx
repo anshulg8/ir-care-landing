@@ -12,10 +12,12 @@ import CentresPage from './components/CentresPage';
 import Terms from './components/Terms';
 import Privacy from './components/Privacy';
 import InterventionalRadiology from './components/InterventionalRadiology';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Layout>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/procedures/:procedureId" element={<ProcedureDetailPage />} />

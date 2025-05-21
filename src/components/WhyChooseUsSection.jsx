@@ -16,7 +16,7 @@ const WhyChooseUsSection = () => {
     };
 
     return (
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <section className="pt-4 sm:pt-6 pb-8 px-4 sm:px-6 lg:px-8 bg-white">
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
                     Why Choose Us? <span className="text-teal-600">3 Unmatched Advantages</span>
@@ -60,7 +60,7 @@ const WhyChooseUsSection = () => {
 
 
                 {/* USPs for larger screens */}
-                <div className="hidden md:grid md:grid-cols-3 gap-8 mb-16">
+                <div className="hidden md:grid md:grid-cols-3 gap-8 mb-8">
                     {usps.map((usp, index) => (
                         <div key={index} className="bg-teal-50 p-6 rounded-xl border border-teal-100">
                             <div className="flex items-center mb-4">
