@@ -11,7 +11,7 @@ import SwiperSection from './SwiperSection';
 import InsurancePartners from './InsurancePartners';
 import ContactFloatingButton from './ContactFloatingButton';
 import CentersCarousel from './CentersCarousel';
-import { centers, generalFaqs } from '../data.jsx';
+import { centers, generalFaqs, landingTestimonials } from '../data.jsx';
 
 const Home = () => {
 
@@ -26,7 +26,7 @@ const Home = () => {
             <WhyChooseUsSection />
             <HowItWorks />
             <ProcedureSection />
-            <TestimonialSection />
+            <TestimonialSection testimonials={landingTestimonials} />
             <FAQSection faqs={generalFaqs} />
 
             {/* Comparison Modal - Add near Procedures section */}

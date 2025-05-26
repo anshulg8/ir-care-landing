@@ -13,6 +13,7 @@ import Terms from './components/Terms';
 import Privacy from './components/Privacy';
 import InterventionalRadiology from './components/InterventionalRadiology';
 import ScrollToTop from './components/ScrollToTop';
+// import MdComponent from './components/MdComponent';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/interventional-radiology" element={<InterventionalRadiology />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/privacy" element={<Privacy />} />
+        {/* <Route path="/demo" element={<MdComponent />} /> */}
       </Routes>
     </Layout>
   );

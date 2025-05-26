@@ -35,6 +35,8 @@ const Layout = ({ children }) => {
                             WhatsApp
                         </a>
                     </div>
+                    <br />
+                    <p>*Limited daily slots for personalized care*</p>
                 </div>
             </div>
 

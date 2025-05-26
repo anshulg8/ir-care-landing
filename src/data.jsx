@@ -65,8 +65,7 @@ export const cards = [
     {
         title: 'Surgery — without Surgery',
         subtitle: "Discover Interventional Radiology: tiny pin-hole cures, same-day discharge",
-        backgroundImage: "https://chatgpt.com/backend-api/public_content/enc/eyJpZCI6Im1fNjgyNGI2YTNmMmIwODE5MWIyZmNmNDJkMDFmMmNiOWE6ZmlsZV8wMDAwMDAwMGIxNzA2MjJmOWU3ZDRhZTMzYmU3NTEyNiIsInRzIjoiNDg1Mzg0IiwicCI6InB5aSIsInNpZyI6ImEyNThlOTExNzliMjYyNGQwMjgwMjI0YzBiZGRjMTk0M2Q3MmUwN2JkOWNlMmNlNDk1NGNiMmI4ZDJmNmNhNjYiLCJ2IjoiMCIsImdpem1vX2lkIjpudWxsfQ==",
-        // "https://cdn.hexahealth.com/static/images/slide-1.jpg",
+        backgroundImage: "https://cdn.hexahealth.com/static/images/slide-1.jpg",
         primaryCTA: "Book Free IR Consultation",
         secondaryCTA: "What is IR?",
     },
@@ -445,15 +444,18 @@ export const proceduresArray = [
     {
         id: 1,
         slug: "prostatic-artery-embolization-pae",
+        markdownPath: '/src/md/pae.md',
         name: "Prostatic Artery Embolization (PAE)",
+        headline: "Freedom from Enlarged-Prostate Symptoms—Without Surgery",
         for: "BPH (Enlarged Prostate)",
         cta: "Know More",
-        description: "A minimally invasive procedure that blocks blood flow to the prostate, reducing its size and relieving symptoms of benign prostatic hyperplasia (BPH).",
+        description: "Prostate Artery Embolization (PAE) shrinks the prostate through a pin-hole incision, gets you home the *same day* and preserves sexual function. Book your 30-min expert consult now.",
         benefits: [
-            "No catheter • Free by lunchtime",
-            "Shrinks prostate in 2-4 weeks",
-            "Zero risk of sexual dysfunction",
-            "FDA-approved alternative to TURP"
+            "Out-patient, local anesthesia — walk in, walk out the same day",
+            "Rapid symptom relief: IPSS scores plunge within weeks and continue improving for 12 months",
+            "< 15 min wrist-access incision — no catheter in most cases",
+            "Keeps intimacy intact: ejaculatory dysfunction ≤ 16 % vs ≈ 50 % with TURP",
+            "Lower complication rate than surgery in randomised trials",
         ],
         icon: (
             <FaMale className="text-4xl text-teal-600" />
@@ -475,14 +477,33 @@ export const proceduresArray = [
         faqs: [
             {
                 id: 1,
-                question: "Is PAE better than TURP?",
-                answer: "PAE is less invasive, doesn’t require general anesthesia, and preserves sexual function..."
+                question: "Will PAE affect my sexual performance?",
+                answer: "PAE has a much lower risk of retrograde ejaculation (≈ 10–16 %) compared with TURP’s \~50 %. No erectile nerves are cut."
             },
             {
                 id: 2,
-                question: "Will I need a catheter after PAE?",
-                answer: "Most patients don’t require long-term catheterization and can resume normal activities quickly."
+                question: "How long before I feel better?",
+                answer: "Many patients notice stronger flow within a week; prostate shrinkage continues for 3–6 months."
             },
+            {
+                id: 3,
+                question: "Can PAE be repeated?",
+                answer: "Yes. If prostate arteries reopen years later, a touch- up embolization is simple and safe."
+            },
+            {
+                id: 4,
+                question: "Is there a risk of prostate cancer being missed?",
+                answer: "We screen PSA, DRE and imaging.PAE does not preclude future biopsy if ever needed."
+            },
+        ],
+        testimonials: [
+            {
+                id: 1,
+                image: "",
+                name: "Rohit M., 62, Investment Banker",
+                city: "Mumbai",
+                message: "I went in at 8 a.m. and was back in my Bandra office the next afternoon—zero catheter, zero pain. My IPSS fell from 24 to 6 in three months."
+            }
         ],
         comparison: [
             { parameter: "Anesthesia", ir: "Local", traditional: "General" },
@@ -495,15 +516,17 @@ export const proceduresArray = [
     {
         id: 2,
         slug: "uterine-fibroid-embolization-ufe",
+        markdownPath: '/src/md/uae.md',
         name: "Uterine Fibroid Embolization (UFE)",
         for: "Symptomatic Fibroids",
+        headline: "Shrink Fibroids. Keep Your Uterus",
+        description: "Uterine Artery Embolization (UAE/UFE) ends heavy bleeding and bulk pain through a pin-hole wrist incision—zero scars, same-day discharge, uterus preserved.",
         cta: "Know More",
-        description: "A non-surgical treatment for uterine fibroids that blocks blood flow to the fibroids, causing them to shrink and symptoms to improve.",
         benefits: [
-            "90% symptom relief without hysterectomy",
-            "1-hour procedure under local anesthesia",
-            "Preserves uterus for future pregnancy",
-            "Recommended by leading gynecologists"
+            "Out-patient, local anesthesia—walk out in 6 h  ",
+            "Symptom relief in 85–90% of women; bleeding drops within one cycle  ",
+            "Treats every fibroid at once—even 15+ lesions or >10 cm bulk",
+            "Back to work in a week, gym in two"
         ],
         icon: <FaFemale className="text-4xl text-teal-600" />,
         process: [
@@ -520,16 +543,40 @@ export const proceduresArray = [
             "Rare risk of infection",
             "Minimal risk of non-target embolization"
         ],
+        testimonials: [
+            {
+                id: 1,
+                image: "",
+                name: "Samira K, 37",
+                city: "Dubai",
+                message: "After years of 8-day periods and anemia, I walked out after UAE with just a Band-Aid. Three months later: fibroids halved, hemoglobin 13, and back to marathon training—uterus intact."
+            }
+        ],
         faqs: [
             {
                 id: 1,
-                question: "Is PAE better than TURP?",
-                answer: "PAE is less invasive, doesn’t require general anesthesia, and preserves sexual function..."
+                question: "Will I still get pregnant?",
+                answer: "Pregnancy after UFE is possible—hundreds of live births reported—but data is limited. If pregnancy is your *immediate* goal, myomectomy may be first-line; otherwise UAE preserves the option for later."
             },
             {
                 id: 2,
-                question: "Will I need a catheter after PAE?",
-                answer: "Most patients don’t require long-term catheterization and can resume normal activities quickly."
+                question: "How soon do symptoms improve?",
+                answer: "Bleeding often lightens next period; pressure and bloating improve steadily as fibroids shrink over 3–6 months."
+            },
+            {
+                id: 3,
+                question: "Is it painful?",
+                answer: "Expect mild cramping the first night; > 90 % of patients need only oral painkillers for < 48 h. No stitches, no catheter."
+            },
+            {
+                id: 4,
+                question: "What if fibroids regrow?",
+                answer: "About 1 in 5 women may need a touch-up or alternate therapy within 5 years—still far fewer interventions than lifetime medication or repeated surgeries."
+            },
+            {
+                id: 5,
+                question: "Does UAE affect menopause timing?",
+                answer: "In women > 45 yrs there’s a small risk of earlier menopause (< 5 %); infrequent in younger women."
             },
         ],
         comparison: [
@@ -543,15 +590,18 @@ export const proceduresArray = [
     {
         id: 3,
         slug: "hemorrhoidal-artery-embolization-hae",
+        markdownPath: '/src/md/hae.md',
         name: "Hemorrhoidal Artery Embolization (HAE)",
+        headline: "Freedom from Piles—No Cutting, No Stitches, Same-Day Home",
         for: "Chronic Rectal Bleeding",
         cta: "Know More",
-        description: "A non-surgical treatment for hemorrhoids that reduces blood flow to alleviate pain and bleeding.",
+        description: "Hemorrhoidal Artery Embolization (HAE) ends bleeding piles through a single pin-hole in your wrist or groin. Zero rectal wounds, near-zero pain. Book a 30-minute specialist consult today.",
         benefits: [
-            "Painless alternative to rubber banding/laser",
-            "30-minute outpatient procedure",
-            "No dietary restrictions post-op",
-            "Resume work next day"
+            "Walk-in ▶ Walk-out: outpatient, local anaesthesia — back to routine the next day",
+            "Technical success 93-100 % and durable symptom relief ≥ 12 months",
+            "Virtually painless — post-procedure pain score 0 vs 6 /10 after surgery",
+            "No open wounds ➜ no risk of incontinence or anal stenosis — zero major complications reported to date",
+            "Covered by most premium insurance plans; coded as therapeutic embolization for hemorrhoidal bleeding",
         ],
         icon: <FaToiletPaper className="text-4xl text-teal-600" />,
         process: [
@@ -571,14 +621,38 @@ export const proceduresArray = [
         faqs: [
             {
                 id: 1,
-                question: "Is PAE better than TURP?",
-                answer: "PAE is less invasive, doesn’t require general anesthesia, and preserves sexual function..."
+                question: "Will the coils set off airport scanners?",
+                answer: "No. They’re micro-sized platinum; MRI-safe and undetectable at security."
             },
             {
                 id: 2,
-                question: "Will I need a catheter after PAE?",
-                answer: "Most patients don’t require long-term catheterization and can resume normal activities quickly."
+                question: "Can hemorrhoids come back?",
+                answer: "Most patients stay symptom-free for years. If minor bleeding re-appears, a quick touch-up embolization fixes it."
             },
+            {
+                id: 3,
+                question: "Is HAE safe if I’m on blood thinners?",
+                answer: "Yes—unlike surgery, we don’t cut tissue. Many patients on anticoagulants choose HAE precisely for this reason."
+            },
+            {
+                id: 4,
+                question: "What about external piles?",
+                answer: "External skin tags may persist but often shrink as internal blood flow drops. If cosmetically bothersome, they can be removed later under local anaesthesia."
+            },
+            {
+                id: 5,
+                question: "Is radiation a concern?",
+                answer: "Dose is comparable to a pelvic CT and well within safety norms; our suite uses real-time dose monitoring."
+            },
+        ],
+        testimonials: [
+            {
+                id: 1,
+                image: "",
+                name: "Nisreen K, 48, CFO",
+                city: "Dubai",
+                message: "I’d already had two painful bandings that kept bleeding. HAE took 40 minutes; I watched Netflix in recovery and was in my Worli office next morning. Six months later—no blood, no fear."
+            }
         ],
         comparison: [
             { parameter: "Pain Level", ir: "Minimal", traditional: "Moderate to Severe" },
@@ -591,15 +665,18 @@ export const proceduresArray = [
     {
         id: 4,
         slug: "okuno-procedure-tam",
+        markdownPath: '/src/md/tam.md',
         name: "OKUNO Procedure (TAM)",
+        headline: "End Chronic Joint & Tendon Pain — Without Surgery or Long Downtime",
         for: "Chronic Pain (Knee/Shoulder/Back)",
         cta: "Know More",
-        description: "Targeted micro-embolization using advanced microcatheters to reduce inflammation and pain for joint conditions like osteoarthritis.",
+        description: "The Okuno Procedure (Trans-Arterial Micro-Embolization, *TAME*) shuts down the rogue blood vessels that keep pain alive in knees, shoulders, elbows and spine. One tiny wrist puncture, home in hours.",
         benefits: [
-            "Targeted micro-embolization for osteoarthritis",
-            "50-80% pain reduction in 2 weeks",
-            "No implants or major surgery",
-            "German-engineered microcatheters used"
+            "Out-patient, local anaesthesia — tiny 0.6 mm catheter; no stitches",
+            "50 – 80 % pain reduction that lasts 1–2 years or longer",
+            "All-star indications: Knee arthritis, frozen shoulder, tennis elbow, facet-back pain, plantar fasciitis",
+            "Fast return to life: Most patients back to desk work next day, sports in 7-14 days",
+            "Zero joint damage: Preserves cartilage, tendons, nerves; repeatable if ever needed",
         ],
         icon: <FaWalking className="text-4xl text-teal-600" />,
         process: [
@@ -619,14 +696,33 @@ export const proceduresArray = [
         faqs: [
             {
                 id: 1,
-                question: "Is PAE better than TURP?",
-                answer: "PAE is less invasive, doesn’t require general anesthesia, and preserves sexual function..."
+                question: "How soon will I feel better?",
+                answer: "Most notice a 30–50 % pain drop within 2 weeks; full benefit builds over 1–3 months as inflamed tissue regresses."
             },
             {
                 id: 2,
-                question: "Will I need a catheter after PAE?",
-                answer: "Most patients don’t require long-term catheterization and can resume normal activities quickly."
+                question: "Does it harm cartilage or nerves?",
+                answer: "No. Imaging at 2 years shows preserved cartilage and no nerve injury. The particles lodge only in abnormal vessels."
             },
+            {
+                id: 3,
+                question: "Can TAME be repeated?",
+                answer: "Yes. If pain creeps back years later, a repeat embolization is straightforward and safe."
+            },
+            {
+                id: 4,
+                question: "What if I still need surgery later?",
+                answer: "TAME doesn’t “burn bridges.” You can have arthroscopy or replacement later if ever required—often years down the line."
+            },
+        ],
+        testimonials: [
+            {
+                id: 1,
+                image: "",
+                name: "Farah S, 49, Entrepreneur",
+                city: "Dubai",
+                message: "Six weeks after TAME my knee pain went from 7/10 to 1/10. I’m back to 18-hole weekends—without a single pain-killer."
+            }
         ],
         comparison: [
             { parameter: "Invasiveness", ir: "Minimal", traditional: "Arthroscopy or surgery" },
@@ -728,5 +824,36 @@ export const generalFaqs = [
         question: "How do I confirm if I’m a candidate?",
         answer:
             "Click 'Book Free IR Consult' below or WhatsApp us your latest report. A senior doctor replies in ≤30 min.",
+    },
+];
+
+export const landingTestimonials = [
+    {
+        id: 1,
+        image: "https://lh3.googleusercontent.com/a-/ALV-UjW5OScHHANGJme3MCakwWOWPy7D9A_kh1kedMy1-zMC8MvpJyCp=s120-c-rp-mo-br100", // Replace with actual image URL
+        name: "John Doe",
+        city: "New York",
+        message: "The procedure changed my life! I was able to resume normal activities in just a few days, and the recovery was faster than I ever expected."
+    },
+    {
+        id: 2,
+        image: "https://lh3.googleusercontent.com/a-/ALV-UjXxhEeZtGikowQN-XKzdtj2crfaC9aXpN7b57tRCscO7ADrRi35=s120-c-rp-mo-br100", // Replace with actual image URL
+        name: "Jane Smith",
+        city: "Los Angeles",
+        message: "I was really nervous, but the team was so supportive. The whole experience was comfortable, and I feel amazing after the procedure."
+    },
+    {
+        id: 3,
+        image: "https://lh3.googleusercontent.com/a-/ALV-UjXxhEeZtGikowQN-XKzdtj2crfaC9aXpN7b57tRCscO7ADrRi35=s120-c-rp-mo-br100", // Replace with actual image URL
+        name: "Sarah Lee",
+        city: "Chicago",
+        message: "Highly recommend this treatment. I had immediate relief, and the recovery was quick. The doctors were very professional."
+    },
+    {
+        id: 4,
+        image: "https://lh3.googleusercontent.com/a-/ALV-UjW5OScHHANGJme3MCakwWOWPy7D9A_kh1kedMy1-zMC8MvpJyCp=s120-c-rp-mo-br100", // Replace with actual image URL
+        name: "Michael Clark",
+        city: "San Francisco",
+        message: "From start to finish, the entire process was smooth. The team explained everything to me, and I felt well-cared-for throughout."
     },
 ];

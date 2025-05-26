@@ -6,7 +6,5 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss(),],
   // base: '/ir-care-landing',
-  server: {
-    allowedHosts: ['shiny-years-agree.loca.lt'],
-  }
+  assetsInclude: ['**/*.md'],
 })

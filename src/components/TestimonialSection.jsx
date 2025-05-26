@@ -2,43 +2,9 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css'; // Core Swiper styles
 import 'swiper/css/pagination'; // Pagination styles
-
-// import { Pagination } from 'swiper'; // Import the Swiper Pagination module
 import { Pagination } from 'swiper/modules';
 
-// Sample testimonials data
-const testimonials = [
-    {
-        id: 1,
-        image: "https://lh3.googleusercontent.com/a-/ALV-UjW5OScHHANGJme3MCakwWOWPy7D9A_kh1kedMy1-zMC8MvpJyCp=s120-c-rp-mo-br100", // Replace with actual image URL
-        name: "John Doe",
-        city: "New York",
-        message: "The procedure changed my life! I was able to resume normal activities in just a few days, and the recovery was faster than I ever expected."
-    },
-    {
-        id: 2,
-        image: "https://lh3.googleusercontent.com/a-/ALV-UjXxhEeZtGikowQN-XKzdtj2crfaC9aXpN7b57tRCscO7ADrRi35=s120-c-rp-mo-br100", // Replace with actual image URL
-        name: "Jane Smith",
-        city: "Los Angeles",
-        message: "I was really nervous, but the team was so supportive. The whole experience was comfortable, and I feel amazing after the procedure."
-    },
-    {
-        id: 3,
-        image: "https://lh3.googleusercontent.com/a-/ALV-UjXxhEeZtGikowQN-XKzdtj2crfaC9aXpN7b57tRCscO7ADrRi35=s120-c-rp-mo-br100", // Replace with actual image URL
-        name: "Sarah Lee",
-        city: "Chicago",
-        message: "Highly recommend this treatment. I had immediate relief, and the recovery was quick. The doctors were very professional."
-    },
-    {
-        id: 4,
-        image: "https://lh3.googleusercontent.com/a-/ALV-UjW5OScHHANGJme3MCakwWOWPy7D9A_kh1kedMy1-zMC8MvpJyCp=s120-c-rp-mo-br100", // Replace with actual image URL
-        name: "Michael Clark",
-        city: "San Francisco",
-        message: "From start to finish, the entire process was smooth. The team explained everything to me, and I felt well-cared-for throughout."
-    },
-];
-
-const TestimonialSection = () => {
+const TestimonialSection = ({ testimonials = [] }) => {
     return (
         <section className="pt-10 pb-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
             <div className="max-w-7xl mx-auto">
@@ -71,11 +37,18 @@ const TestimonialSection = () => {
                             <div className="bg-white rounded-xl shadow-lg p-6 mx-auto w-full max-w-lg">
                                 <div className="flex items-center space-x-4 mb-6">
                                     {/* Patient's Image */}
-                                    <img
-                                        src={testimonial.image}
-                                        alt={testimonial.name}
-                                        className="h-16 w-16 rounded-full object-cover"
-                                    />
+                                    {testimonial.image ? (
+                                        <img
+                                            src={testimonial.image}
+                                            alt={testimonial.name}
+                                            className="h-16 w-16 rounded-full object-cover"
+                                        />
+                                    ) : (
+                                        <div className="h-16 w-16 rounded-full bg-teal-500 flex items-center justify-center text-white text-xl font-bold">
+                                            {testimonial.name?.charAt(0).toUpperCase() || "?"}
+                                        </div>
+                                    )}
+
                                     <div>
                                         <h3 className="text-xl font-semibold text-gray-900">
                                             {testimonial.name}
