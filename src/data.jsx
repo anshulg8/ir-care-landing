@@ -444,7 +444,7 @@ export const proceduresArray = [
     {
         id: 1,
         slug: "prostatic-artery-embolization-pae",
-        markdownPath: '/src/assets/pae.md',
+        markdownPath: './pae.md',
         name: "Prostatic Artery Embolization (PAE)",
         headline: "Freedom from Enlarged-Prostate Symptoms—Without Surgery",
         for: "BPH (Enlarged Prostate)",
@@ -516,7 +516,7 @@ export const proceduresArray = [
     {
         id: 2,
         slug: "uterine-fibroid-embolization-ufe",
-        markdownPath: '/src/assets/uae.md',
+        markdownPath: './uae.md',
         name: "Uterine Fibroid Embolization (UFE)",
         for: "Symptomatic Fibroids",
         headline: "Shrink Fibroids. Keep Your Uterus",
@@ -590,7 +590,7 @@ export const proceduresArray = [
     {
         id: 3,
         slug: "hemorrhoidal-artery-embolization-hae",
-        markdownPath: '/src/assets/hae.md',
+        markdownPath: './hae.md',
         name: "Hemorrhoidal Artery Embolization (HAE)",
         headline: "Freedom from Piles—No Cutting, No Stitches, Same-Day Home",
         for: "Chronic Rectal Bleeding",
@@ -665,7 +665,7 @@ export const proceduresArray = [
     {
         id: 4,
         slug: "okuno-procedure-tam",
-        markdownPath: '/src/assets/tam.md',
+        markdownPath: './tam.md',
         name: "OKUNO Procedure (TAM)",
         headline: "End Chronic Joint & Tendon Pain — Without Surgery or Long Downtime",
         for: "Chronic Pain (Knee/Shoulder/Back)",
