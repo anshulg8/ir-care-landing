@@ -1,9 +1,10 @@
-import { FaMale, FaFemale, FaToiletPaper, FaWalking, FaHospital, FaHeartbeat, FaCut, FaHeart, FaShieldAlt } from 'react-icons/fa';
+import { FaMale, FaFemale, FaToiletPaper, FaWalking, FaHospital, FaHeartbeat, FaCut, FaHeart, FaShieldAlt, FaTint, FaRedo, FaSmile, FaCompressArrowsAlt, FaRunning } from 'react-icons/fa';
 import DrRochan from './assets/dr-rochan-copy.webp';
 import DrMukul from './assets/dr-mukul-copy.webp';
 import DrLenon from './assets/dr-lenon-copy.webp';
 import DrKB from './assets/dr-kb.png';
 import DrAshwin from './assets/dr-ashwin.jpg';
+import { FaBan, FaChartLine, FaLayerGroup, FaMoneyBillWave, FaStar, FaSyringe } from 'react-icons/fa6';
 
 export const usps = [
     {
@@ -566,23 +567,28 @@ export const proceduresArray = [
             {
                 title: "Out-patient, local anesthesia",
                 description: "Walk out in 6 hours",
+                icon: <FaWalking className="text-4xl text-teal-600" />,
             },
             {
                 title: "Symptom relief in 85–90% of women",
                 description: "Bleeding drops within one cycle",
+                icon: <FaTint className="text-4xl text-teal-600" />, // water drop for bleeding
             },
             {
                 title: "Treats every fibroid at once",
                 description: "Even 15+ lesions or >10 cm bulk",
+                icon: <FaLayerGroup className="text-4xl text-teal-600" />, // multiple layers = multiple fibroids
             },
             {
                 title: "Uterus & hormones stay intact",
                 description: "No hysterectomy trauma",
+                icon: <FaFemale className="text-4xl text-teal-600" />, // female symbol
             },
             {
                 title: "Back to work in a week",
                 description: "Gym in two",
-            }
+                icon: <FaRedo className="text-4xl text-teal-600" />, // recovery / refresh
+            },
         ],
         icon: <FaFemale className="text-4xl text-teal-600" />,
         process: [
@@ -660,26 +666,33 @@ export const proceduresArray = [
             "93-100% Technical Success Rate, Long Lasting Relief",
             "Wide Variety of Payment Options",
         ],
-        benefitDetails: [{
-            title: "Walk in, walk out the same day",
-            description: "HAE takes just a few hours, allowing you to travel & get back to work the next day",
-        },
-        {
-            title: "Virtually Painless",
-            description: "Average pain score after procedure is 0/10 (vs 6/10 after piles surgery)",
-        },
-        {
-            title: "No Cuts, No Scars, No Risk",
-            description: "Compared to surgery risks (loss of stool control, bleeding post surgery, anal scarring causing blockage and more), HAE reports zero major complications to date.",
-        },
-        {
-            title: "93-100% Technical Success Rate, Long Lasting Relief",
-            description: "As effective and durable as most solutions, without the pain & complications",
-        },
-        {
-            title: "Wide Variety of Payment Options",
-            description: "Major insurances covered, cash payment discount available.",
-        }],
+        benefitDetails: [
+            {
+                title: "Walk in, walk out the same day",
+                description: "HAE takes just a few hours, allowing you to travel & get back to work the next day",
+                icon: <FaWalking className="text-4xl text-teal-600" />,
+            },
+            {
+                title: "Virtually Painless",
+                description: "Average pain score after procedure is 0/10 (vs 6/10 after piles surgery)",
+                icon: <FaSmile className="text-4xl text-teal-600" />, // smile = comfort/painless
+            },
+            {
+                title: "No Cuts, No Scars, No Risk",
+                description: "Compared to surgery risks (loss of stool control, bleeding post surgery, anal scarring causing blockage and more), HAE reports zero major complications to date.",
+                icon: <FaBan className="text-4xl text-teal-600" />, // ban = no cuts/scars/risks
+            },
+            {
+                title: "93-100% Technical Success Rate, Long Lasting Relief",
+                description: "As effective and durable as most solutions, without the pain & complications",
+                icon: <FaChartLine className="text-4xl text-teal-600" />, // success/performance
+            },
+            {
+                title: "Wide Variety of Payment Options",
+                description: "Major insurances covered, cash payment discount available.",
+                icon: <FaMoneyBillWave className="text-4xl text-teal-600" />, // finance-related
+            },
+        ],
         icon: <FaToiletPaper className="text-4xl text-teal-600" />,
         process: [
             "Pre-procedure imaging and consultation",
@@ -760,22 +773,27 @@ export const proceduresArray = [
             {
                 title: "Out-patient, local anaesthesia",
                 description: "Tiny 0.6 mm catheter; no stitches",
+                icon: <FaSyringe className="text-4xl text-teal-600" />, // syringe for procedure-related
             },
             {
                 title: "50 – 80 % pain reduction",
                 description: "That lasts 1–2 years or longer",
+                icon: <FaCompressArrowsAlt className="text-4xl text-teal-600" />, // symbol for reduction
             },
             {
                 title: "All-star indications",
                 description: "Knee arthritis, frozen shoulder, tennis elbow, facet-back pain, plantar fasciitis",
+                icon: <FaStar className="text-4xl text-teal-600" />, // star = standout features
             },
             {
                 title: "Fast return to life",
                 description: "Most patients back to desk work next day, sports in 7-14 days",
+                icon: <FaRunning className="text-4xl text-teal-600" />, // running = quick recovery
             },
             {
                 title: "Zero joint damage",
                 description: "Preserves cartilage, tendons, nerves; repeatable if ever needed",
+                icon: <FaShieldAlt className="text-4xl text-teal-600" />, // shield = protection
             },
         ],
         icon: <FaWalking className="text-4xl text-teal-600" />,
