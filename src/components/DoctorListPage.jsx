@@ -21,6 +21,9 @@ const DoctorProfiles = () => {
                                 )}
                                 <div className="p-6 flex-1">
                                     <h3 className="text-xl font-bold text-gray-900">{doc.name}</h3>
+                                    <p className="inline-block bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full mb-2">
+                                        {doc.experience}+ Years Experience
+                                    </p>
                                     <p className="text-teal-600 font-medium mb-3">{doc.designation}</p>
                                     <p className="text-gray-700 mb-4 text-sm">
                                         {doc.specialty || 'Specialized in cutting-edge Interventional Radiology treatments.'}

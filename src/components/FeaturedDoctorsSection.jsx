@@ -108,7 +108,6 @@ const FeaturedDoctorsSection = () => {
                                         {doctor.experience}+ Years Experience
                                     </p>
 
-
                                     <p className="text-teal-600 font-medium mb-3">{doctor.designation}</p>
                                     <ul className="space-y-2 mb-4">
                                         {doctor.credentials.map((cred, idx) => (
