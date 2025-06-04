@@ -13,12 +13,14 @@ import Terms from './components/Terms';
 import Privacy from './components/Privacy';
 import InterventionalRadiology from './components/InterventionalRadiology';
 import ScrollToTop from './components/ScrollToTop';
+import ContactFloatingButton from './components/ContactFloatingButton';
 // import MdComponent from './components/MdComponent';
 
 function App() {
   return (
     <Layout>
       <ScrollToTop />
+      <ContactFloatingButton />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/procedures/:procedureId" element={<ProcedureDetailPage />} />

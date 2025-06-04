@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import { PHONE_NUMBER, WHATSAPP_LINK } from '../constants';
 import { Link } from 'react-router-dom';
+import InsurancePartners from './InsurancePartners';
 
 const Layout = ({ children }) => {
     return (
@@ -10,6 +11,7 @@ const Layout = ({ children }) => {
             <main className="flex-grow">
                 {children}
             </main>
+            <InsurancePartners />
             <div className="bg-teal-700 text-white py-16 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-4xl mx-auto text-center">
                     <h2 className="text-3xl font-bold mb-6">Your Pain-Free Journey Starts Here</h2>

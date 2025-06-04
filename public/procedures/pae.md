@@ -1,9 +1,4 @@
-## **Key Benefits of Prostate Artery Embolization (PAE)**
-* **Out-patient, local anesthesia**—walk in, walk out the same day
-* **Rapid symptom relief:** IPSS scores plunge within weeks and continue improving for 12 months
-* **< 15 min wrist-access incision**—no catheter in most cases
-* **Keeps intimacy intact:** ejaculatory dysfunction ≤ 16 % vs ≈ 50 % with TURP
-* **Lower complication rate** than surgery in randomised trials
+<!-- FEATURED_DOCTORS_SECTION -->
 
 ## **Why Does BPH Hurt Your Life?**
 
@@ -47,7 +42,7 @@ Our interventional radiologist navigates a micro-catheter from a wrist artery to
 ## **World-Class Expertise, Right Here**
 
 * Procedure led by **Dr \[Name]**, fellowship-trained at \[Johns Hopkins / CIRSE centre].
-* > **300 PAE cases** with 98 % technical success; published outcomes in peer-reviewed journals.
+* **300 PAE cases** with 98 % technical success; published outcomes in peer-reviewed journals.
 * Performed inside a **hybrid angio-CT suite** for sub-millimetre accuracy.
 
 ## **What the Evidence Says**

@@ -1,10 +1,4 @@
-## **Instant-Impact Highlights**
-
-* **Walk-in ▶ Walk-out**: outpatient, local anaesthesia—back to routine the next day
-* **Technical success 93-100 %** and durable symptom relief ≥ 12 months
-* **Virtually painless**—post-procedure pain score 0 vs 6 /10 after surgery
-* **No open wounds ➜ no risk of incontinence or anal stenosis**—zero major complications reported to date
-* **Covered by most premium insurance plans**; coded as therapeutic embolization for hemorrhoidal bleeding
+<!-- FEATURED_DOCTORS_SECTION -->
 
 ## **Why Do Hemorrhoids Make Life Miserable?**
 Swollen vascular cushions inside the rectum trigger bleeding, itching and prolapse. Creams and fibre help early piles, but persistent Grade II–III disease keeps bleeding. Traditional surgery (open or stapled) removes tissue but demands spinal/GA, weeks of searing pain, and risks of stricture or sexual embarrassment in recovery.

@@ -1,4 +1,4 @@
-import { FaMale, FaFemale, FaToiletPaper, FaWalking } from 'react-icons/fa';
+import { FaMale, FaFemale, FaToiletPaper, FaWalking, FaHospital, FaHeartbeat, FaCut, FaHeart, FaShieldAlt } from 'react-icons/fa';
 import DrRochan from './assets/dr-rochan-copy.webp';
 import DrMukul from './assets/dr-mukul-copy.webp';
 import DrLenon from './assets/dr-lenon-copy.webp';
@@ -92,6 +92,7 @@ export const featuredDoctors = [
         name: "Dr. Ashwin M Polnaya",
         designation: "Interventional Radiologist",
         image: DrAshwin,
+        experience: 18,
         credentials: [
             // "Trailblazer in advanced liver cancer therapy — first radioactive IR in Karnataka.",
             "First in Dakshina Kannada to Perform Radioactive Liver Cancer Therapy",
@@ -107,6 +108,7 @@ export const featuredDoctors = [
         name: "Surg. Capt. Dr. Rochan Pant",
         designation: "Vascular & Neuro IR Specialist",
         image: DrRochan,
+        experience: 18,
         credentials: [
             // "Decorated IR veteran with 2,000+ complex vascular interventions. Presidential awardee",
             "Vishisht Seva Medal (President of India Awardee)",
@@ -122,6 +124,7 @@ export const featuredDoctors = [
         name: "Dr. Mukul Mutatkar",
         designation: "Senior Interventional Radiologist",
         image: DrMukul,
+        experience: 18,
         credentials: [
             // "Global imaging expert with 30 yrs of IR innovation. Built Pune’s first high-end MRI centre.",
             "Trained in MRI/CT at USA, Germany, Japan, UK",
@@ -137,6 +140,7 @@ export const featuredDoctors = [
         name: "Dr. Keerthiraj B",
         designation: "Interventional Neuro Radiologist",
         image: DrKB,
+        experience: 18,
         credentials: [
             // "Mangalore’s senior-most leading neuro-IR specialist. 1,500+ life-changing pin-hole procedures.",
             "First Interventional Neuroradiologist in Dakshina Kannada",
@@ -152,6 +156,7 @@ export const featuredDoctors = [
         name: "Dr. Lenon D'Souza",
         designation: "Vascular Surgeon & IR Specialist",
         image: DrLenon,
+        experience: 18,
         credentials: [
             // "Gold-medalist IR specialist with latest expertise across new & diverse procedure types.",
             "Gold Medalist - Rajiv Gandhi University",
@@ -446,16 +451,44 @@ export const proceduresArray = [
         slug: "prostatic-artery-embolization-pae",
         markdownPath: './pae.md',
         name: "Prostatic Artery Embolization (PAE)",
-        headline: "Freedom from Enlarged-Prostate Symptoms—Without Surgery",
+        title: "Latest Minimally Invasive Prostate Treatment",
+        headline: "Freedom from Enlarged Prostate Symptoms—Without Surgery",
         for: "BPH (Enlarged Prostate)",
         cta: "Know More",
-        description: "Prostate Artery Embolization (PAE) shrinks the prostate through a pin-hole incision, gets you home the *same day* and preserves sexual function. Book your 30-min expert consult now.",
+        description: "Prostatic Artery Embolization (PAE) reduces prostate size through a tiny pin-hole in the wrist without anesthesia and without taking your pants off, getting you home in a few hours, with almost none of the surgical side effects.",
         benefits: [
             "Out-patient, local anesthesia — walk in, walk out the same day",
             "Rapid symptom relief: IPSS scores plunge within weeks and continue improving for 12 months",
             "< 15 min wrist-access incision — no catheter in most cases",
             "Keeps intimacy intact: ejaculatory dysfunction ≤ 16 % vs ≈ 50 % with TURP",
             "Lower complication rate than surgery in randomised trials",
+        ],
+        benefitDetails: [
+            {
+                title: 'Out-patient, local anesthesia',
+                description: 'Walk in, walk out the same day',
+                icon: <FaHospital className="text-4xl text-teal-600" />,
+            },
+            {
+                title: 'Rapid symptom relief',
+                description: 'IPSS scores plunge within weeks and continue improving for 12 months',
+                icon: <FaHeartbeat className="text-4xl text-teal-600" />,
+            },
+            {
+                title: '< 15 min wrist-access incision',
+                description: 'No catheter in most cases',
+                icon: <FaCut className="text-4xl text-teal-600" />,
+            },
+            {
+                title: 'Keeps intimacy intact',
+                description: 'Ejaculatory dysfunction ≤ 16% vs ≈ 50% with TURP',
+                icon: <FaHeart className="text-4xl text-teal-600" />,
+            },
+            {
+                title: 'Lower complication rate',
+                description: 'Than surgery in randomized trials',
+                icon: <FaShieldAlt className="text-4xl text-teal-600" />,
+            },
         ],
         icon: (
             <FaMale className="text-4xl text-teal-600" />
@@ -517,16 +550,39 @@ export const proceduresArray = [
         id: 2,
         slug: "uterine-fibroid-embolization-ufe",
         markdownPath: './uae.md',
+        title: 'Treat Fibroids Without Surgery',
         name: "Uterine Fibroid Embolization (UFE)",
         for: "Symptomatic Fibroids",
-        headline: "Shrink Fibroids. Keep Your Uterus",
-        description: "Uterine Artery Embolization (UAE/UFE) ends heavy bleeding and bulk pain through a pin-hole wrist incision—zero scars, same-day discharge, uterus preserved.",
+        headline: "Learn about the latest European Pinhole IR technology - now in India & UAE",
+        description: "Uterine Fibroid Embolization (UFE) uses a remote guided small wire inserted through a tiny pin-hole in your wrist - reducing fibroid size without anesthesia or surgical risk, and without even touching your belly, getting you home in a few hours, while retaining your ability to get pregnant. Book your consultation now.",
         cta: "Know More",
         benefits: [
             "Out-patient, local anesthesia—walk out in 6 h  ",
             "Symptom relief in 85–90% of women; bleeding drops within one cycle  ",
             "Treats every fibroid at once—even 15+ lesions or >10 cm bulk",
             "Back to work in a week, gym in two"
+        ],
+        benefitDetails: [
+            {
+                title: "Out-patient, local anesthesia",
+                description: "Walk out in 6 hours",
+            },
+            {
+                title: "Symptom relief in 85–90% of women",
+                description: "Bleeding drops within one cycle",
+            },
+            {
+                title: "Treats every fibroid at once",
+                description: "Even 15+ lesions or >10 cm bulk",
+            },
+            {
+                title: "Uterus & hormones stay intact",
+                description: "No hysterectomy trauma",
+            },
+            {
+                title: "Back to work in a week",
+                description: "Gym in two",
+            }
         ],
         icon: <FaFemale className="text-4xl text-teal-600" />,
         process: [
@@ -591,18 +647,39 @@ export const proceduresArray = [
         id: 3,
         slug: "hemorrhoidal-artery-embolization-hae",
         markdownPath: './hae.md',
+        title: 'Treat Piles Bleeding Without Surgery',
         name: "Hemorrhoidal Artery Embolization (HAE)",
-        headline: "Freedom from Piles—No Cutting, No Stitches, Same-Day Home",
+        headline: "Learn about the latest European Pinhole IR technology - now in India & UAE",
         for: "Chronic Rectal Bleeding",
         cta: "Know More",
-        description: "Hemorrhoidal Artery Embolization (HAE) ends bleeding piles through a single pin-hole in your wrist or groin. Zero rectal wounds, near-zero pain. Book a 30-minute specialist consult today.",
+        description: "Hemorrhoidal Artery Embolization (HAE) uses a remote guided small wire inserted through a tiny pin-hole in your wrist to cut off blood to your anal vessels - stopping the bleeding without anesthesia or surgical risk, and without even taking your pants off, getting you home in a few hours. Book your consultation now.",
         benefits: [
-            "Walk-in ▶ Walk-out: outpatient, local anaesthesia — back to routine the next day",
-            "Technical success 93-100 % and durable symptom relief ≥ 12 months",
-            "Virtually painless — post-procedure pain score 0 vs 6 /10 after surgery",
-            "No open wounds ➜ no risk of incontinence or anal stenosis — zero major complications reported to date",
-            "Covered by most premium insurance plans; coded as therapeutic embolization for hemorrhoidal bleeding",
+            "Walk in, walk out the same day",
+            "Virtually Painless",
+            "No Cuts, No Scars, No Risk",
+            "93-100% Technical Success Rate, Long Lasting Relief",
+            "Wide Variety of Payment Options",
         ],
+        benefitDetails: [{
+            title: "Walk in, walk out the same day",
+            description: "HAE takes just a few hours, allowing you to travel & get back to work the next day",
+        },
+        {
+            title: "Virtually Painless",
+            description: "Average pain score after procedure is 0/10 (vs 6/10 after piles surgery)",
+        },
+        {
+            title: "No Cuts, No Scars, No Risk",
+            description: "Compared to surgery risks (loss of stool control, bleeding post surgery, anal scarring causing blockage and more), HAE reports zero major complications to date.",
+        },
+        {
+            title: "93-100% Technical Success Rate, Long Lasting Relief",
+            description: "As effective and durable as most solutions, without the pain & complications",
+        },
+        {
+            title: "Wide Variety of Payment Options",
+            description: "Major insurances covered, cash payment discount available.",
+        }],
         icon: <FaToiletPaper className="text-4xl text-teal-600" />,
         process: [
             "Pre-procedure imaging and consultation",
@@ -666,6 +743,7 @@ export const proceduresArray = [
         id: 4,
         slug: "okuno-procedure-tam",
         markdownPath: './tam.md',
+        title: '',
         name: "OKUNO Procedure (TAM)",
         headline: "End Chronic Joint & Tendon Pain — Without Surgery or Long Downtime",
         for: "Chronic Pain (Knee/Shoulder/Back)",
@@ -677,6 +755,28 @@ export const proceduresArray = [
             "All-star indications: Knee arthritis, frozen shoulder, tennis elbow, facet-back pain, plantar fasciitis",
             "Fast return to life: Most patients back to desk work next day, sports in 7-14 days",
             "Zero joint damage: Preserves cartilage, tendons, nerves; repeatable if ever needed",
+        ],
+        benefitDetails: [
+            {
+                title: "Out-patient, local anaesthesia",
+                description: "Tiny 0.6 mm catheter; no stitches",
+            },
+            {
+                title: "50 – 80 % pain reduction",
+                description: "That lasts 1–2 years or longer",
+            },
+            {
+                title: "All-star indications",
+                description: "Knee arthritis, frozen shoulder, tennis elbow, facet-back pain, plantar fasciitis",
+            },
+            {
+                title: "Fast return to life",
+                description: "Most patients back to desk work next day, sports in 7-14 days",
+            },
+            {
+                title: "Zero joint damage",
+                description: "Preserves cartilage, tendons, nerves; repeatable if ever needed",
+            },
         ],
         icon: <FaWalking className="text-4xl text-teal-600" />,
         process: [

@@ -51,6 +51,10 @@ const FeaturedDoctorsSection = () => {
                                     </div>
                                     <div className="p-4">
                                         <h3 className="text-lg font-semibold text-gray-900">{doctor.name}</h3>
+                                        <p className="inline-block bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full mb-2">
+                                            {doctor.experience}+ Years Experience
+                                        </p>
+
                                         <p className="text-teal-600 text-sm font-medium mb-2">{doctor.designation}</p>
                                         <ul className="space-y-1 text-sm mb-3">
                                             {doctor.credentials.map((cred, idx) => (
@@ -100,6 +104,11 @@ const FeaturedDoctorsSection = () => {
                                 />
                                 <div className="p-6 flex-1">
                                     <h3 className="text-2xl font-bold text-gray-900">{doctor.name}</h3>
+                                    <p className="inline-block bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full mb-2">
+                                        {doctor.experience}+ Years Experience
+                                    </p>
+
+
                                     <p className="text-teal-600 font-medium mb-3">{doctor.designation}</p>
                                     <ul className="space-y-2 mb-4">
                                         {doctor.credentials.map((cred, idx) => (

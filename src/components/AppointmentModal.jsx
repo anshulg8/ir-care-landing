@@ -28,9 +28,9 @@ const AppointmentModal = ({ show, onClose, procedure }) => {
                     &times;
                 </button>
 
-                <h2 className="text-2xl font-bold text-teal-700 mb-4 text-center">
+                {/* <h2 className="text-2xl font-bold text-teal-700 mb-4 text-center">
                     Explore Minimally Invasive Options for your condition
-                </h2>
+                </h2> */}
 
                 {/* <GoogleFormWithProcedureInput procedure={procedure} /> */}
                 <GoogleFormWithProcedureInput procedure={procedure} onClose={() => setShowModal(false)} />

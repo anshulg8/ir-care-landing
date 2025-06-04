@@ -1,9 +1,4 @@
-## **Instant-Impact Highlights**
-* **Out-patient, local anesthesia** — walk out in 6 h  
-* **Symptom relief in 85–90%** of women; bleeding drops within one cycle  
-* **Treats every fibroid at once** — even 15+ lesions or >10 cm bulk  
-* **Uterus & hormones stay intact** — no hysterectomy trauma  
-* **Back to work in a week**, gym in two  
+<!-- FEATURED_DOCTORS_SECTION -->
 
 ## **Why Do Fibroids Wreck Your Life?**
 Uterine fibroids trigger relentless heavy periods, pelvic pressure, bloating and anaemia. Tablets and IUDs often fail; myomectomy or hysterectomy solve symptoms but demand general anaesthesia, weeks off work and, for hysterectomy, permanent loss of fertility.

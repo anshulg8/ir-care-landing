@@ -8,8 +8,6 @@ import ProcedureSection from './ProcedureSection';
 import TestimonialSection from './TestimonialSection';
 import FAQSection from './FAQSection';
 import SwiperSection from './SwiperSection';
-import InsurancePartners from './InsurancePartners';
-import ContactFloatingButton from './ContactFloatingButton';
 import CentersCarousel from './CentersCarousel';
 import { centers, generalFaqs, landingTestimonials } from '../data.jsx';
 
@@ -20,7 +18,6 @@ const Home = () => {
             <SwiperSection />
             <DiseaseIconsGrid />
             <DiseaseSearch />
-            <ContactFloatingButton />
             <FeaturedDoctorsSection />
             <CentersCarousel centers={centers} />
             <WhyChooseUsSection />
@@ -118,8 +115,6 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-
-            <InsurancePartners />
         </div >
     );
 };

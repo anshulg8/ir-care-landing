@@ -1,10 +1,4 @@
-## **Instant-Impact Highlights**
-
-* **Out-patient, local anaesthesia** — tiny 0.6 mm catheter; no stitches
-* **50 – 80 % pain reduction** that lasts 1–2 years or longer
-* **All-star indications:** Knee arthritis, frozen shoulder, tennis elbow, facet-back pain, plantar fasciitis
-* **Fast return to life:** Most patients back to desk work next day, sports in 7-14 days
-* **Zero joint damage:** Preserves cartilage, tendons, nerves; repeatable if ever needed
+<!-- FEATURED_DOCTORS_SECTION -->
 
 ## **Why Conventional Care Often Fails**
 

@@ -8,10 +8,13 @@ import {
     FIELD_PHONE_ID,
     GOOGLE_FORM_ACTION_URL,
     PHONE_NUMBER,
+    YOUR_REFERRAL_CODE_FIELD_ID,
 } from '../constants';
+import StatsBanner from './StatsBanner';
 
 const GoogleFormSubmit = ({ procedure }) => {
-    const [formData, setFormData] = useState({ name: '', phone: '', city: '' });
+    const [formData, setFormData] = useState({ name: '', phone: '', city: '', referralCode: '' });
+    const [hasReferral, setHasReferral] = useState(false);
     const [status, setStatus] = useState('');
     const [nearbyCities, setNearbyCities] = useState([]);
     const [isLoadingCities, setIsLoadingCities] = useState(false);
@@ -107,6 +110,10 @@ const GoogleFormSubmit = ({ procedure }) => {
         formBody.append(FIELD_CITY_ID, formData.city);
         formBody.append(FIELD_DISEASE_ID, procedure);
 
+        if (formData.referralCode) {
+            formBody.append(YOUR_REFERRAL_CODE_FIELD_ID, formData.referralCode);
+        }
+
         fetch(GOOGLE_FORM_ACTION_URL, {
             method: 'POST',
             mode: 'no-cors',
@@ -117,96 +124,142 @@ const GoogleFormSubmit = ({ procedure }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4 bg-white shadow rounded space-y-4 relative">
-            <input
-                name="name"
-                type="text"
-                placeholder="Patient Name"
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full border border-gray-300 p-2 rounded"
-                required
-            />
+        <>
+            <div className="relative max-w-md mx-auto">
 
-            <input
-                name="phone"
-                type="tel"
-                placeholder="Enter 10 Digit Mobile Number"
-                value={formData.phone}
-                onChange={handleChange}
-                className="w-full border border-gray-300 p-2 rounded"
-                pattern="[0-9]{10}"
-                required
-            />
-
-            <div className="flex items-center gap-2">
-                <input
-                    name="city"
-                    type="text"
-                    placeholder="City"
-                    value={formData.city}
-                    onChange={handleChange}
-                    className="w-full border border-gray-300 p-2 rounded"
-                    required
-                />
-                <button
-                    type="button"
-                    onClick={handleGetLocation}
-                    className="text-white bg-teal-600 hover:bg-teal-700 p-2 rounded"
-                    title="Use my location"
-                >
-                    <FaCrosshairs size={16} />
-                </button>
-            </div>
-
-            {isLoadingCities ? (
-                <p className="text-sm text-gray-500 mt-2">Detecting nearby cities...</p>
-            ) : (
-                nearbyCities.length > 0 && (
-                    <div className="mt-2">
-                        <p className="text-sm text-gray-600">Nearby Cities:</p>
-                        <div className="flex flex-wrap gap-2 mt-1">
-                            {nearbyCities.map((city, idx) => (
-                                <button
-                                    key={idx}
-                                    type="button"
-                                    onClick={() =>
-                                        setFormData((prev) => ({ ...prev, city }))
-                                    }
-                                    className="px-3 py-1 text-sm bg-teal-100 text-teal-800 rounded hover:bg-teal-200"
-                                >
-                                    {city}
-                                </button>
-                            ))}
-                        </div>
-                    </div>
-                )
-            )}
-
-            {/* Submit Button with Free Consultation Tag */}
-            <div className="relative w-full">
-                <div className="absolute -top-3 right-4 transform -skew-x-12 bg-green-600 text-white text-xs px-4 py-1 shadow-sm z-10">
-                    <div className="transform skew-x-12">Free Consultation</div>
+                <div className="absolute top-10 left-4 z-10 text-gray-800">
+                    <p className="text-teal-700 text-lg font-semibold leading-tight">Book Free Appointment</p>
+                    {/* <p className="text-lg font-semibold leading-tight">Appointment</p> */}
                 </div>
 
-                <button
-                    type="submit"
-                    className="bg-[#ff8300] text-white py-3 px-6 rounded font-semibold w-full"
-                >
-                    Book Free Appointment
-                </button>
+
+                {/* Doctor's image in top-right */}
+                <img
+                    src="https://img.pristyncare.com/new_brand%2Felements%2Fprakash_2023_mobile.webp"
+                    alt="Doctor"
+                    width={110}
+                    height={102}
+                    className="absolute top-4 right-4 z-10"
+                />
+                <form onSubmit={handleSubmit} className="p-4 pt-30 bg-white shadow rounded space-y-4">
+
+                    <input
+                        name="name"
+                        type="text"
+                        placeholder="Patient Name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="w-full border border-gray-300 p-2 rounded"
+                        required
+                    />
+
+                    <input
+                        name="phone"
+                        type="tel"
+                        placeholder="Enter 10 Digit Mobile Number"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full border border-gray-300 p-2 rounded"
+                        pattern="[0-9]{10}"
+                        required
+                    />
+
+                    <div className="flex items-center gap-2">
+                        <input
+                            name="city"
+                            type="text"
+                            placeholder="City"
+                            value={formData.city}
+                            onChange={handleChange}
+                            className="w-full border border-gray-300 p-2 rounded"
+                            required
+                        />
+                        <button
+                            type="button"
+                            onClick={handleGetLocation}
+                            className="text-white bg-teal-600 hover:bg-teal-700 p-2 rounded"
+                            title="Use my location"
+                        >
+                            <FaCrosshairs size={16} />
+                        </button>
+                    </div>
+
+                    {isLoadingCities ? (
+                        <p className="text-sm text-gray-500 mt-2">Detecting nearby cities...</p>
+                    ) : (
+                        nearbyCities.length > 0 && (
+                            <div className="mt-2">
+                                <p className="text-sm text-gray-600">Nearby Cities:</p>
+                                <div className="flex flex-wrap gap-2 mt-1">
+                                    {nearbyCities.map((city, idx) => (
+                                        <button
+                                            key={idx}
+                                            type="button"
+                                            onClick={() =>
+                                                setFormData((prev) => ({ ...prev, city }))
+                                            }
+                                            className="px-3 py-1 text-sm bg-teal-100 text-teal-800 rounded hover:bg-teal-200"
+                                        >
+                                            {city}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+                        )
+                    )}
+
+                    {/* Referral Code Toggle */}
+                    <div className="text-sm text-gray-600">
+                        {!hasReferral ? (
+                            <button
+                                type="button"
+                                onClick={() => setHasReferral(true)}
+                                className="text-teal-600 underline hover:text-teal-800"
+                            >
+                                Have a referral code?
+                            </button>
+                        ) : (
+                            <div className="mt-2">
+                                <label className="block mb-1 text-sm font-medium text-gray-700">Referral Code</label>
+                                <input
+                                    name="referralCode"
+                                    type="text"
+                                    placeholder="Enter Doctor's Referral Code"
+                                    value={formData.referralCode}
+                                    onChange={handleChange}
+                                    className="w-full border border-gray-300 p-2 rounded"
+                                />
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Submit Button with Free Consultation Tag */}
+                    <div className="relative w-full">
+                        <div className="absolute -top-3 right-4 transform -skew-x-12 bg-green-600 text-white text-xs px-4 py-1 shadow-sm z-10">
+                            <div className="transform skew-x-12">Free Consultation</div>
+                        </div>
+
+                        <button
+                            type="submit"
+                            className="bg-[#ff8300] text-white py-3 px-6 rounded font-semibold w-full"
+                        >
+                            Book Free Appointment
+                        </button>
+                    </div>
+
+                    {/* Call Link */}
+                    <a
+                        href={`tel:${PHONE_NUMBER}`}
+                        className="block text-lg text-center font-medium text-teal-600 hover:underline"
+                    >
+                        Call Us 📞 {PHONE_NUMBER}
+                    </a>
+
+                    <StatsBanner />
+                    {status && <p className="text-sm text-teal-700">{status}</p>}
+                </form>
             </div>
-
-            {/* Call Link */}
-            <a
-                href={`tel:${PHONE_NUMBER}`}
-                className="block text-lg text-center font-medium text-teal-600 hover:underline"
-            >
-                Call Us 📞 {PHONE_NUMBER}
-            </a>
-
-            {status && <p className="text-sm text-teal-700">{status}</p>}
-        </form>
+        </>
     );
 };
 
