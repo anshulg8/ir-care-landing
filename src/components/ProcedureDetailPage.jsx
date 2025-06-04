@@ -6,19 +6,44 @@ import FAQSection from './FAQSection.jsx';
 import TestimonialSection from './TestimonialSection.jsx';
 import MarkdownRenderer from './MarkdownRenderer'; // Your existing MarkdownRenderer
 import BenefitCarousel from './BenefitCarousel.jsx';
+import AppointmentModal from './AppointmentModal';
+import StickyButtons from './StickyButtons';
+import ContactFloatingButton from './ContactFloatingButton.jsx';
 
 const ProcedureDetailPage = () => {
     const { procedureId } = useParams();
     const [isMobile, setIsMobile] = useState(false);
+    const [showStickyButtons, setShowStickyButtons] = useState(false);
     const [showFullDescription, setShowFullDescription] = useState(false);
     const [markdownContent, setMarkdownContent] = useState('');
     const [loading, setLoading] = useState(false);
+    const [showContactModal, setShowContactModal] = useState(false);
+
+    const [showModal, setShowModal] = useState(false);
+    const [selectedProcedure, setSelectedProcedure] = useState('');
+    const openAppointmentModal = (procedureName) => {
+        setSelectedProcedure(procedureName);
+        setShowModal(true);
+    };
 
     useEffect(() => {
         const checkMobile = () => setIsMobile(window.innerWidth < 768);
         checkMobile();
         window.addEventListener('resize', checkMobile);
         return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 100) {
+                setShowStickyButtons(true);
+            } else {
+                setShowStickyButtons(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     const procedures = proceduresMap;
@@ -115,6 +140,25 @@ const ProcedureDetailPage = () => {
                     </div>
                 </div>
             </div>
+
+            <StickyButtons
+                onBookAppointment={() => openAppointmentModal(procedure?.title || procedure?.name)}
+                onContactClick={() => setShowContactModal(true)}
+            />
+
+            {/* {showContactModal && (
+                <ContactFloatingButton onClose={() => setShowContactModal(false)} />
+            )} */}
+
+            <ContactFloatingButton forceOpen={showContactModal} onClose={() => setShowContactModal(false)} />
+
+            <AppointmentModal
+                show={showModal}
+                onClose={() => setShowModal(false)}
+                procedure={selectedProcedure}
+            />
+
+
         </div>
     );
 };

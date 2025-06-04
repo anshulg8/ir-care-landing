@@ -1,7 +1,6 @@
 import React from 'react';
 
 const BenefitsCarousel = ({ benefits }) => {
-    console.log(benefits)
     return (
         <div className="benefits-grid">
             {benefits.map((benefit, index) => (

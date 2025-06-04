@@ -6,7 +6,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { cards } from '../data';
-import AppointmentModal from './AppointmentModal'; // Import your modal component
+import AppointmentModal from './AppointmentModal';
 
 const SwiperSection = () => {
     const [showModal, setShowModal] = useState(false);
