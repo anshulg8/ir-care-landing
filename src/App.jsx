@@ -32,7 +32,6 @@ function App() {
         <Route path="/interventional-radiology" element={<InterventionalRadiology />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/privacy" element={<Privacy />} />
-        {/* <Route path="/demo" element={<MdComponent />} /> */}
       </Routes>
     </Layout>
   );

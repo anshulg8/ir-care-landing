@@ -975,3 +975,41 @@ export const landingTestimonials = [
         message: "From start to finish, the entire process was smooth. The team explained everything to me, and I felt well-cared-for throughout."
     },
 ];
+
+export const docsyJourneySteps = [
+    {
+        title: "1 - First Appointment",
+        desc: "Our doctors will take a detailed history, examine you at length, and ask you to get some blood and stool tests, and some imaging scans done.",
+        time: "30 mins",
+        icon: "🩺",
+        color: "bg-teal-500",
+    },
+    {
+        title: "2 - Care Navigation",
+        desc: "Based on your disease stage and treatment preferences, we'll help you choose the best possible solution for your case – even if we don't offer it ourselves, we'll guide you to the right people who we're confident will do a good job.",
+        time: "1 day post results",
+        icon: "🧭",
+        color: "bg-yellow-500",
+    },
+    {
+        title: "3 - Pre-Procedure & Insurance",
+        desc: "To save time, we send you out for pre-procedure tests and scans while in parallel, we start your insurance claim processing (including pre-authorisation and approvals).",
+        time: "1–2 days post date locking",
+        icon: "📝",
+        color: "bg-blue-500",
+    },
+    {
+        title: "4 - Procedure Day",
+        desc: "Doorstep cab pickup to our center, procedure in 2–4 hours while your family/caregivers have a complimentary meal and wait, same day discharge and then doorstep drop post procedure.",
+        time: "2–4 hours",
+        icon: "🏥",
+        color: "bg-purple-500",
+    },
+    {
+        title: "5 - Post Procedure Follow-up",
+        desc: "Doctors check-ins on: *Day 0*, Day 1, *Day 3*, Day 7, Day 14 and *Day 30*, *Month 3* and *Month 6*. \n *Note:* Highlighted days with Bold are Detailed Follow Ups, rest are Regular Status Check-In",
+        time: "Ongoing",
+        icon: "📅",
+        color: "bg-green-500",
+    },
+];

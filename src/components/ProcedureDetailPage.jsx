@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import GoogleFormSubmit from './GoogleFormSubmit';
-import { proceduresMap } from '../data.jsx';
+import { docsyJourneySteps, proceduresMap } from '../data.jsx';
 import FAQSection from './FAQSection.jsx';
 import TestimonialSection from './TestimonialSection.jsx';
 import MarkdownRenderer from './MarkdownRenderer'; // Your existing MarkdownRenderer
@@ -9,6 +9,7 @@ import BenefitCarousel from './BenefitCarousel.jsx';
 import AppointmentModal from './AppointmentModal';
 import StickyButtons from './StickyButtons';
 import ContactFloatingButton from './ContactFloatingButton.jsx';
+import DocsyJourney from './DocsyJourney.jsx';
 
 const ProcedureDetailPage = () => {
     const { procedureId } = useParams();
@@ -115,7 +116,6 @@ const ProcedureDetailPage = () => {
                         <GoogleFormSubmit procedure={procedure.name} />
 
                         <div className="my-8">
-                            <b>Key Benefits</b>
                             <BenefitCarousel benefits={procedure.benefitDetails} />
                         </div>
 
@@ -131,6 +131,7 @@ const ProcedureDetailPage = () => {
                                 <MarkdownRenderer content={markdownContent} />
                             )}
                         </div>
+                        <DocsyJourney steps={docsyJourneySteps} />
                         {procedure.testimonials?.length > 0 && (
                             <TestimonialSection testimonials={procedure.testimonials} />
                         )}
