@@ -14,25 +14,28 @@ import Privacy from './components/Privacy';
 import InterventionalRadiology from './components/InterventionalRadiology';
 import ScrollToTop from './components/ScrollToTop';
 import ContactFloatingButton from './components/ContactFloatingButton';
+import { ModalProvider } from './context/ModalContext';
 
 function App() {
   return (
     <Layout>
       <ScrollToTop />
       <ContactFloatingButton />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/procedures/:procedureId" element={<ProcedureDetailPage />} />
-        <Route path="/doctors" element={<DoctorListPage />} />
-        <Route path="/ir-applications" element={<IRApplications />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/procedures" element={<ProceduresPage />} />
-        <Route path="/centres" element={<CentresPage />} />
-        <Route path="/interventional-radiology" element={<InterventionalRadiology />} />
-        <Route path="/terms" element={<Terms />} />
-        <Route path="/privacy" element={<Privacy />} />
-      </Routes>
+      <ModalProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/procedures/:procedureId" element={<ProcedureDetailPage />} />
+          <Route path="/doctors" element={<DoctorListPage />} />
+          <Route path="/ir-applications" element={<IRApplications />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/procedures" element={<ProceduresPage />} />
+          <Route path="/centres" element={<CentresPage />} />
+          <Route path="/interventional-radiology" element={<InterventionalRadiology />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
+        </Routes>
+      </ModalProvider>
     </Layout>
   );
 }

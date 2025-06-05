@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -7,15 +7,10 @@ import 'swiper/css/autoplay';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { cards } from '../data';
 import AppointmentModal from './AppointmentModal';
+import { useModal } from '../context/ModalContext';
 
 const SwiperSection = () => {
-    const [showModal, setShowModal] = useState(false);
-    const [selectedProcedure, setSelectedProcedure] = useState('');
-
-    const handlePrimaryCTA = (procedureTitle) => {
-        setSelectedProcedure(procedureTitle);
-        setShowModal(true);
-    };
+    const { show, procedure, openModal, closeModal } = useModal();
 
     return (
         <div className="w-full relative z-10">
@@ -43,12 +38,14 @@ const SwiperSection = () => {
                                 <h1 className="text-4xl md:text-5xl font-bold mb-4">{card.title}</h1>
                                 <h2 className="text-xl md:text-2xl font-semibold mb-6">{card.subtitle}</h2>
                                 <div className="flex flex-col sm:flex-row justify-center gap-4">
+
                                     <button
-                                        onClick={() => handlePrimaryCTA(card.title)}
+                                        onClick={() => openModal(card.title)}
                                         className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
                                     >
                                         {card.primaryCTA}
                                     </button>
+
                                     <Link to="/interventional-radiology">
                                         <button className="bg-white/80 text-teal-700 hover:bg-white px-8 py-3 rounded-lg font-medium transition-colors shadow-md backdrop-blur-sm">
                                             {card.secondaryCTA}
@@ -61,12 +58,8 @@ const SwiperSection = () => {
                 ))}
             </Swiper>
 
-            {/* Modal below swiper */}
-            <AppointmentModal
-                show={showModal}
-                onClose={() => setShowModal(false)}
-                procedure={selectedProcedure}
-            />
+            <AppointmentModal show={show} procedure={procedure} onClose={closeModal} />
+
         </div>
     );
 };

@@ -10,6 +10,7 @@ import AppointmentModal from './AppointmentModal';
 import StickyButtons from './StickyButtons';
 import ContactFloatingButton from './ContactFloatingButton.jsx';
 import DocsyJourney from './DocsyJourney.jsx';
+import CustomLink from './CustomLink.jsx';
 
 const ProcedureDetailPage = () => {
     const { procedureId } = useParams();
@@ -158,6 +159,14 @@ const ProcedureDetailPage = () => {
                 onClose={() => setShowModal(false)}
                 procedure={selectedProcedure}
             />
+
+            {/* <p>
+                Want to learn more about Test Link?{' '}
+                <CustomLink procedure="Fibroid Treatment">
+                    Click here
+                </CustomLink>
+                .
+            </p> */}
 
 
         </div>
