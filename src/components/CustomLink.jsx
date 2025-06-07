@@ -10,7 +10,7 @@ const CustomLink = ({ procedure, children }) => {
                 e.preventDefault();
                 openModal(procedure);
             }}
-            className="text-teal-600 underline hover:text-teal-800"
+            className="text-teal-600 hover:text-teal-800"
         >
             {children}
         </a>

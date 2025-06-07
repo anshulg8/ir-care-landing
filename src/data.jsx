@@ -5,6 +5,9 @@ import DrLenon from './assets/dr-lenon-copy.webp';
 import DrKB from './assets/dr-kb.png';
 import DrAshwin from './assets/dr-ashwin.jpg';
 import { FaBan, FaChartLine, FaLayerGroup, FaMoneyBillWave, FaStar, FaSyringe } from 'react-icons/fa6';
+import img1 from './assets/slider1.png';
+import img2 from './assets/slider2.png';
+import img3 from './assets/slider4.png';
 
 export const usps = [
     {
@@ -66,22 +69,21 @@ export const cards = [
     {
         title: 'Surgery — without Surgery',
         subtitle: "Discover Interventional Radiology: tiny pin-hole cures, same-day discharge",
-        backgroundImage: "https://cdn.hexahealth.com/static/images/slide-1.jpg",
+        backgroundImage: img1,
         primaryCTA: "Book Free IR Consultation",
         secondaryCTA: "What is IR?",
     },
     {
         title: "No Cuts. No Scars. No Hospital Stay.",
         subtitle: "American FDA & European CE-approved, lowers complications 70-90 % vs open/lap surgery",
-        backgroundImage:
-            "https://cdn.hexahealth.com/static/images/slide-2.jpg",
+        backgroundImage: img2,
         primaryCTA: "Check My Eligibility",
         secondaryCTA: "Compare to Surgery",
     },
     {
         title: "Top Doctors • Premium Centres • VIP Experience",
         subtitle: "India’s first end-to-end IR ecosystem with 24 x 7 Care Navigators",
-        backgroundImage: "https://cdn.hexahealth.com/static/images/slide-3.jpg",
+        backgroundImage: img3,
         primaryCTA: "Start My Care Journey",
         secondaryCTA: "View Success Stories",
     },
@@ -451,6 +453,7 @@ export const proceduresArray = [
         id: 1,
         slug: "prostatic-artery-embolization-pae",
         markdownPath: './pae.md',
+        htmlPath: 'paeBlock',
         name: "Prostatic Artery Embolization (PAE)",
         title: "Latest Minimally Invasive Prostate Treatment",
         headline: "Freedom from Enlarged Prostate Symptoms—Without Surgery",
@@ -551,6 +554,7 @@ export const proceduresArray = [
         id: 2,
         slug: "uterine-fibroid-embolization-ufe",
         markdownPath: './uae.md',
+        htmlPath: 'uaeBlock',
         title: 'Treat Fibroids Without Surgery',
         name: "Uterine Fibroid Embolization (UFE)",
         for: "Symptomatic Fibroids",
@@ -653,6 +657,7 @@ export const proceduresArray = [
         id: 3,
         slug: "hemorrhoidal-artery-embolization-hae",
         markdownPath: './hae.md',
+        htmlPath: 'haeBlock',
         title: 'Treat Piles Bleeding Without Surgery',
         name: "Hemorrhoidal Artery Embolization (HAE)",
         headline: "Learn about the latest European Pinhole IR technology - now in India & UAE",
@@ -756,6 +761,7 @@ export const proceduresArray = [
         id: 4,
         slug: "okuno-procedure-tam",
         markdownPath: './tam.md',
+        htmlPath: 'tameBlock',
         title: '',
         name: "OKUNO Procedure (TAM)",
         headline: "End Chronic Joint & Tendon Pain — Without Surgery or Long Downtime",

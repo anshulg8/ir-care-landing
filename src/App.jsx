@@ -15,7 +15,7 @@ import InterventionalRadiology from './components/InterventionalRadiology';
 import ScrollToTop from './components/ScrollToTop';
 import ContactFloatingButton from './components/ContactFloatingButton';
 import { ModalProvider } from './context/ModalContext';
-import ProstateQuiz from './components/ProstateQuiz';
+import ProstateQuizPage from './components/ProstateQuizPage';
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
       <ModalProvider>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/quiz/:quizId" element={<ProstateQuiz />} />
+          <Route path="/quiz/prostate" element={<ProstateQuizPage />} />
           <Route path="/procedures/:procedureId" element={<ProcedureDetailPage />} />
           <Route path="/doctors" element={<DoctorListPage />} />
           <Route path="/ir-applications" element={<IRApplications />} />

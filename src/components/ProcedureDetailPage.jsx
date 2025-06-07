@@ -4,13 +4,12 @@ import GoogleFormSubmit from './GoogleFormSubmit';
 import { docsyJourneySteps, proceduresMap } from '../data.jsx';
 import FAQSection from './FAQSection.jsx';
 import TestimonialSection from './TestimonialSection.jsx';
-import MarkdownRenderer from './MarkdownRenderer'; // Your existing MarkdownRenderer
 import BenefitCarousel from './BenefitCarousel.jsx';
 import AppointmentModal from './AppointmentModal';
 import StickyButtons from './StickyButtons';
 import ContactFloatingButton from './ContactFloatingButton.jsx';
 import DocsyJourney from './DocsyJourney.jsx';
-import CustomLink from './CustomLink.jsx';
+import HTMLBlockRenderer from './HTMLBlockRenderer.jsx';
 
 const ProcedureDetailPage = () => {
     const { procedureId } = useParams();
@@ -121,7 +120,7 @@ const ProcedureDetailPage = () => {
                         </div>
 
                         {/* Markdown Content Section */}
-                        <div className="my-8">
+                        {/* <div className="my-8">
                             {loading ? (
                                 <div className="animate-pulse space-y-4">
                                     <div className="h-6 bg-gray-200 rounded w-3/4"></div>
@@ -131,7 +130,13 @@ const ProcedureDetailPage = () => {
                             ) : (
                                 <MarkdownRenderer content={markdownContent} />
                             )}
+                        </div> */}
+
+                        {/* <HTMLBlockRenderer type="blockA" /> */}
+                        <div className="container my-8">
+                            <HTMLBlockRenderer type={procedure.htmlPath} />
                         </div>
+
                         <DocsyJourney steps={docsyJourneySteps} />
                         {procedure.testimonials?.length > 0 && (
                             <TestimonialSection testimonials={procedure.testimonials} />
@@ -159,14 +164,6 @@ const ProcedureDetailPage = () => {
                 onClose={() => setShowModal(false)}
                 procedure={selectedProcedure}
             />
-
-            {/* <p>
-                Want to learn more about Test Link?{' '}
-                <CustomLink procedure="Fibroid Treatment">
-                    Click here
-                </CustomLink>
-                .
-            </p> */}
 
 
         </div>

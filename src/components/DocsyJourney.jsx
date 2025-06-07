@@ -8,6 +8,7 @@ const DocsyJourney = ({ steps }) => {
         const lines = text.split(/\n/g);
 
         return lines.map((line, lineIndex) => {
+            if (!line.trim()) return null;
             // Then, within each line, handle *bold* text
             const parts = line.split(/(\*[^*]+\*)/g); // Match *text*
 
@@ -25,7 +26,7 @@ const DocsyJourney = ({ steps }) => {
     };
 
     return (
-        <section className="pt-16 pb-6 px-4 sm:px-6 lg:px-8 bg-white">
+        <section className="pt-4 pb-6 px-4 sm:px-6 lg:px-8 bg-white">
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
                     Your <span className="text-teal-600">End-to-End Journey</span> With Docsy
@@ -45,9 +46,9 @@ const DocsyJourney = ({ steps }) => {
                                     </div>
                                     <h3 className="text-lg font-bold text-gray-900 ml-4">{step.title}</h3>
                                 </div>
-                                <p className="text-gray-600 whitespace-pre-line">
+                                <div className="text-gray-600 whitespace-pre-line">
                                     {formatWithBoldWithNewlines(step.desc)}
-                                </p>
+                                </div>
                                 <p className="text-sm font-medium text-teal-600 mt-2">⏱ {step.time}</p>
                             </div>
                         ))}
@@ -66,7 +67,7 @@ const DocsyJourney = ({ steps }) => {
                                 </div>
                                 <div className="mt-8 pt-16 pb-6 px-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow h-full">
                                     <h3 className="text-xl font-bold text-gray-900 mb-2">{step.title}</h3>
-                                    <p className="text-gray-600 whitespace-pre-line">{formatWithBoldWithNewlines(step.desc)}</p>
+                                    <div className="text-gray-600 whitespace-pre-line">{formatWithBoldWithNewlines(step.desc)}</div>
                                     <p className="text-sm font-medium text-teal-600 mt-2">⏱ {step.time}</p>
                                 </div>
                             </div>

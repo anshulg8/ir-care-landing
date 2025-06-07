@@ -3,6 +3,7 @@ import Header from './Header';
 import { PHONE_NUMBER, WHATSAPP_LINK } from '../constants';
 import { Link } from 'react-router-dom';
 import InsurancePartners from './InsurancePartners';
+import { FaTwitter, FaInstagram } from 'react-icons/fa6';
 
 const Layout = ({ children }) => {
     return (
@@ -14,7 +15,7 @@ const Layout = ({ children }) => {
             <InsurancePartners />
             <div className="bg-teal-700 text-white py-16 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl font-bold mb-6">Your Pain-Free Journey Starts Here</h2>
+                    <h2 className="text-3xl font-bold mb-6">Crafting India's Most Advanced Care Experiences</h2>
                     <p className="text-xl mb-8 opacity-90">
                         Speak to our care navigators today. Zero obligation, 100% clarity.
                     </p>
@@ -38,7 +39,7 @@ const Layout = ({ children }) => {
                         </a>
                     </div>
                     <br />
-                    <p>*Limited daily slots for personalized care*</p>
+                    <p>*Limited daily slots - please book in advance*</p>
                 </div>
             </div>
 
@@ -47,18 +48,18 @@ const Layout = ({ children }) => {
                     <div className="grid md:grid-cols-3 gap-12">
                         {/* About */}
                         <div>
-                            <h3 className="text-white text-lg font-bold mb-4">Minimally Invasive Care Since 20XX</h3>
+                            <h3 className="text-white text-lg font-bold mb-4">Minimally Invasive. Maximally Effective.</h3>
                             <p className="mb-4">
-                                Pioneering image-guided treatments with compassion and cutting-edge technology.
+                                Skip the Scalpel, Pick the Pinhole - heal in hours, not weeks.
                             </p>
                             <div className="flex space-x-4">
-                                <a href="#" className="text-gray-400 hover:text-white">
-                                    Twitter
-                                    <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="..." /></svg>
+                                <a href="#" className="text-gray-400 hover:text-white flex items-center space-x-2">
+                                    <FaTwitter className="h-6 w-6" />
+                                    <span></span>
                                 </a>
-                                <a href="#" className="text-gray-400 hover:text-white">
-                                    Instagram
-                                    <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="..." /></svg>
+                                <a href="#" className="text-gray-400 hover:text-white flex items-center space-x-2">
+                                    <FaInstagram className="h-6 w-6" />
+                                    <span></span>
                                 </a>
                             </div>
                         </div>
