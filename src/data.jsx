@@ -558,7 +558,7 @@ export const proceduresArray = [
         htmlPath: 'uaeBlock',
         title: 'Treat Fibroids Without Surgery',
         name: "Uterine Fibroid Embolization (UFE)",
-        generalName: "Fibroids,",
+        generalName: "Fibroids",
         for: "Symptomatic Fibroids",
         headline: "Learn about the latest European Pinhole IR technology - now in India & UAE",
         description: "Uterine Fibroid Embolization (UFE) uses a remote guided small wire inserted through a tiny pin-hole in your wrist - reducing fibroid size without anesthesia or surgical risk, and without even touching your belly, getting you home in a few hours, while retaining your ability to get pregnant. Book your consultation now.",
