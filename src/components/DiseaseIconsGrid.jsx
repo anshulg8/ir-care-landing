@@ -11,7 +11,7 @@ const DiseaseIconsGrid = () => {
                 </h2>
 
                 <div className="grid grid-cols-2 gap-4">
-                    {proceduresArray.map(({ id, name, slug, icon }) => (
+                    {proceduresArray.map(({ id, generalName, slug, icon }) => (
                         <Link
                             to={`/procedures/${slug}`}
                             key={id}
@@ -19,7 +19,7 @@ const DiseaseIconsGrid = () => {
                         >
                             <div className="flex items-center gap-2">
                                 <span className="text-lg">{icon}</span>
-                                <span>{name}</span>
+                                <span>{generalName}</span>
                             </div>
                             <FiExternalLink className="text-base" />
                             {/* <FiArrowUpRight className="text-base" /> */}

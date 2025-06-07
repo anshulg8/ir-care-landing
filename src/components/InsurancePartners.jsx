@@ -2,11 +2,13 @@ import React from 'react';
 import { PHONE_NUMBER } from '../constants';
 
 const logos = [
-    'https://images.seeklogo.com/logo-png/24/1/national-insurance-company-india-logo-png_seeklogo-241702.png',
+    // 'https://images.seeklogo.com/logo-png/24/1/national-insurance-company-india-logo-png_seeklogo-241702.png',
     'https://images.seeklogo.com/logo-png/30/2/hdfc-life-logo-png_seeklogo-304905.png',
     'https://images.seeklogo.com/logo-png/30/1/icici-prudential-life-insurance-logo-png_seeklogo-307031.png',
     'https://images.seeklogo.com/logo-png/38/1/aditya-birla-group-logo-png_seeklogo-385778.png',
-    'https://images.seeklogo.com/logo-png/38/1/aditya-birla-group-logo-png_seeklogo-385778.png',
+    'https://images.seeklogo.com/logo-png/30/1/star-health-insurance-logo-png_seeklogo-303863.png',
+    'https://images.seeklogo.com/logo-png/12/2/sbi-life-insurance-logo-png_seeklogo-123116.png',
+    'https://images.seeklogo.com/logo-png/30/2/max-life-insurance-logo-png_seeklogo-304906.png',
 ];
 
 const InsurancePartners = () => {
