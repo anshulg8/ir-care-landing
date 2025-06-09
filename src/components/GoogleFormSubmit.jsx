@@ -119,8 +119,12 @@ const GoogleFormSubmit = ({ procedure }) => {
             mode: 'no-cors',
             body: formBody,
         })
-            .then(() => setStatus('Appointment request submitted!'))
+            .then(() => {
+                setStatus('Appointment request submitted!');
+                setFormData({ name: '', phone: '', city: '', referralCode: '' });
+            })
             .catch(() => setStatus('Submission failed. Try again.'));
+
     };
 
     return (

@@ -1,37 +1,37 @@
-import React, { useEffect, useState } from 'react';
-import { FaCrosshairs } from 'react-icons/fa6';
+// FormFields.jsx
+import React, { useState, useEffect, forwardRef, useImperativeHandle } from 'react';
 import axios from 'axios';
+import { FaCrosshairs } from 'react-icons/fa6';
 import {
     FIELD_CITY_ID,
     FIELD_DISEASE_ID,
     FIELD_NAME_ID,
     FIELD_PHONE_ID,
     GOOGLE_FORM_ACTION_URL,
-    PHONE_NUMBER,
     YOUR_REFERRAL_CODE_FIELD_ID,
 } from '../constants';
-import { proceduresArray } from '../data';
-import StatsBanner from './StatsBanner';
 
-const procedures = proceduresArray.map(proc => proc.name);
-
-const GoogleFormWithProcedureInput = () => {
+const FormFields = forwardRef(({ procedure = 'General Consultation', onSuccess }, ref) => {
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
         city: '',
-        procedure: '',
         referralCode: '',
     });
-
-    const [status, setStatus] = useState('');
     const [hasReferral, setHasReferral] = useState(false);
-    const [filtered, setFiltered] = useState([]);
-    const [showDropdown, setShowDropdown] = useState(false);
+    const [status, setStatus] = useState('');
     const [nearbyCities, setNearbyCities] = useState([]);
     const [isLoadingCities, setIsLoadingCities] = useState(false);
 
-    // Fetch nearby cities using IP + Overpass API
+    // 🎯 Expose reset method
+    useImperativeHandle(ref, () => ({
+        resetForm: () => {
+            setFormData({ name: '', phone: '', city: '', referralCode: '' });
+            setHasReferral(false);
+            setStatus('');
+        },
+    }));
+
     useEffect(() => {
         const fetchNearbyCities = async () => {
             setIsLoadingCities(true);
@@ -40,12 +40,12 @@ const GoogleFormWithProcedureInput = () => {
                 const { latitude, longitude, city } = res.data;
 
                 const overpassQuery = `
-                    [out:json];
-                    (
-                        node["place"~"city|town|village"](around:50000,${latitude},${longitude});
-                    );
-                    out body;
-                `;
+          [out:json];
+          (
+              node["place"~"city|town|village"](around:50000,${latitude},${longitude});
+          );
+          out body;
+        `;
 
                 const response = await axios.post(
                     'https://overpass-api.de/api/interpreter',
@@ -71,7 +71,6 @@ const GoogleFormWithProcedureInput = () => {
         fetchNearbyCities();
     }, []);
 
-    // Get city from browser GPS
     const handleGetLocation = () => {
         if (!navigator.geolocation) {
             alert('Geolocation is not supported by your browser');
@@ -112,21 +111,7 @@ const GoogleFormWithProcedureInput = () => {
     };
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
-
-        if (name === 'procedure') {
-            const matches = procedures.filter((proc) =>
-                proc.toLowerCase().includes(value.toLowerCase())
-            );
-            setFiltered(matches);
-            setShowDropdown(true);
-        }
-    };
-
-    const handleSelectProcedure = (value) => {
-        setFormData((prev) => ({ ...prev, procedure: value }));
-        setShowDropdown(false);
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = (e) => {
@@ -136,7 +121,7 @@ const GoogleFormWithProcedureInput = () => {
         formBody.append(FIELD_NAME_ID, formData.name);
         formBody.append(FIELD_PHONE_ID, formData.phone);
         formBody.append(FIELD_CITY_ID, formData.city);
-        formBody.append(FIELD_DISEASE_ID, formData.procedure);
+        formBody.append(FIELD_DISEASE_ID, procedure);
 
         if (formData.referralCode) {
             formBody.append(YOUR_REFERRAL_CODE_FIELD_ID, formData.referralCode);
@@ -148,33 +133,26 @@ const GoogleFormWithProcedureInput = () => {
             body: formBody,
         })
             .then(() => {
-                setStatus('Appointment request submitted!')
-                setFormData({ name: '', phone: '', city: '', referralCode: '', procedure: '' });
+                setStatus('Appointment request submitted!');
+                onSuccess?.();
             })
             .catch(() => setStatus('Submission failed. Try again.'));
     };
 
     return (
         <>
-            <div className="relative max-w-md mx-auto">
-                <div className="absolute top-10 left-4 z-10 text-gray-800">
-                    <p className="text-teal-700 text-lg font-semibold leading-tight">Book Free Appointment</p>
-                    {/* <p className="text-lg font-semibold leading-tight">Appointment</p> */}
-                </div>
 
-                {/* Doctor's image in top-right */}
+            <div className="relative max-w-md mx-auto">
                 <img
                     src="https://img.pristyncare.com/new_brand%2Felements%2Fprakash_2023_mobile.webp"
                     alt="Doctor"
                     width={110}
                     height={102}
-                    className="absolute top-4 right-4 z-10"
+                    className="absolute top-0 right-4 z-10"
                 />
 
-                <form
-                    onSubmit={handleSubmit}
-                    className="p-4 pt-30 bg-white shadow rounded space-y-4"
-                >
+                {/* Doctor's image in top-right */}
+                <form onSubmit={handleSubmit} className="p-4 bg-white rounded space-y-4 shadow">
                     <input
                         name="name"
                         type="text"
@@ -216,8 +194,6 @@ const GoogleFormWithProcedureInput = () => {
                         </button>
                     </div>
 
-
-                    {/* Nearby Cities */}
                     {isLoadingCities ? (
                         <p className="text-sm text-gray-500 mt-2">Detecting nearby cities...</p>
                     ) : (
@@ -242,34 +218,6 @@ const GoogleFormWithProcedureInput = () => {
                         )
                     )}
 
-                    {/* Procedure Auto-Complete */}
-                    <div className="relative">
-                        <input
-                            name="procedure"
-                            type="text"
-                            placeholder="Select Disease"
-                            value={formData.procedure}
-                            onChange={handleChange}
-                            onFocus={() => setShowDropdown(true)}
-                            className="w-full border border-gray-300 p-2 rounded"
-                            required
-                        />
-                        {showDropdown && filtered.length > 0 && (
-                            <ul className="absolute z-10 w-full bg-white border border-gray-200 rounded shadow max-h-48 overflow-y-auto">
-                                {filtered.map((option, idx) => (
-                                    <li
-                                        key={idx}
-                                        onClick={() => handleSelectProcedure(option)}
-                                        className="px-4 py-2 hover:bg-teal-50 cursor-pointer text-sm"
-                                    >
-                                        {option}
-                                    </li>
-                                ))}
-                            </ul>
-                        )}
-                    </div>
-
-                    {/* Referral Code Toggle */}
                     <div className="text-sm text-gray-600">
                         {!hasReferral ? (
                             <button
@@ -294,34 +242,19 @@ const GoogleFormWithProcedureInput = () => {
                         )}
                     </div>
 
-                    {/* Submit Button + Banner */}
-                    <div className="relative w-full">
-                        <div className="absolute -top-3 right-4 transform -skew-x-12 bg-green-600 text-white text-xs px-4 py-1 shadow-sm z-10">
-                            <div className="transform skew-x-12">Free Consultation</div>
-                        </div>
-
-                        <button
-                            type="submit"
-                            className="bg-[#ff8300] text-white py-3 px-6 rounded font-semibold w-full"
-                        >
-                            Book Free Appointment
-                        </button>
-                    </div>
-
-                    {/* Call Link */}
-                    <a
-                        href={`tel:${PHONE_NUMBER}`}
-                        className="block text-lg text-center font-medium text-teal-600 hover:underline"
+                    <button
+                        type="submit"
+                        className="bg-[#ff8300] text-white py-3 px-6 rounded font-semibold w-full"
                     >
-                        Call Us 📞 {PHONE_NUMBER}
-                    </a>
+                        Book Free Appointment
+                    </button>
 
-                    <StatsBanner />
-                    {status && <p className="text-sm text-teal-700">{status}</p>}
+                    {status && <p className="text-sm text-teal-700 mt-2">{status}</p>}
                 </form>
+
             </div>
         </>
     );
-};
+});
 
-export default GoogleFormWithProcedureInput;
+export default FormFields;

@@ -1,8 +1,8 @@
 import React from 'react';
-import GoogleFormSubmit from './GoogleFormSubmit';
+import GoogleFormWithProcedureInput from './GoogleFormWithProcedureInput';
 import { useModal } from '../context/ModalContext';
 
-const AppointmentModal = () => {
+const AppointmentModalWithProcedure = () => {
     const { show, closeModal, procedure } = useModal();
 
     if (!show) return null;
@@ -26,10 +26,10 @@ const AppointmentModal = () => {
                     &times;
                 </button>
 
-                <GoogleFormSubmit procedure={procedure} onClose={closeModal} />
+                <GoogleFormWithProcedureInput procedure={procedure} onClose={closeModal} />
             </div>
         </div>
     );
 };
 
-export default AppointmentModal;
+export default AppointmentModalWithProcedure;

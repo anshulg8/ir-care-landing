@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { FaPhoneAlt, FaCalendarCheck } from 'react-icons/fa';
+import { FaLightbulb, FaCalendarCheck } from 'react-icons/fa';
 
 const StickyButtons = ({ onBookAppointment, onContactClick }) => {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         const onScroll = () => {
-            if (window.scrollY > 50) setIsVisible(true);
-            else setIsVisible(false);
+            setIsVisible(window.scrollY > 50);
         };
         window.addEventListener('scroll', onScroll);
         return () => window.removeEventListener('scroll', onScroll);
@@ -21,8 +20,8 @@ const StickyButtons = ({ onBookAppointment, onContactClick }) => {
                 className="flex-1 text-center bg-[#ff8300] text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2"
                 onClick={onContactClick}
             >
-                <FaPhoneAlt className="text-sm" />
-                Talk To Us
+                <FaLightbulb className="text-sm" />
+                Take the Quiz
             </button>
             <button
                 className="flex-1 text-center bg-teal-600 text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2"
@@ -32,7 +31,6 @@ const StickyButtons = ({ onBookAppointment, onContactClick }) => {
                 Book Appointment
             </button>
         </div>
-
     );
 };
 

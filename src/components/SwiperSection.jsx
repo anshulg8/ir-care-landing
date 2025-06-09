@@ -6,7 +6,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { cards } from '../data';
-import AppointmentModal from './AppointmentModal';
+import AppointmentModalWithProcedure from './AppointmentModalWithProcedure';
 import { useModal } from '../context/ModalContext';
 
 const SwiperSection = () => {
@@ -58,7 +58,7 @@ const SwiperSection = () => {
                 ))}
             </Swiper>
 
-            <AppointmentModal show={show} procedure={procedure} onClose={closeModal} />
+            <AppointmentModalWithProcedure show={show} procedure={procedure} onClose={closeModal} />
 
         </div>
     );

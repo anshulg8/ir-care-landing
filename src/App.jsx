@@ -25,7 +25,10 @@ function App() {
       <ModalProvider>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/quiz/prostate" element={<ProstateQuizPage />} />
+          <Route path="/quiz/prostatic-artery-embolization-pae" element={<ProstateQuizPage />} />
+          <Route path="/quiz/uterine-fibroid-embolization-ufe" element={<ProstateQuizPage />} />
+          <Route path="/quiz/hemorrhoidal-artery-embolization-hae" element={<ProstateQuizPage />} />
+          <Route path="/quiz/okuno-procedure-tam" element={<ProstateQuizPage />} />
           <Route path="/procedures/:procedureId" element={<ProcedureDetailPage />} />
           <Route path="/doctors" element={<DoctorListPage />} />
           <Route path="/ir-applications" element={<IRApplications />} />
