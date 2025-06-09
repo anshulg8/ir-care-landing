@@ -224,17 +224,14 @@ const ProcedureDetailPage = () => {
             </div>
 
             <StickyButtons
+                // onBookAppointment={() => openAppointmentModal(procedure?.title || procedure?.name)}
                 onBookAppointment={() => openModal(procedure)}
-                onContactClick={() => window.location.href = `/quiz/${procedure?.slug}`}
+                onContactClick={() => setShowContactModal(true)}
+            // onContactClick={() => window.location.href = `/quiz/${procedure?.slug}`}
             />
-
-            {/* {showContactModal && (
-                <ContactFloatingButton onClose={() => setShowContactModal(false)} />
-            )} */}
 
             <ContactFloatingButton forceOpen={showContactModal} onClose={() => setShowContactModal(false)} />
             <AppointmentModal />
-
 
         </div>
     );

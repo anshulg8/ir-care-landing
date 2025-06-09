@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import WhyChooseUsSection from './WhyChooseUsSection';
 import FeaturedDoctorsSection from './FeaturedDoctorsSection';
 import DiseaseIconsGrid from './DiseaseIconsGrid';
@@ -10,8 +10,15 @@ import FAQSection from './FAQSection';
 import SwiperSection from './SwiperSection';
 import CentersCarousel from './CentersCarousel';
 import { centers, generalFaqs, landingTestimonials } from '../data.jsx';
+import StickyButtons from './StickyButtons.jsx';
+import ContactFloatingButton from './ContactFloatingButton.jsx';
+import { useModal } from '../context/ModalContext.jsx';
 
 const Home = () => {
+
+    const [showContactModal, setShowContactModal] = useState(false);
+
+    const { openModal } = useModal();
 
     return (
         <div className="min-h-screen bg-gray-50">
@@ -115,6 +122,12 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+
+            <StickyButtons
+                onBookAppointment={() => openModal()}
+                onContactClick={() => setShowContactModal(true)}
+            />
+            <ContactFloatingButton forceOpen={showContactModal} onClose={() => setShowContactModal(false)} />
         </div >
     );
 };

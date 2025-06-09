@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FaLightbulb, FaCalendarCheck } from 'react-icons/fa';
+import { FaPhoneAlt, FaCalendarCheck } from 'react-icons/fa';
 
 const StickyButtons = ({ onBookAppointment, onContactClick }) => {
     const [isVisible, setIsVisible] = useState(false);
@@ -20,8 +20,8 @@ const StickyButtons = ({ onBookAppointment, onContactClick }) => {
                 className="flex-1 text-center bg-[#ff8300] text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2"
                 onClick={onContactClick}
             >
-                <FaLightbulb className="text-sm" />
-                Take the Quiz
+                <FaPhoneAlt className="text-sm" />
+                Call Us
             </button>
             <button
                 className="flex-1 text-center bg-teal-600 text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2"
