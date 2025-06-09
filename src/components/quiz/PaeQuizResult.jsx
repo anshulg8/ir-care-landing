@@ -1,8 +1,8 @@
 import React from 'react';
-import { proceduresArray } from '../data.jsx';
-import BenefitsCarousel from '../components/BenefitCarousel';
+import { proceduresArray } from '../../data.jsx';
+import BenefitsCarousel from '../BenefitCarousel.jsx';
 
-const HaeQuizResult = ({ score }) => {
+const PaeQuizResult = ({ score }) => {
     let severity = '';
     if (score <= 7) severity = 'mild';
     else if (score <= 19) severity = 'moderate';
@@ -102,4 +102,4 @@ const HaeQuizResult = ({ score }) => {
     );
 };
 
-export default HaeQuizResult;
+export default PaeQuizResult;

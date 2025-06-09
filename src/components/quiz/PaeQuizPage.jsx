@@ -1,24 +1,39 @@
 import React, { useState, useRef } from 'react';
-import ContactFloatingButton from './ContactFloatingButton';
-import FormFields from './FormFields';
-import CustomLink from './CustomLink';
-import AppointmentModal from './AppointmentModal';
-import { fibroidQuizData } from '../data/quizData';
-import UaeQuizResult from '../blocks/uaeQuizResult';
+import ContactFloatingButton from '../ContactFloatingButton';
+import FormFields from '../FormFields';
+import CustomLink from '../CustomLink';
+import AppointmentModal from '../AppointmentModal';
+import { paeQuizData } from './data/quizData';
+import PaeQuizResult from './PaeQuizResult';
 
-const FibroidQuizPage = () => {
+const PaeQuizPage = () => {
+
     const formRef = useRef();
+    const handleRetakeQuiz = () => {
+        setAnswers([]);
+        setCurrentQuestionIndex(0);
+        setSubmitted(false);
+        setShowForm(false);
+    };
 
-    const [answers, setAnswers] = useState(Array(fibroidQuizData.questions.length).fill(null));
+    const quiz = paeQuizData;
+
+    const [showForm, setShowForm] = useState(false);
+
+    const [answers, setAnswers] = useState(Array(quiz.questions.length).fill(null));
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [submitted, setSubmitted] = useState(false);
-    const [showForm, setShowForm] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [showContactModal, setShowContactModal] = useState(false);
 
-    const total = fibroidQuizData.questions.length;
+    const total = quiz.questions.length;
     const isAnswered = answers[currentQuestionIndex] !== null;
     const isLast = currentQuestionIndex === total - 1;
+
+    const options =
+        quiz.specialOptions && quiz.specialOptions[currentQuestionIndex]
+            ? quiz.specialOptions[currentQuestionIndex]
+            : quiz.options;
 
     const handleOptionChange = (value) => {
         const updated = [...answers];
@@ -41,16 +56,8 @@ const FibroidQuizPage = () => {
         }
     };
 
-    const handleRetakeQuiz = () => {
-        setAnswers(Array(fibroidQuizData.questions.length).fill(null));
-        setCurrentQuestionIndex(0);
-        setSubmitted(false);
-        setShowForm(false);
-    };
-
-    const rawScore = answers.reduce((sum, v) => sum + (v ?? 0), 0);
-    const normalizedScore = rawScore + 8; // UFS-QOL SSS adds 8 as floor
-    const result = fibroidQuizData.result(normalizedScore);
+    const score = answers.reduce((sum, v) => sum + (v ?? 0), 0);
+    const result = quiz.result(score);
     const progressPercent = ((currentQuestionIndex + 1) / total) * 100;
 
     return (
@@ -60,7 +67,7 @@ const FibroidQuizPage = () => {
                     <div className="mb-6">
                         <div className="w-full bg-gray-200 h-2 rounded">
                             <div
-                                className="bg-teal-500 h-2 rounded transition-all"
+                                className="bg-teal-600 h-2 rounded transition-all"
                                 style={{ width: `${progressPercent}%` }}
                             />
                         </div>
@@ -71,12 +78,11 @@ const FibroidQuizPage = () => {
 
                     {!submitted ? (
                         <>
-                            <p><i>In the past 4 weeks, how much did each of the following bother you?</i></p><br />
                             <h1 className="text-xl font-semibold text-gray-800 mb-4">
-                                {fibroidQuizData.questions[currentQuestionIndex]}
+                                {quiz.questions[currentQuestionIndex]}
                             </h1>
                             <div className="space-y-3">
-                                {fibroidQuizData.options.map((opt) => (
+                                {options.map((opt) => (
                                     <label key={opt.value} className="flex items-center space-x-3">
                                         <input
                                             type="radio"
@@ -109,67 +115,70 @@ const FibroidQuizPage = () => {
                                 </button>
                             </div>
                         </>
-                    ) : (
-                        <div className="bg-white p-6 rounded-lg shadow-md mt-6">
-                            <div className="text-sm mb-2">
-                                <span
-                                    className={`inline-block px-2 py-1 rounded font-medium ${result.severity === 'mild' ? 'bg-green-100 text-green-700' :
-                                        result.severity === 'moderate' ? 'bg-yellow-100 text-yellow-700' :
-                                            result.severity === 'severe' ? 'bg-orange-100 text-orange-700' :
+                    ) :
+                        (
+                            <div className="bg-white p-6 rounded-lg shadow-md mt-6">
+                                {/* <h2 className="text-2xl font-bold text-gray-800 mb-4">{result.title}</h2> */}
+
+                                <div className="text-sm mb-2">
+                                    <span
+                                        className={`inline-block px-2 py-1 rounded font-medium ${result.severity === 'mild' ? 'bg-green-100 text-green-700' :
+                                            result.severity === 'moderate' ? 'bg-yellow-100 text-yellow-700' :
                                                 'bg-red-100 text-red-700'
-                                        }`}
-                                >
-                                    Your Symptom Score: {normalizedScore} / 40
-                                </span>
-                            </div>
-
-                            <UaeQuizResult score={normalizedScore} />
-
-                            <div className="bg-teal-50 border border-teal-100 text-gray-800 p-4 rounded-lg mt-8 text-lg">
-                                <CustomLink procedure={`Fibroid Quiz - ${normalizedScore} / 40`}>
-                                    {result.cta}
-                                </CustomLink>
-                            </div>
-
-                            {showForm && (
-                                <div className="mt-6">
-                                    <FormFields
-                                        ref={formRef}
-                                        procedure={`Fibroid Symptom Quiz - ${normalizedScore} / 40`}
-                                        onSuccess={() => {
-                                            alert('Thanks!');
-                                            formRef.current?.resetForm();
-                                        }}
-                                    />
+                                            }`}
+                                    >
+                                        Your Score: {result.score} / 35
+                                    </span>
                                 </div>
-                            )}
 
-                            <button
-                                className="mt-4 text-teal-600 underline text-sm"
-                                onClick={handleRetakeQuiz}
-                            >
-                                Retake Quiz
-                            </button>
-                        </div>
-                    )}
+                                {submitted && <PaeQuizResult score={result.score} />}
+                                <div>
+
+                                    <div className="bg-teal-50 border border-teal-100 text-gray-800 p-4 rounded-lg mt-8 text-lg">
+                                        <CustomLink procedure={`Prostate Quiz - ${result.score} / 35`}>{result.cta}</CustomLink>
+                                    </div>
+
+                                    {showForm && (
+                                        <div className="mt-6">
+                                            <FormFields
+                                                ref={formRef}
+                                                procedure={`Prostate Symptom Quiz (IPSS) - ${result.score} / 35`}
+                                                onSuccess={() => {
+                                                    alert('Thanks !');
+                                                    formRef.current?.resetForm();
+                                                }}
+                                            />
+                                        </div>
+                                    )}
+                                </div>
+
+                                <button
+                                    className="mt-4 text-teal-600 underline text-sm"
+                                    onClick={handleRetakeQuiz}
+                                >
+                                    Retake Quiz
+                                </button>
+                            </div>
+
+                        )}
 
                     <div className="mt-10 border-t pt-6 text-sm text-gray-500">
-                        <p>🩺 Trusted by top gynecologists. NABH Accredited.</p>
-                        <p className="text-sm text-gray-600">
-                            Know someone with heavy periods or pelvic pressure? Share this free check-up tool.
-                        </p>
+                        <p>🩺 Trusted by leading urologists. NABH Accredited.</p>
+                        <p className="text-sm text-gray-600">Know someone who may need a prostate check-up? Share this free tool</p>
                     </div>
+
                 </div>
             </div>
 
+            {/* <StickyButtons onBookAppointment={handleBook} onContactClick={handleContact} /> */}
             <ContactFloatingButton forceOpen={showContactModal} onClose={() => setShowContactModal(false)} />
             <AppointmentModal
                 show={showModal}
                 onClose={() => setShowModal(false)}
-                procedure={`Fibroid Symptom Quiz - ${normalizedScore} / 40`}
+                procedure={`Prostate Symptom Quiz (IPSS) - ${result.score} / 35`}
             />
         </div>
     );
 };
 
-export default FibroidQuizPage;
+export default PaeQuizPage;

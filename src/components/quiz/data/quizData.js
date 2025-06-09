@@ -1,5 +1,5 @@
 // src/data/quizData.js
-export const prostateQuizData = {
+export const paeQuizData = {
     title: 'Prostate Symptom Quiz (IPSS)',
     questions: [
         'Incomplete Emptying - How often have you had the sensation of not emptying your bladder?',
@@ -63,7 +63,7 @@ export const prostateQuizData = {
     },
 };
 
-export const fibroidQuizData = {
+export const uaeQuizData = {
     title: 'Fibroid Symptom Fast-Check™ (UFS-QOL SSS)',
     questions: [
         'Heavy menstrual bleeding',

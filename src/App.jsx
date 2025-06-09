@@ -15,8 +15,8 @@ import InterventionalRadiology from './components/InterventionalRadiology';
 import ScrollToTop from './components/ScrollToTop';
 import ContactFloatingButton from './components/ContactFloatingButton';
 import { ModalProvider } from './context/ModalContext';
-import ProstateQuizPage from './components/ProstateQuizPage';
-import FibroidQuizPage from './components/FibroidQuizPage';
+import UaeQuizPage from './components/quiz/UaeQuizPage';
+import PaeQuizPage from './components/quiz/PaeQuizPage';
 
 function App() {
   return (
@@ -26,10 +26,10 @@ function App() {
       <ModalProvider>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/quiz/prostatic-artery-embolization-pae" element={<ProstateQuizPage />} />
-          <Route path="/quiz/uterine-fibroid-embolization-ufe" element={<FibroidQuizPage />} />
-          <Route path="/quiz/hemorrhoidal-artery-embolization-hae" element={<ProstateQuizPage />} />
-          <Route path="/quiz/okuno-procedure-tam" element={<ProstateQuizPage />} />
+          <Route path="/quiz/prostatic-artery-embolization-pae" element={<PaeQuizPage />} />
+          <Route path="/quiz/uterine-fibroid-embolization-ufe" element={<UaeQuizPage />} />
+          {/* <Route path="/quiz/hemorrhoidal-artery-embolization-hae" element={<HaeQuizPage />} />
+          <Route path="/quiz/okuno-procedure-tam" element={<TameQuizPage />} /> */}
           <Route path="/procedures/:procedureId" element={<ProcedureDetailPage />} />
           <Route path="/doctors" element={<DoctorListPage />} />
           <Route path="/ir-applications" element={<IRApplications />} />
