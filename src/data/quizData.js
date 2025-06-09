@@ -63,4 +63,49 @@ export const prostateQuizData = {
     },
 };
 
+export const fibroidQuizData = {
+    title: 'Fibroid Symptom Fast-Check™ (UFS-QOL SSS)',
+    questions: [
+        'Heavy menstrual bleeding',
+        'Passing clots during periods',
+        'Pelvic pressure or a feeling of heaviness',
+        'Needing to urinate frequently',
+        'Waking at night to urinate',
+        'Menstrual cramp-type pain',
+        'Missing work or household duties',
+        'Feeling tired or “worn out”',
+    ],
+    options: [
+        { label: 'Not at all', value: 0 },
+        { label: 'A little', value: 1 },
+        { label: 'Moderately', value: 2 },
+        { label: 'Quite a bit', value: 3 },
+        { label: 'A great deal', value: 4 },
+    ],
+    result: (rawScore) => {
+        // Raw SSS ranges from 8 to 40 (UFS-QOL standard)
+        // rawScore is assumed to be between 8 and 40
+        let severity = '';
+        let cta = '';
 
+        if (rawScore <= 15) {
+            severity = 'mild';
+            cta = '🗨️ Chat Now with Docsy’s expert nurse to receive a free, personalized fibroid management guide, including annual scan checklists. ';
+        } else if (rawScore <= 23) {
+            severity = 'moderate';
+            cta = '📞 Book your complimentary 10-min tele-consultation with Docsy’s senior fibroid specialist';
+        } else if (rawScore <= 31) {
+            severity = 'severe';
+            cta = '📞 Reserve your priority fast-track consultation with Docsy’s lead fibroid specialist';
+        } else {
+            severity = 'very_severe';
+            cta = '📞 Reserve your priority fast-track consultation with Docsy’s lead fibroid specialist – urgent action recommended';
+        }
+
+        return {
+            score: rawScore,
+            severity,
+            cta,
+        };
+    },
+};
