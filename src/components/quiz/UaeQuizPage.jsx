@@ -4,7 +4,7 @@ import FormFields from '../FormFields';
 import CustomLink from '../CustomLink';
 import AppointmentModal from '../AppointmentModal';
 import { uaeQuizData } from './data/quizData';
-import UaeQuizResult from './uaeQuizResult';
+import UaeQuizResult from './UaeQuizResult';
 
 const UaeQuizPage = () => {
     const formRef = useRef();
