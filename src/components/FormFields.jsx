@@ -10,6 +10,7 @@ import {
     GOOGLE_FORM_ACTION_URL,
     YOUR_REFERRAL_CODE_FIELD_ID,
 } from '../constants';
+import LeadDr from '../assets/leadform-doc.png';
 
 const FormFields = forwardRef(({ procedure = 'General Consultation', onSuccess }, ref) => {
     const [formData, setFormData] = useState({
@@ -144,7 +145,7 @@ const FormFields = forwardRef(({ procedure = 'General Consultation', onSuccess }
 
             <div className="relative max-w-md mx-auto">
                 <img
-                    src="https://img.pristyncare.com/new_brand%2Felements%2Fprakash_2023_mobile.webp"
+                    src={LeadDr}
                     alt="Doctor"
                     width={110}
                     height={102}

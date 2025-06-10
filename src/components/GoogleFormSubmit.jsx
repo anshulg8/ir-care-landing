@@ -11,6 +11,7 @@ import {
     YOUR_REFERRAL_CODE_FIELD_ID,
 } from '../constants';
 import StatsBanner from './StatsBanner';
+import LeadDr from '../assets/leadform-doc.png';
 
 const GoogleFormSubmit = ({ procedure }) => {
     const [formData, setFormData] = useState({ name: '', phone: '', city: '', referralCode: '' });
@@ -139,11 +140,11 @@ const GoogleFormSubmit = ({ procedure }) => {
 
                 {/* Doctor's image in top-right */}
                 <img
-                    src="https://img.pristyncare.com/new_brand%2Felements%2Fprakash_2023_mobile.webp"
+                    src={LeadDr}
                     alt="Doctor"
                     width={110}
                     height={102}
-                    className="absolute top-4 right-4 z-10"
+                    className="absolute top-2 right-4 z-10"
                 />
                 <form onSubmit={handleSubmit} className="p-4 pt-30 bg-white shadow rounded space-y-4">
 

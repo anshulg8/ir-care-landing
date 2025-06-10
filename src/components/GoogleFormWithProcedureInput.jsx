@@ -12,6 +12,7 @@ import {
 } from '../constants';
 import { proceduresArray } from '../data';
 import StatsBanner from './StatsBanner';
+import LeadDr from '../assets/leadform-doc.png';
 
 const procedures = proceduresArray.map(proc => proc.name);
 
@@ -164,11 +165,11 @@ const GoogleFormWithProcedureInput = () => {
 
                 {/* Doctor's image in top-right */}
                 <img
-                    src="https://img.pristyncare.com/new_brand%2Felements%2Fprakash_2023_mobile.webp"
+                    src={LeadDr}
                     alt="Doctor"
                     width={110}
                     height={102}
-                    className="absolute top-4 right-4 z-10"
+                    className="absolute top-2 right-4 z-10"
                 />
 
                 <form
