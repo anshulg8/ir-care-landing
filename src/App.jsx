@@ -17,6 +17,7 @@ import ContactFloatingButton from './components/ContactFloatingButton';
 import { ModalProvider } from './context/ModalContext';
 import UaeQuizPage from './components/quiz/UaeQuizPage';
 import PaeQuizPage from './components/quiz/PaeQuizPage';
+// import TameQuizPage from './components/quiz/TameQuizPage';
 
 function App() {
   return (
@@ -28,8 +29,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/quiz/prostatic-artery-embolization-pae" element={<PaeQuizPage />} />
           <Route path="/quiz/uterine-fibroid-embolization-ufe" element={<UaeQuizPage />} />
-          {/* <Route path="/quiz/hemorrhoidal-artery-embolization-hae" element={<HaeQuizPage />} />
-          <Route path="/quiz/okuno-procedure-tam" element={<TameQuizPage />} /> */}
+          {/* <Route path="/quiz/hemorrhoidal-artery-embolization-hae" element={<HaeQuizPage />} /> */}
+          {/* <Route path="/quiz/okuno-procedure-tam" element={<TameQuizPage />} /> */}
           <Route path="/procedures/:procedureId" element={<ProcedureDetailPage />} />
           <Route path="/doctors" element={<DoctorListPage />} />
           <Route path="/ir-applications" element={<IRApplications />} />

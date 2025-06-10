@@ -78,12 +78,12 @@ const ProcedureDetailPage = () => {
         <div className="min-h-screen bg-gray-50 py-12">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="mb-8">
-                    <Link to="/procedures" className="text-teal-600 hover:text-teal-700 flex items-center">
+                    {/* <Link to="/procedures" className="text-teal-600 hover:text-teal-700 flex items-center">
                         <svg className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                         </svg>
                         Back to Procedures
-                    </Link>
+                    </Link> */}
                 </div>
 
                 <div className="bg-white rounded-lg shadow-sm overflow-hidden">
