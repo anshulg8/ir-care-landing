@@ -144,7 +144,7 @@ const GoogleFormSubmit = ({ procedure }) => {
                     alt="Doctor"
                     width={110}
                     height={102}
-                    className="absolute top-2 right-4 z-10"
+                    className="absolute top-2 right-2 z-10"
                 />
                 <form onSubmit={handleSubmit} className="p-4 pt-30 bg-white shadow rounded space-y-4">
 

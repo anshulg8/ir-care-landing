@@ -163,8 +163,8 @@ const PaeQuizPage = () => {
                         )}
 
                     <div className="mt-10 border-t pt-6 text-sm text-gray-500">
-                        <p>🩺 Trusted by leading urologists. NABH Accredited.</p>
-                        <p className="text-sm text-gray-600">Know someone who may need a prostate check-up? Share this free tool</p>
+                        <p>🩺 IPSS Score is trusted by leading urologists and validated by international institutions.</p>
+                        <p className="text-sm text-gray-600">Know someone who may need a quick prostate enlargement check? Share this free tool.</p>
                     </div>
 
                 </div>

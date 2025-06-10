@@ -256,7 +256,7 @@ const GoogleFormWithProcedureInput = () => {
                             required
                         />
                         {showDropdown && filtered.length > 0 && (
-                            <ul className="absolute z-10 w-full bg-white border border-gray-200 rounded shadow max-h-48 overflow-y-auto">
+                            <ul className="absolute z-20 w-full bg-white border border-gray-200 rounded shadow max-h-48 overflow-y-auto">
                                 {filtered.map((option, idx) => (
                                     <li
                                         key={idx}

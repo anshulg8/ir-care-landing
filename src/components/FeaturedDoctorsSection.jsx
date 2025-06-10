@@ -6,8 +6,6 @@ import 'swiper/css/pagination';
 import { featuredDoctors } from '../data.jsx';
 
 const FeaturedDoctorsSection = () => {
-
-
     return (
         <section className="pt-6 sm:pt-16 pb-6 px-4 sm:px-6 lg:px-8 bg-white">
             <div className="max-w-7xl mx-auto">

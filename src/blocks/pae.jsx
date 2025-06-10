@@ -1,5 +1,6 @@
 import React from 'react';
 import CustomLink from '../components/CustomLink';
+import { Link } from 'react-router-dom';
 
 const paeBlock = () => {
     return (
@@ -13,14 +14,27 @@ const paeBlock = () => {
             </p>
 
             <div className="bg-teal-50 border border-teal-100 text-gray-800 p-4 rounded-lg mt-8 text-lg">
-                Want more clarity on the most effective procedure for your case?&nbsp;
-                <CustomLink procedure="Fibroid Treatment">Let our doctors</CustomLink> guide you.
+                Want further details on this latest procedure?
+                <CustomLink procedure="PAE"> Speak to our doctors</CustomLink>  now - get full clarity with zero obligations.
             </div>
 
             <h2 className="text-2xl font-bold my-4">How Is a Large Prostate Affecting You?</h2>
             <p className="mb-8 text-lg">
                 The prostate is a walnut-shaped organ surrounding your urinary passage. As men age, the prostate enlarges due to male hormones. This can block urine flow, causing a weak stream, frequent night urination, and disruptions to daily life. If untreated, it can lead to medical emergencies like acute retention (sudden urinary block), requiring emergency hospitalization and catheter insertion to drain the bladder.
             </p>
+
+            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 my-10">
+                <h3 className="text-lg font-semibold text-yellow-900 mb-2">Not sure what your symptoms mean?</h3>
+                <p className="text-yellow-800 mb-4">
+                    Do you have a prostate block? Stop guessing - take the free 2 min clinically validated test now.
+                </p>
+                <Link
+                    to={`/quiz/prostatic-artery-embolization-pae`}
+                    className="bg-yellow-600 hover:bg-yellow-700 text-white px-5 py-2 rounded-md font-medium transition"
+                >
+                    Start Free Test
+                </Link>
+            </div>
 
             <h2 className="text-2xl font-bold my-4">Your Treatment Options</h2>
             <h3 className="text-xl font-semibold mb-2">Early Stages:</h3>
@@ -38,7 +52,7 @@ const paeBlock = () => {
 
             <div className="bg-teal-50 border border-teal-100 text-gray-800 p-4 rounded-lg mt-8 text-lg">
                 Want more clarity on the most effective procedure for your case?&nbsp;
-                <CustomLink procedure="Fibroid Treatment">Let our doctors</CustomLink> guide you.
+                <CustomLink procedure="PAE">Let our doctors</CustomLink> guide you.
             </div>
 
             <h2 className="text-2xl font-bold my-4">Why Choose PAE?</h2>
@@ -67,8 +81,21 @@ const paeBlock = () => {
             </ul>
 
             <div className="bg-teal-50 border border-teal-100 text-gray-800 p-4 rounded-lg mt-8 text-lg">
-                Want more clarity on the most effective procedure for your case?&nbsp;
-                <CustomLink procedure="Fibroid Treatment">Let our doctors</CustomLink> guide you.
+                Want to know if PAE is right for you?
+                <CustomLink procedure="PAE">Let our doctors</CustomLink> guide you.
+            </div>
+
+            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 my-10">
+                <h3 className="text-lg font-semibold text-yellow-900 mb-2">Not sure where to start?</h3>
+                <p className="text-yellow-800 mb-4">
+                    Do you have a prostate block? Stop guessing - take the free 2 min clinically validated test now.
+                </p>
+                <Link
+                    to={`/quiz/prostatic-artery-embolization-pae`}
+                    className="bg-yellow-600 hover:bg-yellow-700 text-white px-5 py-2 rounded-md font-medium transition"
+                >
+                    Start Free Test
+                </Link>
             </div>
         </div>
     );
