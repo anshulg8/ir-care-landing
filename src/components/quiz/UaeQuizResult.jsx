@@ -1,6 +1,7 @@
 import React from 'react';
 import { proceduresArray } from '../../data.jsx';
 import BenefitsCarousel from '../BenefitCarousel.jsx';
+import ScoreTag from './ScoreTag.jsx';
 
 const UaeQuizResult = ({ score, maxScore }) => {
     let severity = '';
