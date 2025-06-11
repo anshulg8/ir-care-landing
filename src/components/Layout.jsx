@@ -39,7 +39,7 @@ const Layout = ({ children }) => {
                         </a>
                     </div>
                     <br />
-                    <p>*Limited daily slots - please book in advance*</p>
+                    <p>Limited daily slots - please book in advance</p>
                 </div>
             </div>
 

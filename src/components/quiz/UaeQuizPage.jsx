@@ -71,7 +71,7 @@ const UaeQuizPage = () => {
 
                     {!submitted ? (
                         <>
-                            <p><i>In the past 4 weeks, how much did each of the following bother you?</i></p><br />
+                            <p><i>In the past 4 weeks, how much did this problem affect you?</i></p><br />
                             <h1 className="text-xl font-semibold text-gray-800 mb-4">
                                 {uaeQuizData.questions[currentQuestionIndex]}
                             </h1>
@@ -154,9 +154,9 @@ const UaeQuizPage = () => {
                     )}
 
                     <div className="mt-10 border-t pt-6 text-sm text-gray-500">
-                        <p>🩺 Trusted by top gynecologists. NABH Accredited.</p>
+                        <p>🩺 Know someone suffering from heavy or painful periods?</p>
                         <p className="text-sm text-gray-600">
-                            Know someone with heavy periods or pelvic pressure? Share this free check-up tool.
+                            *Share this free tool* to help them know more.
                         </p>
                     </div>
                 </div>

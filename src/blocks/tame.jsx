@@ -1,5 +1,6 @@
 import React from 'react';
 import CustomLink from '../components/CustomLink';
+import { Link } from 'react-router-dom';
 
 const tameBlock = () => {
     return (
@@ -13,14 +14,27 @@ const tameBlock = () => {
             </p>
 
             <div className="bg-teal-50 border border-teal-100 text-gray-800 p-4 rounded-lg mt-8 text-lg">
-                Want more clarity on the most effective procedure for your case?&nbsp;
-                <CustomLink procedure="Fibroid Treatment">Let our doctors</CustomLink> guide you.
+                Want further details on this latest procedure?
+                <CustomLink procedure="TAME"> Speak to our doctors</CustomLink>  now - get full clarity with zero obligations.
             </div>
 
             <h2 className="text-2xl font-bold my-4">Why Does Chronic Pain Happen?</h2>
             <p className="mb-8 text-lg">
                 Chronic joint pain occurs because of the growth of tiny blood vessels that increase blood supply to inflamed tissue that releases pain-causing chemicals. Over time, the pain releases other chemical signals causing these vessels to grow in number and size — causing the pain to worsen further, creating a vicious cycle.
             </p>
+
+            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 my-10">
+                <h3 className="text-lg font-semibold text-yellow-900 mb-2">Not sure what your symptoms mean?</h3>
+                <p className="text-yellow-800 mb-4">
+                    Stop guessing - take the free 2 min clinically validated test now.
+                </p>
+                <Link
+                    to={`/quiz/okuno-procedure-tam`}
+                    className="bg-yellow-600 hover:bg-yellow-700 text-white px-5 py-2 rounded-md font-medium transition"
+                >
+                    Start Free Test
+                </Link>
+            </div>
 
             <h2 className="text-2xl font-bold my-4">What Are Your Treatment Options?</h2>
             <h3 className="text-xl font-semibold mb-2">Conventional Options:</h3>
@@ -34,7 +48,7 @@ const tameBlock = () => {
 
             <div className="bg-teal-50 border border-teal-100 text-gray-800 p-4 rounded-lg mt-8 text-lg">
                 Want more clarity on the most effective procedure for your case?&nbsp;
-                <CustomLink procedure="Fibroid Treatment">Let our doctors</CustomLink> guide you.
+                <CustomLink procedure="TAME"> Let our doctors</CustomLink> guide you.
             </div>
 
             <h2 className="text-2xl font-bold my-4">How Is TAME Different?</h2>
@@ -62,8 +76,21 @@ const tameBlock = () => {
             </ul>
 
             <div className="bg-teal-50 border border-teal-100 text-gray-800 p-4 rounded-lg mt-8 text-lg">
-                Want more clarity on the most effective procedure for your case?&nbsp;
-                <CustomLink procedure="Fibroid Treatment">Let our doctors</CustomLink> guide you.
+                Want to know if TAME is right for you?
+                <CustomLink procedure="TAME"> Let our doctors</CustomLink> guide you.
+            </div>
+
+            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 my-10">
+                <h3 className="text-lg font-semibold text-yellow-900 mb-2">Not sure where to start?</h3>
+                <p className="text-yellow-800 mb-4">
+                    Stop guessing - take the free 2 min clinically validated test now.
+                </p>
+                <Link
+                    to={`/quiz/okuno-procedure-tam`}
+                    className="bg-yellow-600 hover:bg-yellow-700 text-white px-5 py-2 rounded-md font-medium transition"
+                >
+                    Start Free Test
+                </Link>
             </div>
         </div>
     );

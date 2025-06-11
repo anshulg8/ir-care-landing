@@ -622,11 +622,6 @@ export const proceduresArray = [
         ],
         faqs: [
             {
-                id: 1,
-                question: "Will I still get pregnant?",
-                answer: "Pregnancy after UFE is possible—hundreds of live births reported—but data is limited. If pregnancy is your *immediate* goal, myomectomy may be first-line; otherwise UAE preserves the option for later."
-            },
-            {
                 id: 2,
                 question: "How soon do symptoms improve?",
                 answer: "Bleeding often lightens next period; pressure and bloating improve steadily as fibroids shrink over 3–6 months."
@@ -766,7 +761,7 @@ export const proceduresArray = [
         markdownPath: './tam.md',
         htmlPath: 'tameBlock',
         title: '',
-        name: "OKUNO Procedure (TAM)",
+        name: "OKUNO Procedure (TAME)",
         generalName: "Severe Pain",
         headline: "End Chronic Joint & Tendon Pain — Without Surgery or Long Downtime",
         for: "Chronic Pain (Knee/Shoulder/Back)",

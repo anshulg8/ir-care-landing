@@ -26,7 +26,7 @@ const paeBlock = () => {
             <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 my-10">
                 <h3 className="text-lg font-semibold text-yellow-900 mb-2">Not sure what your symptoms mean?</h3>
                 <p className="text-yellow-800 mb-4">
-                    Do you have a prostate block? Stop guessing - take the free 2 min clinically validated test now.
+                    Stop guessing - take the free 2 min clinically validated test now.
                 </p>
                 <Link
                     to={`/quiz/prostatic-artery-embolization-pae`}
@@ -52,7 +52,7 @@ const paeBlock = () => {
 
             <div className="bg-teal-50 border border-teal-100 text-gray-800 p-4 rounded-lg mt-8 text-lg">
                 Want more clarity on the most effective procedure for your case?&nbsp;
-                <CustomLink procedure="PAE">Let our doctors</CustomLink> guide you.
+                <CustomLink procedure="PAE"> Let our doctors</CustomLink> guide you.
             </div>
 
             <h2 className="text-2xl font-bold my-4">Why Choose PAE?</h2>
@@ -82,13 +82,13 @@ const paeBlock = () => {
 
             <div className="bg-teal-50 border border-teal-100 text-gray-800 p-4 rounded-lg mt-8 text-lg">
                 Want to know if PAE is right for you?
-                <CustomLink procedure="PAE">Let our doctors</CustomLink> guide you.
+                <CustomLink procedure="PAE"> Let our doctors</CustomLink> guide you.
             </div>
 
             <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 my-10">
                 <h3 className="text-lg font-semibold text-yellow-900 mb-2">Not sure where to start?</h3>
                 <p className="text-yellow-800 mb-4">
-                    Do you have a prostate block? Stop guessing - take the free 2 min clinically validated test now.
+                    Stop guessing - take the free 2 min clinically validated test now.
                 </p>
                 <Link
                     to={`/quiz/prostatic-artery-embolization-pae`}

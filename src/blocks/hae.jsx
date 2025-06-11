@@ -1,5 +1,6 @@
 import React from 'react';
 import CustomLink from '../components/CustomLink';
+import { Link } from 'react-router-dom';
 
 const haeBlock = () => {
     return (
@@ -11,7 +12,7 @@ const haeBlock = () => {
 
             <div className="bg-teal-50 border border-teal-100 text-gray-800 p-4 rounded-lg mt-8 text-lg">
                 Want more clarity on the most effective procedure for your case?&nbsp;
-                <CustomLink procedure="Fibroid Treatment">Let our doctors</CustomLink> guide you.
+                <CustomLink procedure="HAE"> Let our doctors</CustomLink> guide you.
             </div>
 
             <h2 className="text-2xl font-bold my-4">How Are Piles Affecting You?</h2>
@@ -26,6 +27,19 @@ const haeBlock = () => {
             <p className="mb-8 text-lg">
                 If left untreated, piles can worsen — leading to pain, infection, blood clots, and strangulation (severe pain due to cut-off blood supply).
             </p>
+
+            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 my-10">
+                <h3 className="text-lg font-semibold text-yellow-900 mb-2">Not sure what your symptoms mean?</h3>
+                <p className="text-yellow-800 mb-4">
+                    Stop guessing - take the free 2 min clinically validated test now.
+                </p>
+                <Link
+                    to={`/quiz/hemorrhoidal-artery-embolization-hae`}
+                    className="bg-yellow-600 hover:bg-yellow-700 text-white px-5 py-2 rounded-md font-medium transition"
+                >
+                    Start Free Test
+                </Link>
+            </div>
 
             <h2 className="text-2xl font-bold my-4">What Are Your Treatment Options?</h2>
             <h3 className="text-xl font-semibold mb-2">Mild Cases:</h3>
@@ -45,7 +59,7 @@ const haeBlock = () => {
             </p>
             <div className="bg-teal-50 border border-teal-100 text-gray-800 p-4 rounded-lg mt-8 text-lg">
                 Want more clarity on the most effective procedure for your case?&nbsp;
-                <CustomLink procedure="Fibroid Treatment">Let our doctors</CustomLink> guide you.
+                <CustomLink procedure="HAE"> Let our doctors</CustomLink> guide you.
             </div>
 
             <h2 className="text-2xl font-bold my-4">How Does HAE Work?</h2>
@@ -70,8 +84,21 @@ const haeBlock = () => {
             </ul>
 
             <div className="bg-teal-50 border border-teal-100 text-gray-800 p-4 rounded-lg mt-8 text-lg">
-                Want more clarity on the most effective procedure for your case?&nbsp;
-                <CustomLink procedure="Fibroid Treatment">Let our doctors</CustomLink> guide you.
+                Want to know if HAE is right for you?
+                <CustomLink procedure="HAE"> Let our doctors</CustomLink> guide you.
+            </div>
+
+            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 my-10">
+                <h3 className="text-lg font-semibold text-yellow-900 mb-2">Not sure what your symptoms mean?</h3>
+                <p className="text-yellow-800 mb-4">
+                    Stop guessing - take the free 2 min clinically validated test now.
+                </p>
+                <Link
+                    to={`/quiz/hemorrhoidal-artery-embolization-hae`}
+                    className="bg-yellow-600 hover:bg-yellow-700 text-white px-5 py-2 rounded-md font-medium transition"
+                >
+                    Start Free Test
+                </Link>
             </div>
         </div>
     );
