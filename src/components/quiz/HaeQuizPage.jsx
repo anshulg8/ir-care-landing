@@ -3,20 +3,20 @@ import ContactFloatingButton from '../ContactFloatingButton';
 import FormFields from '../FormFields';
 import CustomLink from '../CustomLink';
 import AppointmentModal from '../AppointmentModal';
-import { uaeQuizData } from './data/quizData';
-import UaeQuizResult from './UaeQuizResult';
+import { haeQuizData } from './data/quizData';
+import HaeQuizResult from './HaeQuizResult';
 
-const UaeQuizPage = () => {
+const HaeQuizPage = () => {
     const formRef = useRef();
 
-    const [answers, setAnswers] = useState(Array(uaeQuizData.questions.length).fill(null));
+    const [answers, setAnswers] = useState(Array(haeQuizData.questions.length).fill(null));
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [submitted, setSubmitted] = useState(false);
     const [showForm, setShowForm] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [showContactModal, setShowContactModal] = useState(false);
 
-    const total = uaeQuizData.questions.length;
+    const total = haeQuizData.questions.length;
     const isAnswered = answers[currentQuestionIndex] !== null;
     const isLast = currentQuestionIndex === total - 1;
 
@@ -42,17 +42,17 @@ const UaeQuizPage = () => {
     };
 
     const handleRetakeQuiz = () => {
-        setAnswers(Array(uaeQuizData.questions.length).fill(null));
+        setAnswers(Array(haeQuizData.questions.length).fill(null));
         setCurrentQuestionIndex(0);
         setSubmitted(false);
         setShowForm(false);
     };
 
     const rawScore = answers.reduce((sum, v) => sum + (v ?? 0), 0);
-    const normalizedScore = rawScore + 8; // UFS-QOL SSS adds 8 as floor
-    const result = uaeQuizData.result(normalizedScore);
+    const normalizedScore = rawScore + 0; // UFS-QOL SSS adds 8 as floor - redundant
+    const result = haeQuizData.result(normalizedScore);
     const progressPercent = ((currentQuestionIndex + 1) / total) * 100;
-    const maxScore = uaeQuizData.maxScore;
+    const maxScore = haeQuizData.questions.length * 4;
 
     return (
         <div className="min-h-screen bg-gray-50 py-12">
@@ -72,12 +72,12 @@ const UaeQuizPage = () => {
 
                     {!submitted ? (
                         <>
-                            <p><i>In the past 4 weeks, how much did this problem affect you?</i></p><br />
+                            <p><i>In the past four weeks, how often have you experienced:</i></p><br />
                             <h1 className="text-xl font-semibold text-gray-800 mb-4">
-                                {uaeQuizData.questions[currentQuestionIndex]}
+                                {haeQuizData.questions[currentQuestionIndex]}
                             </h1>
                             <div className="space-y-3">
-                                {uaeQuizData.options.map((opt) => (
+                                {haeQuizData.options.map((opt) => (
                                     <label key={opt.value} className="flex items-center space-x-3">
                                         <input
                                             type="radio"
@@ -124,10 +124,10 @@ const UaeQuizPage = () => {
                                 </span>
                             </div>
 
-                            <UaeQuizResult score={normalizedScore} maxScore={maxScore} />
+                            <HaeQuizResult score={normalizedScore} maxScore={maxScore} />
 
                             <div className="bg-teal-50 border border-teal-100 text-gray-800 p-4 rounded-lg mt-8 text-lg">
-                                <CustomLink procedure={`UAE Quiz - ${normalizedScore} / ${maxScore}`}>
+                                <CustomLink procedure={`HAE Quiz - ${normalizedScore} / {maxScore}`}>
                                     {result.cta}
                                 </CustomLink>
                             </div>
@@ -136,7 +136,7 @@ const UaeQuizPage = () => {
                                 <div className="mt-6">
                                     <FormFields
                                         ref={formRef}
-                                        procedure={`UAE Quiz - ${normalizedScore} / ${maxScore}`}
+                                        procedure={`HAE Quiz - ${normalizedScore} / {maxScore}`}
                                         onSuccess={() => {
                                             alert('Thanks!');
                                             formRef.current?.resetForm();
@@ -155,11 +155,12 @@ const UaeQuizPage = () => {
                     )}
 
                     <div className="mt-10 border-t pt-6 text-sm text-gray-500">
-                        <p>🩺 Know someone suffering from heavy or painful periods?</p>
+                        <p>🩺 The HDSS scale is trusted by leading doctors and validated by international institutions.</p>
                         <p className="text-sm text-gray-600">
-                            *Share this free tool* to help them know more.
+                            Know someone who may have piles? *Share this free tool* to help them check their severity.
                         </p>
                     </div>
+
                 </div>
             </div>
 
@@ -167,10 +168,10 @@ const UaeQuizPage = () => {
             <AppointmentModal
                 show={showModal}
                 onClose={() => setShowModal(false)}
-                procedure={`UAE - ${normalizedScore} / ${maxScore}`}
+                procedure={`HAE Quiz - ${normalizedScore} / {maxScore}`}
             />
         </div>
     );
 };
 
-export default UaeQuizPage;
+export default HaeQuizPage;

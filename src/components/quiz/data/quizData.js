@@ -1,4 +1,3 @@
-// src/data/quizData.js
 export const paeQuizData = {
     title: 'Prostate Symptom Quiz (IPSS)',
     questions: [
@@ -10,6 +9,7 @@ export const paeQuizData = {
         'Straining - How often have you had to strain to start urination?',
         'Nocturia - How many times did you typically get up at night to urinate?',
     ],
+    maxScore: 35,
     options: [
         { label: 'Not at All', value: 0 },
         { label: 'Less than 1 in 5 Times', value: 1 },
@@ -33,31 +33,19 @@ export const paeQuizData = {
             return {
                 severity: 'mild',
                 score,
-                // title: "Your Prostate Symptoms Are Mild – Here's How to Keep Them That Way.",
-                // body: `Your prostate symptoms currently reflect early-stage Benign Prostatic Hyperplasia (BPH)—a natural enlargement of your prostate gland that commonly affects men after age 50 (and increasingly, in younger men too). Mild symptoms usually include occasional increased urinary urgency or minor changes in urine flow.`,
-                // learn: `As you age, hormonal shifts (especially increased levels of dihydrotestosterone, DHT) cause your prostate to slowly grow. \n Currently, your symptoms indicate minimal obstruction, but BPH often gradually progresses. Approximately 15% of men with mild symptoms see significant worsening within a year without proper management (AUA guidelines, 2022). `,
-                // steps: `• Limit fluids before bed\n• Reduce caffeine/alcohol\n• Do pelvic floor exercises`,
-                cta: "📞 Schedule Your Free Annual Prostate Health Check-In",
+                cta: '📞 Unsure about next steps? Book your first consult with our doctor for free - get full clarity, zero obligations.',
             };
         } else if (score <= 19) {
             return {
                 severity: 'moderate',
                 score,
-                // title: "Moderate Symptoms Detected – You Have Effective Options Beyond Medication.",
-                // body: `Your responses suggest moderate BPH. Typical symptoms at this stage include frequent night-time urination...`,
-                // learn: `The enlarged prostate presses on your urethra, straining your bladder...`,
-                // steps: `• Alpha-blockers, 5AR inhibitors (temporary relief)\n• PAE – 80–90% improvement\n• Resume activities in 48 hrs`,
-                cta: "📞 Discuss if PAE is Right for You – Free Specialist Consult Today",
+                cta: '📞 Unsure about next steps? Book your first consult with our doctor for free - get full clarity, zero obligations.',
             };
         } else {
             return {
                 severity: 'severe',
                 score,
-                // title: "Severe Prostate Symptoms Detected – Prompt Action Recommended.",
-                // body: `Your symptoms indicate advanced BPH. Frequent urgency, weak stream, night awakenings are common.`,
-                // learn: `Risk of complete urinary blockage or long-term bladder damage rises significantly (50% within 2 years)...`,
-                // steps: `• PAE: Minimally invasive\n• No catheter, no incision\n• Discharge same day\n• Covered by insurance`,
-                cta: "⚡ Fast-Track Your Free Specialist Consultation – Speak to Our Doctor Immediately",
+                cta: '📞 Unsure about next steps? Book your first consult with our doctor for free - get full clarity, zero obligations.',
             };
         }
     },
@@ -75,6 +63,7 @@ export const uaeQuizData = {
         'Missing work or household duties',
         'Feeling tired or “worn out”',
     ],
+    maxScore: 40,
     options: [
         { label: 'Not at all', value: 0 },
         { label: 'A little', value: 1 },
@@ -90,16 +79,16 @@ export const uaeQuizData = {
 
         if (rawScore <= 15) {
             severity = 'mild';
-            cta = '🗨️ Chat Now with Docsy’s expert nurse to receive a free, personalized fibroid management guide, including annual scan checklists. ';
+            cta = '📞 Unsure about next steps? Book your first consult with our doctor for free - get full clarity, zero obligations.';
         } else if (rawScore <= 23) {
             severity = 'moderate';
-            cta = '📞 Book your complimentary 10-min tele-consultation with Docsy’s senior fibroid specialist';
+            cta = '📞 Unsure about next steps? Book your first consult with our doctor for free - get full clarity, zero obligations.';
         } else if (rawScore <= 31) {
             severity = 'severe';
-            cta = '📞 Reserve your priority fast-track consultation with Docsy’s lead fibroid specialist';
+            cta = '📞 Unsure about next steps? Book your first consult with our doctor for free - get full clarity, zero obligations.';
         } else {
             severity = 'very_severe';
-            cta = '📞 Reserve your priority fast-track consultation with Docsy’s lead fibroid specialist – urgent action recommended';
+            cta = '📞 Unsure about next steps? Book your first consult with our doctor for free - get full clarity, zero obligations.';
         }
 
         return {
@@ -108,4 +97,91 @@ export const uaeQuizData = {
             cta,
         };
     },
+};
+
+export const haeQuizData = {
+    title: 'Hemorrhoid Symptom Fast-Check™ (HDSS Scale)',
+    questions: [
+        'Bright-red bleeding',
+        'Anal pain/discomfort',
+        'Itching/irritation around anus',
+        'Lumps/Prolapse while passing stool(soft parts coming out of anus)',
+        'Soiling/Staining of underwear',
+    ],
+    maxScore: 20,
+    options: [
+        { label: 'Never', value: 0 },
+        { label: 'Rarely (at least once a month)', value: 1 },
+        { label: 'Sometimes (at least once a week)', value: 2 },
+        { label: 'Often (2–6 times a week)', value: 3 },
+        { label: 'Daily (almost every day)', value: 4 },
+    ],
+    result: (rawScore) => {
+        let severity = '';
+        let cta = '';
+
+        if (rawScore <= 4) {
+            severity = 'mild';
+            cta = '📞 Unsure about next steps? Book your first consult with our doctor for free - get full clarity, zero obligations.';
+        } else if (rawScore <= 9) {
+            severity = 'moderate';
+            cta = '📞 Unsure about next steps? Book your first consult with our doctor for free - get full clarity, zero obligations.';
+        } else if (rawScore <= 14) {
+            severity = 'severe';
+            cta = '📞 Unsure about next steps? Book your first consult with our doctor for free - get full clarity, zero obligations.';
+        } else {
+            severity = 'verySevere';
+            cta = '📞 Unsure about next steps? Book your first consult with our doctor for free - get full clarity, zero obligations.';
+        }
+
+        return {
+            score: rawScore,
+            severity,
+            cta,
+        };
+    },
+};
+
+export const tameQuizData = {
+    title: 'Chronic Joint Pain Self-Assessment (PEG Scale)',
+    questions: [
+        'On average in the past week, how intense was your joint pain?',
+        'How much has pain interfered with your enjoyment of life?',
+        'How much has pain interfered with your general activity?',
+        'Where is your worst pain?',
+        'Has this pain lasted ≥ 3 months AND increases after activity?',
+    ],
+    maxScore: 10,
+    options: {
+        intensityScale: Array.from({ length: 11 }, (_, i) => ({ label: `${i}`, value: i })), // 0-10 scale
+        painLocation: ['Ankle', 'Knee', 'Hip', 'Lower back', 'Shoulder', 'Neck', 'Other'],
+        chronicTrigger: [
+            { label: 'Yes to both', value: true },
+            { label: 'No', value: false }
+        ]
+    },
+    result: (pegScore) => {
+        let severity = '';
+        let cta = '';
+
+        if (pegScore <= 4) {
+            severity = 'mild';
+            cta = '📞 Unsure about next steps? Book your first consult with our doctor for free - get full clarity, zero obligations.';
+        } else if (pegScore <= 7.5) {
+            severity = 'moderate';
+            cta = '📞 Unsure about next steps? Book your first consult with our doctor for free - get full clarity, zero obligations.';
+        } else if (pegScore <= 9) {
+            severity = 'severe';
+            cta = '📞 Unsure about next steps? Book your first consult with our doctor for free - get full clarity, zero obligations.';
+        } else {
+            severity = 'verySevere';
+            cta = '📞 Unsure about next steps? Book your first consult with our doctor for free - get full clarity, zero obligations.';
+        }
+
+        return {
+            score: pegScore,
+            severity,
+            cta,
+        };
+    }
 };

@@ -1,8 +1,9 @@
 import React from 'react';
 import { proceduresArray } from '../../data.jsx';
 import BenefitsCarousel from '../BenefitCarousel.jsx';
+import ScoreTag from './ScoreTag.jsx';
 
-const PaeQuizResult = ({ score }) => {
+const PaeQuizResult = ({ score, maxScore }) => {
     let severity = '';
     if (score <= 7) severity = 'mild';
     else if (score <= 19) severity = 'moderate';
@@ -12,6 +13,8 @@ const PaeQuizResult = ({ score }) => {
 
     return (
         <div className="font-sans leading-relaxed text-gray-700 text-lg">
+            <ScoreTag score={`${score}/${maxScore}`} severity={severity} />
+
             {severity === 'mild' && (
                 <section>
                     <h2 className="text-2xl font-bold my-4">Your Prostate Symptoms Are Mild – Here's How to Keep Them That Way.</h2>

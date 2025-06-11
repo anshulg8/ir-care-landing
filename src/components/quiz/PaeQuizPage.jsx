@@ -5,6 +5,8 @@ import CustomLink from '../CustomLink';
 import AppointmentModal from '../AppointmentModal';
 import { paeQuizData } from './data/quizData';
 import PaeQuizResult from './PaeQuizResult';
+import StickyButtons from '../StickyButtons.jsx';
+import { useModal } from '../../context/ModalContext.jsx';
 
 const PaeQuizPage = () => {
 
@@ -15,6 +17,8 @@ const PaeQuizPage = () => {
         setSubmitted(false);
         setShowForm(false);
     };
+
+    const { openModal } = useModal();
 
     const quiz = paeQuizData;
 
@@ -59,6 +63,7 @@ const PaeQuizPage = () => {
     const score = answers.reduce((sum, v) => sum + (v ?? 0), 0);
     const result = quiz.result(score);
     const progressPercent = ((currentQuestionIndex + 1) / total) * 100;
+    const maxScore = quiz.maxScore;
 
     return (
         <div className="min-h-screen bg-gray-50 py-12">
@@ -120,29 +125,31 @@ const PaeQuizPage = () => {
                             <div className="bg-white p-6 rounded-lg shadow-md mt-6">
                                 {/* <h2 className="text-2xl font-bold text-gray-800 mb-4">{result.title}</h2> */}
 
-                                <div className="text-sm mb-2">
+                                {/* <div className="text-sm mb-2">
+                                    <ScoreTag score="11/20" severity="moderate" />
+                                    <br />
                                     <span
                                         className={`inline-block px-2 py-1 rounded font-medium ${result.severity === 'mild' ? 'bg-green-100 text-green-700' :
                                             result.severity === 'moderate' ? 'bg-yellow-100 text-yellow-700' :
                                                 'bg-red-100 text-red-700'
                                             }`}
                                     >
-                                        Your Score: {result.score} / 35
+                                        Your Score: {result.score} / ${maxScore}
                                     </span>
-                                </div>
+                                </div> */}
 
-                                {submitted && <PaeQuizResult score={result.score} />}
+                                {submitted && <PaeQuizResult score={result.score} maxScore={maxScore} />}
                                 <div>
 
                                     <div className="bg-teal-50 border border-teal-100 text-gray-800 p-4 rounded-lg mt-8 text-lg">
-                                        <CustomLink procedure={`Prostate Quiz - ${result.score} / 35`}>{result.cta}</CustomLink>
+                                        <CustomLink procedure={`PAE Quiz - ${result.score} / ${maxScore}`}>{result.cta}</CustomLink>
                                     </div>
 
                                     {showForm && (
                                         <div className="mt-6">
                                             <FormFields
                                                 ref={formRef}
-                                                procedure={`Prostate Symptom Quiz (IPSS) - ${result.score} / 35`}
+                                                procedure={`PAE Quiz - ${result.score} / ${maxScore}`}
                                                 onSuccess={() => {
                                                     alert('Thanks !');
                                                     formRef.current?.resetForm();
@@ -166,16 +173,19 @@ const PaeQuizPage = () => {
                         <p>🩺 IPSS Score is trusted by leading urologists and validated by international institutions.</p>
                         <p className="text-sm text-gray-600">Know someone who may need a quick prostate enlargement check? Share this free tool.</p>
                     </div>
-
                 </div>
             </div>
 
-            {/* <StickyButtons onBookAppointment={handleBook} onContactClick={handleContact} /> */}
+            <StickyButtons
+                onBookAppointment={() => openModal()}
+                onContactClick={() => setShowContactModal(true)}
+            />
+
             <ContactFloatingButton forceOpen={showContactModal} onClose={() => setShowContactModal(false)} />
             <AppointmentModal
                 show={showModal}
                 onClose={() => setShowModal(false)}
-                procedure={`Prostate Symptom Quiz (IPSS) - ${result.score} / 35`}
+                procedure={`PAE Quiz - ${result.score} / ${maxScore}`}
             />
         </div>
     );

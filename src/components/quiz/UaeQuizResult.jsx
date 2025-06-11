@@ -2,7 +2,7 @@ import React from 'react';
 import { proceduresArray } from '../../data.jsx';
 import BenefitsCarousel from '../BenefitCarousel.jsx';
 
-const UaeQuizResult = ({ score }) => {
+const UaeQuizResult = ({ score, maxScore }) => {
     let severity = '';
     if (score >= 8 && score <= 15) severity = 'mild';
     else if (score >= 16 && score <= 23) severity = 'moderate';
@@ -13,6 +13,7 @@ const UaeQuizResult = ({ score }) => {
 
     return (
         <div className="font-sans leading-relaxed text-gray-700 text-lg">
+            <ScoreTag score={`${score}/${maxScore}`} severity={severity} />
             {severity === 'mild' && (
                 <section>
                     <h2 className="text-2xl font-bold my-4">Your fibroid symptoms are mild – here’s how you stay ahead.</h2>
