@@ -24,7 +24,7 @@ const PaeQuizResult = ({ score, maxScore }) => {
                     <h3 className="text-xl font-semibold my-3">What’s Happening in Your Body:</h3>
                     <ul className="list-disc list-inside space-y-2 mb-8 text-base">
                         <li>As you age, hormonal shifts (especially increased levels of dihydrotestosterone, DHT) cause your prostate to slowly grow.</li>
-                        <li>Currently, your symptoms indicate minimal obstruction, but BPH often gradually progresses. Approximately <b>15% of men with mild symptoms see significant worsening within a year</b> without proper management (AUA guidelines, 2022).</li>
+                        <li>Currently, your symptoms indicate minimal obstruction, but BPH often gradually progresses. Approximately <b>15% of men with mild symptoms see significant worsening within a year</b> without proper management.</li>
                     </ul>
                     <h3 className="text-xl font-semibold my-3">Next Steps Based on Latest Clinical Evidence:</h3>
                     <ul className="list-disc list-inside mb-4">
@@ -43,7 +43,7 @@ const PaeQuizResult = ({ score, maxScore }) => {
                     <h3 className="text-xl font-semibold my-3">What’s Happening in Your Body:</h3>
                     <ul className="list-disc list-inside space-y-2 mb-8 text-base">
                         <li>Your enlarged prostate gland is pressing against your urethra (urine passage), causing bladder muscle strain. Prolonged strain can eventually weaken the bladder, potentially leading to retention or recurrent infections.</li>
-                        <li>Without intervention, <b>about 40% of moderate cases progress within 3–5 years</b> (EAU guidelines, 2023).</li>
+                        <li>Without intervention, <b>about 40% of moderate cases progress within 3–5 years</b>.</li>
                     </ul>
                     <h3 className="text-xl font-semibold my-3">Treatment Choices:</h3>
                     <p className="mb-2 font-semibold">Medications:</p>

@@ -35,7 +35,7 @@ const HaeQuizResult = ({ score, maxScore }) => {
                         <li><b>Warm Sitz Baths:</b> 10 minutes/day significantly reduces symptoms. </li>
                     </ul>
                     <p className="mb-4">
-                        <b>Evidence:</b> Studies show that early dietary and lifestyle intervention can halt progression in over 70% of mild cases (Garg et al., Indian J Surg, 2022).
+                        <b>Evidence:</b> Studies show that early dietary and lifestyle intervention can halt progression in over 70% of mild cases.
                     </p>
 
                     <h3 className="text-xl font-semibold my-3">🚩 When to Seek Further Help: </h3>
