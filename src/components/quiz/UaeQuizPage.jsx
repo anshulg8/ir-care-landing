@@ -112,18 +112,6 @@ const UaeQuizPage = () => {
                         </>
                     ) : (
                         <div className="bg-white p-6 rounded-lg shadow-md mt-6">
-                            <div className="text-sm mb-2">
-                                <span
-                                    className={`inline-block px-2 py-1 rounded font-medium ${result.severity === 'mild' ? 'bg-green-100 text-green-700' :
-                                        result.severity === 'moderate' ? 'bg-yellow-100 text-yellow-700' :
-                                            result.severity === 'severe' ? 'bg-orange-100 text-orange-700' :
-                                                'bg-red-100 text-red-700'
-                                        }`}
-                                >
-                                    Your Symptom Score: {normalizedScore} / {maxScore}
-                                </span>
-                            </div>
-
                             <UaeQuizResult score={normalizedScore} maxScore={maxScore} />
 
                             <div className="bg-teal-50 border border-teal-100 text-gray-800 p-4 rounded-lg mt-8 text-lg">
