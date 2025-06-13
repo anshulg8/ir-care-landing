@@ -22,7 +22,7 @@ const PaeQuizResult = ({ score, maxScore }) => {
                         Your prostate symptoms currently reflect <b>early-stage Benign Prostatic Hyperplasia (BPH)</b> — a natural enlargement of your prostate gland that commonly affects men after age 50 (and increasingly, in younger men too). Mild symptoms usually include occasional increased urinary urgency or minor changes in urine flow.
                     </p>
                     <h3 className="text-xl font-semibold my-3">What’s Happening in Your Body:</h3>
-                    <ul className="list-disc list-inside space-y-2 mb-8 text-base">
+                    <ul className="list-disc list-inside space-y-2 mb-8">
                         <li>As you age, hormonal shifts (especially increased levels of dihydrotestosterone, DHT) cause your prostate to slowly grow.</li>
                         <li>Currently, your symptoms indicate minimal obstruction, but BPH often gradually progresses. Approximately <b>15% of men with mild symptoms see significant worsening within a year</b> without proper management.</li>
                     </ul>
@@ -41,7 +41,7 @@ const PaeQuizResult = ({ score, maxScore }) => {
                         Your responses suggest <b>moderate Benign Prostatic Hyperplasia (BPH)</b>. Typical symptoms at this stage include frequent night-time urination, weaker urinary flow, or incomplete bladder emptying, significantly affecting quality of life.
                     </p>
                     <h3 className="text-xl font-semibold my-3">What’s Happening in Your Body:</h3>
-                    <ul className="list-disc list-inside space-y-2 mb-8 text-base">
+                    <ul className="list-disc list-inside space-y-2 mb-8">
                         <li>Your enlarged prostate gland is pressing against your urethra (urine passage), causing bladder muscle strain. Prolonged strain can eventually weaken the bladder, potentially leading to retention or recurrent infections.</li>
                         <li>Without intervention, <b>about 40% of moderate cases progress within 3–5 years</b>.</li>
                     </ul>
@@ -80,13 +80,13 @@ const PaeQuizResult = ({ score, maxScore }) => {
                         Your symptom profile indicates <b>severe Benign Prostatic Hyperplasia (BPH)</b>. At this stage, symptoms severely impact daily life—frequent urgency, weak stream, nighttime awakenings, and high discomfort levels are common.
                     </p>
                     <h3 className="text-xl font-semibold my-3">Clinical Reality of Severe BPH:</h3>
-                    <ul className="list-disc list-inside space-y-2 mb-8 text-base">
+                    <ul className="list-disc list-inside space-y-2 mb-8">
                         <li>The significantly enlarged prostate gland obstructs urine flow, leading to constant bladder strain, significantly increasing risks like acute urinary retention (complete urinary blockage – a medical emergency requiring hospitalisation and insertion of catheter into penile opening and bladder), frequent urinary tract infections, and potentially irreversible bladder damage. </li>
                         <li>According to the European Association of Urology, severe BPH has a <b>50% risk of acute urinary retention</b> or other complications within 2 years if left untreated. </li>
                     </ul>
 
                     <h3 className="text-xl font-semibold my-3">Urgent Treatment Needed – Why PAE?</h3>
-                    <ul className="list-disc list-inside space-y-2 mb-8 text-base">
+                    <ul className="list-disc list-inside space-y-2 mb-8">
                         <li>Prostatic Artery Embolization (PAE) is an advanced, minimally invasive treatment option designed precisely for severe cases. It is FDA-approved, and American Urology Association recommended, currently offered in almost all big centres in USA and Europe. Clinical trials report a <b>90% symptom improvement</b> with fewer risks compared to conventional surgery (TURP), including no surgical side effects like loss of urinary control, and no impact on sexual function (Journal of Vascular and Interventional Radiology, 2023).</li>
                         <li>Recovery is swift—patients usually discharged the same day with no catheter required, making it ideal for quick symptom relief and immediate quality-of-life enhancement.</li>
                     </ul>

@@ -28,7 +28,7 @@ const HaeQuizResult = ({ score, maxScore }) => {
                     </p>
 
                     <h3 className="text-xl font-semibold my-3">✅ Evidence-Based Practical Advice: </h3>
-                    <ul className="list-disc list-inside space-y-2 mb-8 text-base">
+                    <ul className="list-disc list-inside space-y-2 mb-8">
                         <li><b>Fiber-Rich Diet:</b> Reduces strain during bowel movements (target: 25–35 g/day). </li>
                         <li><b>Hydration:</b> Drink at least 2–3 liters of water daily. </li>
                         <li><b>Avoid Prolonged Sitting:</b> Take short breaks every 30–45 minutes. </li>
@@ -39,7 +39,7 @@ const HaeQuizResult = ({ score, maxScore }) => {
                     </p>
 
                     <h3 className="text-xl font-semibold my-3">🚩 When to Seek Further Help: </h3>
-                    <ul className="list-disc list-inside space-y-2 mb-8 text-base">
+                    <ul className="list-disc list-inside space-y-2 mb-8">
                         <li>Increased bleeding frequency or volume</li>
                         <li>Persistent lumps after bowel movements</li>
                         <li>Significant pain or discomfort</li>
@@ -61,7 +61,7 @@ const HaeQuizResult = ({ score, maxScore }) => {
                         Moderate hemorrhoids signify chronic inflammation and persistent blood vessel swelling due to increased anal pressure. This leads to repeated symptoms affecting daily comfort and quality of life.
                     </p>
                     <h3 className="text-xl font-semibold my-3">Untreated Risks: </h3>
-                    <ul className="list-disc list-inside space-y-2 mb-8 text-base">
+                    <ul className="list-disc list-inside space-y-2 mb-8">
                         <li>Progression to severe disease requiring surgery. </li>
                         <li>Increased bleeding leading to anemia.</li>
                         <li>Chronic discomfort impacting daily life.</li>
@@ -122,7 +122,7 @@ const HaeQuizResult = ({ score, maxScore }) => {
                     </p>
 
                     <h3 className="text-xl font-semibold my-3">Potential Complications if Untreated: </h3>
-                    <ul className="list-disc list-inside space-y-2 mb-8 text-base">
+                    <ul className="list-disc list-inside space-y-2 mb-8">
                         <li>Severe anemia (blood loss causing weakness, shortness of breath) </li>
                         <li>Strangulated hemorrhoids (cutting off tissue supply due to obstruction and compression) requiring emergency surgery </li>
                         <li>Chronic pain, bleeding interfering with work and social life</li>
@@ -181,7 +181,7 @@ const HaeQuizResult = ({ score, maxScore }) => {
                         Advanced hemorrhoids represent significantly dilated blood vessels leading to severe bleeding, thrombosis (blood clots), and prolapse (constant lumps coming out of anus and not going back in). Without timely care, severe complications and hospitalization become likely.
                     </p>
                     <h3 className="text-xl font-semibold my-3">Immediate Risks:</h3>
-                    <ul className="list-disc list-inside space-y-2 mb-8 text-base">
+                    <ul className="list-disc list-inside space-y-2 mb-8">
                         <li>Massive bleeding episodes - represent a potential medical emergency </li>
                         <li>Severe anemia (requiring blood transfusion)  </li>
                         <li>Infection or strangulation (i.e. lack of blood supply leading to potential tissue death) of hemorrhoids. </li>
