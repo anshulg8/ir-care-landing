@@ -495,9 +495,7 @@ export const proceduresArray = [
                 icon: <FaShieldAlt className="text-4xl text-teal-600" />,
             },
         ],
-        icon: (
-            <FaMale className="text-4xl text-teal-600" />
-        ),
+        icon: <FaMale className="text-4xl text-teal-600" />,
         process: [
             "Initial consultation and imaging",
             "Local anesthesia administration",
