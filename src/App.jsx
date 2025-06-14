@@ -19,6 +19,7 @@ import UaeQuizPage from './components/quiz/UaeQuizPage';
 import PaeQuizPage from './components/quiz/PaeQuizPage';
 import HaeQuizPage from './components/quiz/HaeQuizPage';
 import TameQuizPage from './components/quiz/TameQuizPage';
+import IrConditionsAndProcedures from './components/IrConditionsAndProcedures';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/procedures" element={<ProceduresPage />} />
+          <Route path="/our-procedures" element={<IrConditionsAndProcedures />} />
           <Route path="/centres" element={<CentresPage />} />
           <Route path="/interventional-radiology" element={<InterventionalRadiology />} />
           <Route path="/terms" element={<Terms />} />

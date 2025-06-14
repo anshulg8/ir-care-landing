@@ -34,7 +34,9 @@ const ProceduresPage = () => {
                                             {procedure.description}
                                         </p>
                                     </div>
-                                    {procedure.icon}
+                                    <div className="w-12 h-12 text-teal-500 shrink-0">
+                                        {procedure.icon}
+                                    </div>
                                 </div>
                                 <div className="space-y-2 mt-4">
                                     {procedure.benefits.map((benefit, index) => (
@@ -60,7 +62,7 @@ const ProceduresPage = () => {
                 {/* New Link to Full IR Conditions Page */}
                 <div className="mt-12 text-center">
                     <Link
-                        to="/ir-applications"
+                        to="/our-procedures"
                         className="inline-block text-teal-600 text-lg font-semibold hover:underline"
                     >
                         Browse other diseases that can be treated using IR &rarr;

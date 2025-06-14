@@ -114,7 +114,7 @@ const UaeQuizPage = () => {
                         <div className="bg-white p-6 rounded-lg shadow-md mt-6">
                             <UaeQuizResult score={normalizedScore} maxScore={maxScore} />
 
-                            <div className="bg-teal-50 border border-teal-100 text-gray-800 p-4 rounded-lg mt-8 text-lg">
+                            <div className="bg-teal-50 border border-teal-100 text-gray-800 p-4 rounded-lg mt-8 text-lg text-center">
                                 <CustomLink procedure={`UAE Quiz - ${normalizedScore} / ${maxScore}`}>
                                     {result.cta}
                                 </CustomLink>

@@ -8,9 +8,9 @@ const Header = () => {
 
     const navLinks = [
         { path: '/doctors', label: 'Our Doctors' },
-        { path: '/procedures', label: 'Our Procedures' },
         { path: '/centres', label: 'Our Centres' },
-        { path: '/ir-applications', label: 'Treatments' },
+        { path: '/procedures', label: 'Our Procedures' },
+        { path: '/our-procedures', label: 'Treatments' },
     ];
 
     const isActive = (path) => {

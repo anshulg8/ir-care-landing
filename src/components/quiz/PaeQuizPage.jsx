@@ -141,7 +141,7 @@ const PaeQuizPage = () => {
                                 {submitted && <PaeQuizResult score={result.score} maxScore={maxScore} />}
                                 <div>
 
-                                    <div className="bg-teal-50 border border-teal-100 text-gray-800 p-4 rounded-lg mt-8 text-lg">
+                                    <div className="bg-teal-50 border border-teal-100 text-gray-800 p-4 rounded-lg mt-8 text-lg text-center">
                                         <CustomLink procedure={`PAE Quiz - ${result.score} / ${maxScore}`}>{result.cta}</CustomLink>
                                     </div>
 

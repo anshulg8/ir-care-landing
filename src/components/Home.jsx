@@ -41,11 +41,6 @@ const Home = () => {
                         <h3 className="text-2xl font-bold text-gray-900" id="modalHeader">
                             PAE vs Traditional TURP
                         </h3>
-                        <button onClick="closeModal()" className="text-gray-500 hover:text-gray-700">
-                            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
                     </div>
 
                     {/* Modal Content */}
@@ -97,27 +92,6 @@ const Home = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    {/* Modal Footer */}
-                    <div className="sticky bottom-0 bg-white border-t p-6 flex flex-col sm:flex-row justify-between items-center">
-                        <p className="text-gray-600 mb-4 sm:mb-0">
-                            <span className="font-medium" id="successRate">92%</span> of patients choose IR after seeing this comparison
-                        </p>
-                        <div className="flex space-x-3">
-                            <button
-                                onClick="closeModal()"
-                                className="border border-teal-600 text-teal-600 hover:bg-teal-50 px-6 py-2 rounded-lg font-medium"
-                            >
-                                Close
-                            </button>
-                            <button
-                                onClick="bookConsultation()"
-                                className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2 rounded-lg font-medium"
-                            >
-                                Book Free Consultation
-                            </button>
                         </div>
                     </div>
                 </div>

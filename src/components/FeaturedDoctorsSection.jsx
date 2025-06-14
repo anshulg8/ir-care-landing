@@ -10,10 +10,10 @@ const FeaturedDoctorsSection = () => {
         <section className="pt-6 sm:pt-16 pb-6 px-4 sm:px-6 lg:px-8 bg-white">
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-                    Meet Our <span className="text-teal-600">World-Class</span> Doctors
+                    Meet Our <span className="text-teal-600">Specialists</span>
                 </h2>
                 <p className="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-12">
-                    Hand-picked department heads with an average of 22 years of experience, global fellowships, and a less than 1% major-complication rate across 5,000+ Interventional Radiology cases.
+                    Senior Dept Heads, Top Hospitals, Average 20+ years experience
                 </p>
 
                 {/* Mobile View: Swiper */}

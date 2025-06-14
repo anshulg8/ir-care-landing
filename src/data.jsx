@@ -67,24 +67,24 @@ export const technologies = [
 
 export const cards = [
     {
-        title: 'Surgery — without Surgery',
-        subtitle: "Discover Interventional Radiology: tiny pin-hole cures, same-day discharge",
+        title: 'Treat Prostate, Fibroids & Pain Without Surgery',
+        subtitle: "Just a 3mm pin-hole, walk home in 4 hrs",
         backgroundImage: img1,
-        primaryCTA: "Book Free IR Consultation",
-        secondaryCTA: "What is IR?",
+        primaryCTA: "Book Free Consultation",
+        secondaryCTA: "Read More",
     },
     {
         title: "No Cuts. No Scars. No Hospital Stay.",
-        subtitle: "US-FDA and EU CE-approved, >90% lower complications than surgery",
+        subtitle: "FDA and EU-CE Approved, <1% risk of major complications",
         backgroundImage: img2,
         primaryCTA: "Check My Eligibility",
         secondaryCTA: "Compare to Surgery",
     },
     {
-        title: "Top Doctors • Premium Centres • VIP Experience",
+        title: "Top Doctors • 5 Star Centres • VIP Experience",
         subtitle: "India’s first end-to-end IR ecosystem with 24 x 7 Care Navigators",
         backgroundImage: img3,
-        primaryCTA: "Start My Care Journey",
+        primaryCTA: "Speak to a Care Navigator",
         secondaryCTA: "View Success Stories",
     },
 ];
@@ -470,28 +470,28 @@ export const proceduresArray = [
         ],
         benefitDetails: [
             {
-                title: 'Out-patient, local anesthesia',
-                description: 'Walk in, walk out the same day',
+                title: 'Walk in, walk out the same day',
+                description: 'PAE takes just a few hours, allowing you to travel & get back to work the next day',
                 icon: <FaHospital className="text-4xl text-teal-600" />,
             },
             {
-                title: 'Rapid symptom relief',
-                description: 'IPSS scores plunge within weeks and continue improving for 12 months',
+                title: 'Virtually Painless, No Anesthesia',
+                description: 'Unlike surgery, you\'re fully awake during a PAE since it\'s painless and doesn\'t involve putting a thick catheter through your penis opening.',
                 icon: <FaHeartbeat className="text-4xl text-teal-600" />,
             },
             {
-                title: '< 15 min wrist-access incision',
-                description: 'No catheter in most cases',
+                title: 'No Cuts, No Scars, No Risk',
+                description: 'Compared to surgery risks due to the blood loss and cuts (erection and sexual problems, loss of urinary control, urine blockage due to scarring), PAE is safer and risk-free',
                 icon: <FaCut className="text-4xl text-teal-600" />,
             },
             {
-                title: 'Keeps intimacy intact',
-                description: 'Ejaculatory dysfunction ≤ 16% vs ≈ 50% with TURP',
+                title: '>90% Technical Success Rate, Long Lasting Relief',
+                description: 'As effective and durable as surgery, without the pain & complications',
                 icon: <FaHeart className="text-4xl text-teal-600" />,
             },
             {
-                title: 'Lower complication rate',
-                description: 'Than surgery in randomized trials',
+                title: 'Wide Variety of Payment Options',
+                description: 'Major insurances covered, cash payment discount available.',
                 icon: <FaShieldAlt className="text-4xl text-teal-600" />,
             },
         ],
@@ -1016,3 +1016,154 @@ export const docsyJourneySteps = [
         color: "bg-green-500",
     },
 ];
+
+export const ourAllProcedures = [
+    {
+        "Category": "Vascular (Arteries & Veins)",
+        "Typical Problems": [
+            "Peripheral Artery Disease (leg pain, non-healing ulcers)",
+            "Deep-Vein Thrombosis / Pulmonary Embolism",
+            "Varicose Veins & Venous Ulcers",
+            "Dialysis AV Fistula blockages",
+            "Aortic / Peripheral Aneurysms"
+        ],
+        "Key IR Solutions": [
+            "Angioplasty & Stenting",
+            "Atherectomy",
+            "Endovenous Ablation",
+            "Thrombolysis / Thrombectomy",
+            "IVC Filter work",
+            "EVAR / TEVAR / Fenestrated & Chimney grafts"
+        ]
+    },
+    {
+        "Category": "Oncology / Tumour Care",
+        "Typical Problems": [
+            "Liver, Kidney, Lung, Bone, Spine tumours",
+            "Metastatic pain or bleeding",
+            "Pre-op devascularisation"
+        ],
+        "Key IR Solutions": [
+            "TACE / DEB-TACE",
+            "TARE",
+            "Cryo / Radio- / Microwave Ablation",
+            "Tumour Embolisation"
+        ]
+    },
+    {
+        "Category": "Women's Health",
+        "Typical Problems": [
+            "Uterine Fibroids / Adenomyosis",
+            "Pelvic Congestion Syndrome",
+            "Postpartum Haemorrhage",
+            "Placenta Accreta"
+        ],
+        "Key IR Solutions": [
+            "Uterine Artery Embolisation (UAE)",
+            "Ovarian / Internal Iliac Embolisation",
+            "Balloon Occlusion"
+        ]
+    },
+    {
+        "Category": "Men's Health",
+        "Typical Problems": [
+            "Benign Prostatic Hyperplasia (BPH)",
+            "Varicocoele"
+        ],
+        "Key IR Solutions": [
+            "Prostatic Artery Embolisation (PAE)",
+            "Gonadal Vein Embolisation"
+        ]
+    },
+    {
+        "Category": "Pain, Spine & Joints",
+        "Typical Problems": [
+            "Compression Fractures",
+            "Chronic Back / Shoulder / Knee Pain",
+            "Facet / SI Joint pain"
+        ],
+        "Key IR Solutions": [
+            "Vertebro- / Kyphoplasty",
+            "TAME (Okuno)",
+            "Nerve / Facet / Epidural Blocks"
+        ]
+    },
+    {
+        "Category": "Gastro-Hepato-Biliary & GI",
+        "Typical Problems": [
+            "Upper / Lower GI Haemorrhage",
+            "Biliary Strictures & Stones",
+            "Portal & Hepatic Vein Bleeds",
+            "Portal Hypertension / Varices"
+        ],
+        "Key IR Solutions": [
+            "Glue / Coil Embolisation",
+            "PTBD & Biliary Stents",
+            "TIPS / DIPS",
+            "Recanalisation"
+        ]
+    },
+    {
+        "Category": "Renal & Urologic",
+        "Typical Problems": [
+            "Obstructed Kidney / Ureter",
+            "Renal Tumours / Angiomyolipoma"
+        ],
+        "Key IR Solutions": [
+            "Nephrostomy - Antegrade Stenting",
+            "Tumour Ablation",
+            "Embolisation"
+        ]
+    },
+    {
+        "Category": "Thoracic & Pulmonary",
+        "Typical Problems": [
+            "Massive Haemoptysis",
+            "Chylothorax",
+            "Tracheo-Bronchial / Central Airway Narrowing"
+        ],
+        "Key IR Solutions": [
+            "Bronchial Artery Embolisation",
+            "Duct Embolisation",
+            "Stents"
+        ]
+    },
+    {
+        "Category": "Neuro & Head / Neck",
+        "Typical Problems": [
+            "Stroke (acute large-vessel occlusion)",
+            "Brain / Spinal AVMs & Aneurysms",
+            "Severe Face Pain"
+        ],
+        "Key IR Solutions": [
+            "Mechanical Thrombectomy",
+            "AVM / Aneurysm Embolisation",
+            "Trigeminal & Sympathetic Blocks"
+        ]
+    },
+    {
+        "Category": "Biopsy, Drainage & Access",
+        "Typical Problems": [
+            "Undiagnosed lesions (solid organ / bone / soft tissue)",
+            "Abscesses & Complex Cysts",
+            "Long-term IV Access"
+        ],
+        "Key IR Solutions": [
+            "Image-guided Biopsy",
+            "Perc Drainage",
+            "PICC / Port / HD Catheter placement"
+        ]
+    },
+    {
+        "Category": "Paediatric & Rare",
+        "Typical Problems": [
+            "Vascular Malformations (VM / LM)",
+            "Foetal or Neonatal Interventions"
+        ],
+        "Key IR Solutions": [
+            "Sclerotherapy",
+            "Umbilical Vein Access",
+            "Foetal Shunt / Nephrostomy"
+        ]
+    }
+]

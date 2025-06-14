@@ -133,7 +133,7 @@ const GoogleFormSubmit = ({ procedure }) => {
             <div className="relative max-w-md mx-auto">
 
                 <div className="absolute top-10 left-4 z-10 text-gray-800">
-                    <p className="text-teal-700 text-lg font-semibold leading-tight">Book Free Appointment</p>
+                    <p className="text-teal-700 text-lg font-semibold leading-tight">Book Free Consult</p>
                     {/* <p className="text-lg font-semibold leading-tight">Appointment</p> */}
                 </div>
 
@@ -248,7 +248,7 @@ const GoogleFormSubmit = ({ procedure }) => {
                             type="submit"
                             className="bg-[#ff8300] text-white py-3 px-6 rounded font-semibold w-full"
                         >
-                            Book Free Appointment
+                            Book Free Consult
                         </button>
                     </div>
 
