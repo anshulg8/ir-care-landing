@@ -29,16 +29,29 @@ const SwiperSection = () => {
                             <img
                                 src={card.backgroundImage}
                                 alt={card.title}
-                                className="absolute inset-0 w-full h-full object-cover object-[50%_30%] z-0"
+                                className="
+            absolute inset-0 w-full h-full object-cover 
+            object-[50%_20%] sm:object-[50%_30%] 
+            z-0 transition-all duration-300
+        "
                             />
 
-                            <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent z-10" />
+                            {/* Stronger overlay */}
+                            <div className="absolute inset-0 bg-black/40 z-10" />
 
-                            <div className="relative z-20 px-6 sm:px-12 lg:px-24 py-24 text-center max-w-5xl mx-auto text-white h-full flex flex-col justify-center items-center">
-                                <h1 className="text-4xl md:text-5xl font-bold mb-4">{card.title}</h1>
-                                <h2 className="text-xl md:text-2xl font-semibold mb-6">{card.subtitle}</h2>
+                            {/* Text block: pushed down on mobile using margin or padding */}
+                            <div
+                                className="
+            relative z-20 px-6 sm:px-12 lg:px-24 
+            pt-48 sm:pt-24 pb-12
+            text-center max-w-5xl mx-auto text-white 
+            h-full flex flex-col justify-start sm:justify-center items-center
+        "
+                            >
+                                <h1 className="text-3xl md:text-5xl font-bold mb-4 drop-shadow-lg">{card.title}</h1>
+                                <h2 className="text-lg md:text-2xl font-semibold mb-6 drop-shadow">{card.subtitle}</h2>
+
                                 <div className="flex flex-col sm:flex-row justify-center gap-4">
-
                                     <button
                                         onClick={() => openModal(card.title)}
                                         className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
@@ -54,6 +67,7 @@ const SwiperSection = () => {
                                 </div>
                             </div>
                         </section>
+
                     </SwiperSlide>
                 ))}
             </Swiper>

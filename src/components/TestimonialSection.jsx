@@ -1,7 +1,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css'; // Core Swiper styles
-import 'swiper/css/pagination'; // Pagination styles
+import 'swiper/css';
+import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 
 const TestimonialSection = ({ testimonials = [] }) => {
@@ -20,16 +20,13 @@ const TestimonialSection = ({ testimonials = [] }) => {
 
                 {/* Swiper Testimonials */}
                 <Swiper
-                    modules={[Pagination]}  // Enable pagination module
+                    modules={[Pagination]}
                     spaceBetween={20}
-                    slidesPerView={1} // Show one slide at a time
-                    loop={true} // Infinite loop
-                    pagination={{
-                        clickable: true, // Make pagination clickable
-                        type: 'bullets', // Use dot pagination
-                    }}
+                    slidesPerView={1}
+                    loop={true}
+                    pagination={{ clickable: true, type: 'bullets' }}
                     grabCursor={true}
-                    autoplay={{ delay: 5000, disableOnInteraction: false }} // Optional: Automatically change slides
+                    autoplay={{ delay: 5000, disableOnInteraction: false }}
                     className="px-4 !pb-8"
                 >
                     {testimonials.map((testimonial) => (
@@ -54,6 +51,11 @@ const TestimonialSection = ({ testimonials = [] }) => {
                                             {testimonial.name}
                                         </h3>
                                         <p className="text-gray-500 text-sm">{testimonial.city}</p>
+                                        {testimonial.condition && (
+                                            <p className="text-sm text-teal-600 font-medium">
+                                                Treated for: {testimonial.condition}
+                                            </p>
+                                        )}
                                     </div>
                                 </div>
 

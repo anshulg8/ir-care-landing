@@ -11,6 +11,7 @@ import DocsyJourney from './DocsyJourney.jsx';
 import HTMLBlockRenderer from './HTMLBlockRenderer.jsx';
 import { useModal } from '../context/ModalContext.jsx';
 import FeaturedDoctorsSection from './FeaturedDoctorsSection.jsx';
+import TestimonialSection from './TestimonialSection.jsx';
 
 const ProcedureDetailPage = () => {
     const { procedureId } = useParams();
@@ -140,11 +141,11 @@ const ProcedureDetailPage = () => {
                             <HTMLBlockRenderer type={procedure.htmlPath} />
                         </div>
 
-                        <DocsyJourney steps={docsyJourneySteps} />
-
-                        {/* {procedure.testimonials?.length > 0 && (
+                        {procedure.testimonials?.length > 0 && (
                             <TestimonialSection testimonials={procedure.testimonials} />
-                        )} */}
+                        )}
+
+                        <DocsyJourney steps={docsyJourneySteps} />
 
                         {procedure.faqs?.length > 0 && (
                             <FAQSection faqs={procedure.faqs} />

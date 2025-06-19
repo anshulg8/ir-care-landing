@@ -30,6 +30,28 @@ const TameQuizPage = () => {
     if (!isAnswered) return;
     if (isLast) {
       setSubmitted(true);
+
+
+      // // Log raw answers
+      // console.log('Submitted Answers (raw values):', answers);
+
+      // // Log labeled answers
+      // const labeledAnswers = answers.map((value, index) => {
+      //   const question = tameQuizData.questions[index];
+
+      //   let label = '';
+      //   if (index <= 2) {
+      //     label = tameQuizData.options.intensityScale.find(opt => opt.value === value)?.label || 'N/A';
+      //   } else if (index === 3) {
+      //     label = value; // pain location is stored as string
+      //   } else if (index === 4) {
+      //     label = tameQuizData.options.chronicTrigger.find(opt => opt.value === value)?.label || 'N/A';
+      //   }
+
+      //   return { question, answer: label };
+      // });
+
+      // console.log('Detailed Answers:', labeledAnswers);
     } else {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     }

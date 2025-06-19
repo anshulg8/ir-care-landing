@@ -8,6 +8,9 @@ import { FaBan, FaChartLine, FaLayerGroup, FaMoneyBillWave, FaStar, FaSyringe } 
 import img1 from './assets/slider1.png';
 import img2 from './assets/slider2.png';
 import img3 from './assets/slider4.png';
+import Pradeep from './assets/testimonial-pradeep.png';
+import Lakhwinder from './assets/testimonial-lakhwinder.png';
+import Tejal from './assets/testimonial-tejal.png';
 
 export const usps = [
     {
@@ -448,6 +451,47 @@ export const centers = [
     }
 ];
 
+export const landingTestimonials = [
+    {
+        id: 1,
+        image: Pradeep,
+        name: "Pradeep Dhokia, 59",
+        city: "Mumbai",
+        condition: "Enlarged Prostate (PAE)",
+        message: "Wonderful experience, the best... and I should suggest for everyone. Thank God I found Dr Rochan Pant, I was in trouble since a year. Now it's all well, no dribbling, no emergency urine, everything is fine."
+    },
+    {
+        id: 2,
+        image: Lakhwinder,
+        name: "Lukhwinder Singh, 66",
+        city: "Gujarat",
+        condition: "Enlarged Prostate (PAE)",
+        message: "I had a prostate problem. I really liked the treatment, it was very nice...and it happens within 2 hours, without any problems...my experience was very nice, there's no better treatment anywhere else...it's so much better than surgery, the surgery process is such a headache...the best part here is there is no discomfort, the treatment happens within 2 hours, and the service here is also very good... I will recommend to my friends and others, there's no better treatment than this...it's better than surgery"
+    },
+    {
+        id: 3,
+        image: Tejal,
+        name: "Tejal Mhamunkar, 47",
+        city: "Thane",
+        condition: "Fibroids",
+        message: "I saw Dr. Pant's video online. This gave me more confidence that this would work. I was tense, but the doctors and nurses here gave me confidence and support. It is now 4 months since I took the treatment, and I have not had any problem. I am satisfied."
+    },
+    {
+        id: 4,
+        image: "",
+        name: "Divya Mathur, 45",
+        city: "Mumbai",
+        condition: "Chronic Pain",
+        message: "Overall experience was quite cool. This is not something which is commonly known and I think it was awesome."
+    },
+];
+
+export const paeTestimonials = landingTestimonials;
+export const uaeTestimonials = [landingTestimonials[2], landingTestimonials[0], landingTestimonials[1], landingTestimonials[3]];
+export const haeTestimonials = landingTestimonials;
+export const tameTestimonials = [landingTestimonials[3], landingTestimonials[0], landingTestimonials[1], landingTestimonials[2]];;
+
+
 export const proceduresArray = [
     {
         id: 1,
@@ -532,22 +576,29 @@ export const proceduresArray = [
                 answer: "We screen PSA, DRE and imaging.PAE does not preclude future biopsy if ever needed."
             },
         ],
-        testimonials: [
-            {
-                id: 1,
-                image: "",
-                name: "Rohit M., 62, Investment Banker",
-                city: "Mumbai",
-                message: "I went in at 8 a.m. and was back in my Bandra office the next afternoon—zero catheter, zero pain. My IPSS fell from 24 to 6 in three months."
-            }
-        ],
+        testimonials: paeTestimonials,
         comparison: [
             { parameter: "Anesthesia", ir: "Local", traditional: "General" },
             { parameter: "Hospital Stay", ir: "4 hours", traditional: "3-5 days" },
             { parameter: "Recovery", ir: "24-48 hours", traditional: "2-4 weeks" },
             { parameter: "Erectile Dysfunction Risk", ir: "<1%", traditional: "6-15%" },
             { parameter: "Retrograde Ejaculation", ir: "0%", traditional: "50-70%" }
-        ]
+        ],
+        synonyms: [
+            "BPH", "Enlarged prostate", "Big prostate", "Prostate swelling",
+            "prostate bada", "prostate ki sujan", "prostate bada hona",
+            "प्रोस्टेट बढ़ा होना", "प्रोस्टेट सूजन",
+            "prostrate", "prostste", "bpn", "bphh"
+        ],
+        symptoms: [
+            "Frequent urination", "Night-time urination", "Weak stream", "Dribbling", "Urgency",
+            "baar-baar pishaab", "raat ko uthna", "dhaara dheemi", "pishaab ruk-ruk ke",
+            "बार-बार पेशाब", "रात में पेशाब के लिये उठना", "धीमी धार", "पेशाब रुकना"
+        ],
+        conventionalTreatment: [
+            "TURP", "HoLEP", "Rezum™ steam", "UroLift® clips", "Laser prostate surgery"
+        ],
+        irAlternative: "Prostatic Artery Embolization (PAE)"
     },
     {
         id: 2,
@@ -609,15 +660,7 @@ export const proceduresArray = [
             "Rare risk of infection",
             "Minimal risk of non-target embolization"
         ],
-        testimonials: [
-            {
-                id: 1,
-                image: "",
-                name: "Samira K, 37",
-                city: "Dubai",
-                message: "After years of 8-day periods and anemia, I walked out after UAE with just a Band-Aid. Three months later: fibroids halved, hemoglobin 13, and back to marathon training—uterus intact."
-            }
-        ],
+        testimonials: uaeTestimonials,
         faqs: [
             {
                 id: 2,
@@ -646,7 +689,22 @@ export const proceduresArray = [
             { parameter: "Recovery", ir: "3-5 days", traditional: "6-8 weeks" },
             { parameter: "Blood Loss", ir: "10ml", traditional: "300-500ml" },
             { parameter: "Hormonal Impact", ir: "None", traditional: "Surgical menopause" }
-        ]
+        ],
+        synonyms: [
+            "Fibroid uterus", "Uterine myoma", "Womb tumour", "Adenomyosis",
+            "fibroid ki rasoli", "bacha-dani ki ganth",
+            "बच्चेदानी की रसौली", "गर्भाशय में गाँठ",
+            "fibriod", "fibrid", "fybroid"
+        ],
+        symptoms: [
+            "Heavy periods", "Clots", "Pelvic pressure", "Infertility", "Bulky uterus",
+            "zyaada bleeding", "pet me bhaari-pan", "garbh nahi tikna",
+            "अत्यधिक मासिक रक्तस्राव", "पेट में भारीपन", "बाँझपन"
+        ],
+        conventionalTreatment: [
+            "Open Myomectomy", "Lap Myomectomy", "Hysterectomy", "Hysteroscopic resection", "Laser fibroid removal"
+        ],
+        irAlternative: "Uterine Artery Embolization (UAE)"
     },
     {
         id: 3,
@@ -736,22 +794,29 @@ export const proceduresArray = [
                 answer: "Dose is comparable to a pelvic CT and well within safety norms; our suite uses real-time dose monitoring."
             },
         ],
-        testimonials: [
-            {
-                id: 1,
-                image: "",
-                name: "Nisreen K, 48, CFO",
-                city: "Dubai",
-                message: "I’d already had two painful bandings that kept bleeding. HAE took 40 minutes; I watched Netflix in recovery and was in my Worli office next morning. Six months later—no blood, no fear."
-            }
-        ],
+        testimonials: haeTestimonials,
         comparison: [
             { parameter: "Pain Level", ir: "Minimal", traditional: "Moderate to Severe" },
             { parameter: "Anesthesia", ir: "Local", traditional: "General or spinal" },
             { parameter: "Recovery", ir: "2-3 days", traditional: "1-2 weeks" },
             { parameter: "Procedure Time", ir: "30 mins", traditional: "60+ mins" },
             { parameter: "Recurrence", ir: "Low", traditional: "Moderate" }
-        ]
+        ],
+        synonyms: [
+            "Piles", "Haemorrhoids", "Anal piles",
+            "bawasir", "gudde ki sujan", "arsha",
+            "बवासीर", "गुड्डे में सूजन",
+            "hemorroids", "hemmoroids", "pilese"
+        ],
+        symptoms: [
+            "Bleeding while passing stool", "Pain", "Itching", "Lump sticking out",
+            "toilet ke baad khoon", "gudde me dard", "khujli", "mansa bahar aana",
+            "पाखाने के बाद खून", "दर्द", "खुजली", "मांस बाहर आना"
+        ],
+        conventionalTreatment: [
+            "Conventional hemorrhoidectomy", "Stapled PPH", "Rubber-band ligation", "Laser piles surgery"
+        ],
+        irAlternative: "Hemorrhoidal Artery Embolization (HAE)"
     },
     {
         id: 4,
@@ -836,22 +901,30 @@ export const proceduresArray = [
                 answer: "TAME doesn’t “burn bridges.” You can have arthroscopy or replacement later if ever required—often years down the line."
             },
         ],
-        testimonials: [
-            {
-                id: 1,
-                image: "",
-                name: "Farah S, 49, Entrepreneur",
-                city: "Dubai",
-                message: "Six weeks after TAME my knee pain went from 7/10 to 1/10. I’m back to 18-hole weekends—without a single pain-killer."
-            }
-        ],
+        testimonials: tameTestimonials,
         comparison: [
             { parameter: "Invasiveness", ir: "Minimal", traditional: "Arthroscopy or surgery" },
             { parameter: "Pain Relief", ir: "2 weeks", traditional: "2-3 months" },
             { parameter: "Implants", ir: "None", traditional: "Possible" },
             { parameter: "Return to Work", ir: "Next day", traditional: "1-3 weeks" },
             { parameter: "Scarring", ir: "None", traditional: "Visible" }
-        ]
+        ],
+        synonyms: [
+            "Frozen shoulder", "Knee osteoarthritis", "Shoulder impingement", "Chronic back pain",
+            "kandha jamna", "gutna ghisna", "kamar dard",
+            "कंधे में जकड़न", "गुटने घिसना", "कमर दर्द",
+            "knee pian", "frzn sholder", "bak pain"
+        ],
+        symptoms: [
+            "Constant shoulder pain", "Stiffness", "Knee pain walking", "Low-back ache",
+            "kandhe me dard", "haath nahi uthta", "gutne me jalan", "kamar toot rahi",
+            "कंधे में दर्द", "हाथ नहीं उठता", "गुटने में जलन", "कमर टूट रही है"
+        ],
+        conventionalTreatment: [
+            "Arthroscopic capsule release", "Total / Partial Knee Replacement",
+            "Shoulder replacement", "Spine fusion", "Laminectomy"
+        ],
+        irAlternative: "Trans-Arterial Micro-Embolization (TAME)"
     }
 ];
 
@@ -945,37 +1018,6 @@ export const generalFaqs = [
         question: "How do I confirm if I’m a candidate?",
         answer:
             "Click 'Book Free IR Consult' below or WhatsApp us your latest report. A senior doctor replies in ≤30 min.",
-    },
-];
-
-export const landingTestimonials = [
-    {
-        id: 1,
-        image: "https://lh3.googleusercontent.com/a-/ALV-UjW5OScHHANGJme3MCakwWOWPy7D9A_kh1kedMy1-zMC8MvpJyCp=s120-c-rp-mo-br100", // Replace with actual image URL
-        name: "John Doe",
-        city: "New York",
-        message: "The procedure changed my life! I was able to resume normal activities in just a few days, and the recovery was faster than I ever expected."
-    },
-    {
-        id: 2,
-        image: "https://lh3.googleusercontent.com/a-/ALV-UjXxhEeZtGikowQN-XKzdtj2crfaC9aXpN7b57tRCscO7ADrRi35=s120-c-rp-mo-br100", // Replace with actual image URL
-        name: "Jane Smith",
-        city: "Los Angeles",
-        message: "I was really nervous, but the team was so supportive. The whole experience was comfortable, and I feel amazing after the procedure."
-    },
-    {
-        id: 3,
-        image: "https://lh3.googleusercontent.com/a-/ALV-UjXxhEeZtGikowQN-XKzdtj2crfaC9aXpN7b57tRCscO7ADrRi35=s120-c-rp-mo-br100", // Replace with actual image URL
-        name: "Sarah Lee",
-        city: "Chicago",
-        message: "Highly recommend this treatment. I had immediate relief, and the recovery was quick. The doctors were very professional."
-    },
-    {
-        id: 4,
-        image: "https://lh3.googleusercontent.com/a-/ALV-UjW5OScHHANGJme3MCakwWOWPy7D9A_kh1kedMy1-zMC8MvpJyCp=s120-c-rp-mo-br100", // Replace with actual image URL
-        name: "Michael Clark",
-        city: "San Francisco",
-        message: "From start to finish, the entire process was smooth. The team explained everything to me, and I felt well-cared-for throughout."
     },
 ];
 
